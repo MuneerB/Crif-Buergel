@@ -1,0 +1,75 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using RJP.MultiUrlPicker.Models
+@using Archetype.Models;
+@using CrifAustria.Utils;
+@{
+    var currentPage = Model.Content;
+    if (currentPage.HasValue("highlightedNews"))
+    {
+        var highlightedNewsList = currentPage.GetPropertyValue<string>("highlightedNews");
+        var highlightedNews = highlightedNewsList.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+        if (!string.IsNullOrEmpty(highlightedNews.ToString()) && highlightedNews.Any())
+        {
+            <div class="featured-post">
+				<h2 class="h3 clr-drk-blu">Highlight News</h2>
+				@foreach (var news in highlightedNews)
+                {
+                    var singleNews = Umbraco.TypedContent(news);
+                    if (singleNews != null)
+                    {
+                            @PrintData(singleNews)
+                    }
+
+                }
+            </div>
+        }
+    } 
+}
+
+@helper PrintData(IPublishedContent singleNews)
+{
+var highlightedText = ""; 
+<article class="article-structure featured-article clearfix">
+	    @if (singleNews.HasValue("thumbnailImage"))
+        {
+            var thumbnailImage = Umbraco.TypedMedia(singleNews.GetPropertyValue("thumbnailImage"));
+            if(thumbnailImage != null)
+            {
+                <figure class="article-image resize-image pull-left">
+                    <img src="@thumbnailImage.Url" alt="@thumbnailImage.Name" class="">
+                </figure>
+            }           
+        }
+        <section class="article-content col-sm-8">
+            @if (singleNews.HasValue("actualDate"))
+            {
+                string date = singleNews.GetPropertyValue<DateTime>("actualDate").ToString("dd. MMMM yyyy");
+                <time class="clr-light-grey-var-2">@date</time>
+            }
+            @if (singleNews.HasValue("title"))
+            {
+                highlightedText = singleNews.GetPropertyValue<string>("title");
+            }
+            else
+            {
+                highlightedText = singleNews.Name;
+            }
+            <h3 class="h4"><a href="@singleNews.Url" class="clr-drk-blu">@highlightedText</a></h3>
+            @if (singleNews.HasValue("thumbnailImage"))
+            {
+                var thumbnailImage = Umbraco.TypedMedia(singleNews.GetPropertyValue("thumbnailImage"));
+                if(thumbnailImage != null)
+                {
+                    <figure class="hidden-sm hidden-lg hidden-md mob-img">
+                        <img src="@thumbnailImage.Url" alt="@thumbnailImage.Name" class="">
+                    </figure>
+                }           
+            }
+            @if (singleNews.HasValue("shortDescripion"))
+            {
+                <div style="word-wrap: break-word;" class="article-caption">@singleNews.GetPropertyValue("shortDescripion")</div>
+            }
+            <a href="@singleNews.Url" rel="nofollow" class="link clr-drk-blu">@Umbraco.Field("#Read More", altText: "Read More")<i class="fa fa-caret-right"></i></a>
+    </section>
+</article>
+}

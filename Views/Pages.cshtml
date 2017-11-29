@@ -1,0 +1,11 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "_Layout.cshtml";
+}
+@RenderSection("css", required: false)
+@Umbraco.RenderMacro("Breadcrumb")
+@section js{
+            @RenderSection("innerJs",false)
+            }
+	@RenderBody()
+

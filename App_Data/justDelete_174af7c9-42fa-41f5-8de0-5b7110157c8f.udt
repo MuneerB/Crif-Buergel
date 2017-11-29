@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DocumentType>
+  <Info>
+    <Name>News and Events Home</Name>
+    <Alias>newsMainHome</Alias>
+    <Icon>icon-planet color-orange</Icon>
+    <Thumbnail>folder.png</Thumbnail>
+    <Description />
+    <AllowAtRoot>False</AllowAtRoot>
+    <IsListView>False</IsListView>
+    <Compositions>
+      <Composition>ContentMaster</Composition>
+      <Composition>slider</Composition>
+    </Compositions>
+    <AllowedTemplates>
+      <Template>NewsMainHome</Template>
+    </AllowedTemplates>
+    <DefaultTemplate>NewsMainHome</DefaultTemplate>
+  </Info>
+  <Structure>
+    <DocumentType>newsHome</DocumentType>
+  </Structure>
+  <GenericProperties>
+    <GenericProperty>
+      <Name>Body Text</Name>
+      <Alias>bodyText</Alias>
+      <Type>Umbraco.Grid</Type>
+      <Definition>d6e9a39c-bda9-46a1-9912-e2e837409977</Definition>
+      <Tab>Content</Tab>
+      <SortOrder>0</SortOrder>
+      <Mandatory>False</Mandatory>
+      <Description><![CDATA[[bodyText]]]></Description>
+    </GenericProperty>
+  </GenericProperties>
+  <Tabs>
+    <Tab>
+      <Id>68</Id>
+      <Caption>Content</Caption>
+      <SortOrder>0</SortOrder>
+    </Tab>
+  </Tabs>
+</DocumentType>

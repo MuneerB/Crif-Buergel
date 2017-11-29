@@ -1,0 +1,32 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = null;
+    var currentPage=Model.Content;
+    var Image_Style=string.Empty;
+    if (currentPage.HasValue("backgroundImage"))
+    {
+        var konsumentenBoxImage = Umbraco.TypedMedia(currentPage.GetPropertyValue("backgroundImage"));
+        string backgroundImageURL = konsumentenBoxImage.Url;
+        Image_Style = string.Format("style=\"background-image : url('{0}')\"", backgroundImageURL);
+    }
+    <div class="cta-box cta-career sml-sprtr-top-20 clearfix box-text-centered" @Html.Raw(Image_Style)>
+        <div class="col-sm-6 text">
+            @if(CurrentPage.HasValue("title"))
+            {
+                <h2 class="h3">@currentPage.GetPropertyValue("title")</h2>
+            }
+            @if (CurrentPage.HasValue("shortDescription"))
+            {
+                <p>@Html.Raw(currentPage.GetPropertyValue("shortDescription"))</p>
+            }
+            @if (CurrentPage.HasValue("link"))
+            {
+                var konsumentenBoxLinks = Model.Content.GetPropertyValue<RJP.MultiUrlPicker.Models.MultiUrls>("link");
+                if (konsumentenBoxLinks != null && konsumentenBoxLinks.Any())
+                {
+                    <a href="@konsumentenBoxLinks.FirstOrDefault().Url" class="link" @konsumentenBoxLinks.FirstOrDefault().Target>@konsumentenBoxLinks.FirstOrDefault().Name<i class="fa fa-caret-right"></i></a>
+                }
+            }
+        </div>
+    </div>
+}

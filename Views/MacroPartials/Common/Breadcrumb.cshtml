@@ -1,0 +1,66 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using CrifAustria.Utils;
+@{
+    var selection = CurrentPage.Ancestors();
+    var breadcrumbColor="";
+    var currentPage = Common.getTranslatedPage(Model.Content);
+    if (currentPage.HasValue("breadcrumbColor"))
+    {
+        breadcrumbColor= Common.getTranslatedPage(Model.Content).GetPropertyValue("breadcrumbColor").ToString();
+    }
+    var cssClass=(breadcrumbColor=="ffffff")?"white-bdcrmb":"";
+    if (selection.Any())
+    {
+		<div class="breadcrumb-wrapper clr-drk-blu">
+				<div class="container">
+					<div class="row">
+						 <div class="inner-container">
+						 	<ol class="breadcrumb @cssClass">
+								  @foreach (var item in selection.OrderBy("Level"))
+                                              {
+                                                  var page = Umbraco.TypedContent(item.Id);
+                                                  IPublishedContent translatedItem= Common.getTranslatedPage(page);
+                                                  var translatedUrl = Common.getTranslatedUrl(translatedItem.Url);
+                                                  if (item.DocumentTypeAlias =="contactHome" )
+                                                  {
+
+                                           <li><a href="#" class="link-disabled"> @translatedItem.Name</a> </li>
+									  }
+									  else if (!(item.DocumentTypeAlias =="category" ||item.DocumentTypeAlias =="productsMainHome" ||item.DocumentTypeAlias=="PRAndEventsHome" || item.DocumentTypeAlias == "uDateFoldersyFolderMonth" || item.DocumentTypeAlias == "uDateFoldersyFolderDay" || item.DocumentTypeAlias == "uDateFoldersyFolderYear"))
+									  {
+										  <li>
+                                              <a href="@translatedUrl">
+                                                  @if (translatedItem.HasValue("menuAlternateText"))
+                                                  {
+                                                      @translatedItem.GetPropertyValue("menuAlternateText")
+                                                  }
+                                                  else
+                                                  {
+                                                      @item.Name
+                                                  }
+                                              </a> 
+                                          </li>
+
+                                      }
+
+								  }
+								  
+								  <li class="active">
+                                      @if (currentPage.HasValue("menuAlternateText"))
+                                      {
+                                        @currentPage.GetPropertyValue("menuAlternateText")
+                                      }
+                                      else
+                                      {
+                                          @Model.Content.Name
+                                      }
+                                  </li>
+								</ol>
+						 </div>
+					</div>
+				</div>
+				
+		</div>
+        
+    }
+}

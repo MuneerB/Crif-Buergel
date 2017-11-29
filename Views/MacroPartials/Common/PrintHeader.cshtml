@@ -1,0 +1,17 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using CrifAustria.Utils;
+@{
+    var home = Model.Content.AncestorOrSelf(1);
+    home = Common.getTranslatedPage(home);
+    string Image_Style = String.Empty;
+    string backgroundImageURL = string.Empty;
+    if (home.HasValue("logo"))
+    {
+        var siteLogo = Umbraco.TypedMedia(home.GetPropertyValue("logo"));
+        if (siteLogo != null)
+        {
+            backgroundImageURL = siteLogo.Url;
+			<div id="print-header"><img src="@backgroundImageURL" alt=""></div>
+		}
+	}
+}

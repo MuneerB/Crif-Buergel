@@ -1,0 +1,40 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+    @using CrifAustria.Utils;
+@{
+    var home = Model.Content.AncestorOrSelf(1);
+    home = Common.getTranslatedPage(home);
+    string Image_Style = String.Empty;
+    string backgroundImageURL = string.Empty;
+    if (home.HasValue("logo"))
+    {
+        var siteLogo = Umbraco.TypedMedia(home.GetPropertyValue("logo"));
+        if (siteLogo != null)
+        {
+            backgroundImageURL = siteLogo.Url;
+            Image_Style = string.Format("style=\"background-image : url('{0}')\"", backgroundImageURL);
+            var translatedUrl = Common.getTranslatedUrl(home.Url);
+            if (Model.Content.DocumentTypeAlias == "home")
+            {
+				<h1 id="logo">
+					<a @Html.Raw(Image_Style) href="@translatedUrl">Crif Buergel</a>
+				</h1>
+			}
+			else if(Model.Content.DocumentTypeAlias=="consumerInternal")
+			{
+				<div id="logo" class="h1">
+					<a @Html.Raw(Image_Style) href="@translatedUrl">Crif Buergel</a>
+				</div>
+			}
+			else
+			{
+				<h2 id="logo" class="h1">
+					<a @Html.Raw(Image_Style) href="@translatedUrl">Crif Buergel</a>
+				</h2>
+			}
+		}
+
+	}
+
+}
+ 
+   

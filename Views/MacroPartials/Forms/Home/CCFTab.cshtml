@@ -1,0 +1,35 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+    var IndustryNode = Umbraco.TypedContent(Umbraco.GetDictionaryValue("IndustryCategoryNodeID"));
+    var childNodes = IndustryNode.Children.Where(x => x.IsVisible()).OrderBy("sortOrder desc");
+    int industry_items_Count=childNodes.Count()-1;
+<ul class="nav nav-tabs" role="tablist">
+    @foreach(var node in childNodes)
+    {
+        string active = (childNodes.IndexOf(node) == industry_items_Count) ? "active" : "";
+        <li role="presentation" class="@active col-xs-2 pull-right">
+            <a href="#@node.Id" aria-controls="@node.Id" role="tab" data-toggle="tab">
+                @(node.HasValue("menuLabel") ? node.GetPropertyValue("menuLabel") : node.Name)
+            </a>
+        </li>
+    }
+    </ul>
+	<!-- Tab panes -->
+<div class="tab-content">
+    @foreach(var node in childNodes)
+    {
+        string active = (childNodes.IndexOf(node) == industry_items_Count) ? "active" : "";
+        <div role="tabpanel" class="tab-pane @active" id="@node.Id">
+
+            <article class="desc clearfix">
+                <h2>@node.GetPropertyValue("homeBranchenTabTitle")</h2>
+                <p>@Html.Raw(@node.GetPropertyValue("homeBranchenTabDescription"))</p>
+                <a href="@node.Url" class="btn btn-orange text-center pull-right">@node.Name <i class="fa fa-caret-right"></i></a>
+            </article>
+
+        </div>
+        }
+
+    </div>
+    }
+   

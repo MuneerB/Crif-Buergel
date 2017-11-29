@@ -1,0 +1,31 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using RJP.MultiUrlPicker.Models
+@using Archetype.Models;
+@{
+    var home = Model.Content;
+    var linkBoxes = home.GetPropertyValue<ArchetypeModel>("linkBoxes");
+    if (linkBoxes != null && linkBoxes.Any())
+    {
+		<section class="article-structure lrg-sprtr-top">
+		@foreach (var linkBox in linkBoxes)
+			 {
+				 var Title = linkBox.GetValue<string>("title");
+				 var Description = linkBox.GetValue<string>("shortDescription");
+				 var link = linkBox.GetValue<MultiUrls>("link");
+				  string linkTo = "javascript:;", target = "_blank", Name = "";
+				 if (link != null && link.Any())
+				 {
+					 linkTo = link.FirstOrDefault().Url;
+					 target = link.FirstOrDefault().Target;
+					 Name = link.FirstOrDefault().Name;
+				 }
+				 <article class="article-content konsumenten-cta-box border-grey-top no-side-padding">
+					<h3 class="h2 clr-drk-blu">@Title</h3>
+					<p>@Html.Raw(library.RemoveFirstParagraphTag(Description))</p>
+					<a href="@linkTo" target=@target rel="nofollow" class="clr-drk-blu" aria-label="CTA">@Name <span class="fa fa-caret-right"></span></a>
+				 </article>
+			} 
+		</section>
+    }
+}
+

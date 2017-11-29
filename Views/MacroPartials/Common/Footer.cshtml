@@ -1,0 +1,107 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using RJP.MultiUrlPicker.Models
+@using CrifAustria.Utils
+@{
+    var home = Model.Content.AncestorOrSelf(1);
+    home = Common.getTranslatedPage(home);
+
+    var searchNode = home.DescendantsOrSelf("ezSearch").FirstOrDefault();
+    string searchUrl = string.Empty;
+    if (searchNode != null)
+    {
+        searchUrl = Common.getTranslatedPage(searchNode).Url;
+    }
+    if (home.HasValue("footerLogo") || home.HasValue("copyrightText") || home.HasValue("twitterFollowLink") || home.HasValue("xingFollowLink"))
+    {
+    <section class="footer-top bg-drk-grey-2">
+        <div class="container">
+            <div class="row">
+				<div class="inner-container clearfix">
+                @if (home.HasValue("footerLogo"))
+                {
+                    var footerLogo = Umbraco.TypedMedia(home.GetPropertyValue("footerLogo"));
+                    var translatedUrl = Common.getTranslatedUrl(home.Url);
+                    if (Model.Content.DocumentTypeAlias == "home")
+                    {
+                        <h2 id="footer-logo">
+
+                             <a href="@translatedUrl"><img src="@footerLogo.Url" alt="@footerLogo.Name"></a>
+
+                         </h2>
+
+                    }
+                    else
+                    {
+
+                        <div id="footer-logo">
+
+                             <a href="@translatedUrl"><img src="@footerLogo.Url" alt="@footerLogo.Name"></a>
+
+                         </div>
+
+                    }
+                }
+				<div class="footer-right">
+					<section class="social-section">
+					    <h4>Follow Us</h4>
+					    <ul class="list-unstyled list-inline social-list">
+                            @if (home.HasValue("xingFollowLink",true))
+                            {
+                                <li><a href="@home.GetPropertyValue("xingFollowLink",true)" target="_blank" aria-label="Xing Follow"><span class="fa fa-xing"></span></a></li>
+                            }
+                            @if (home.HasValue("linkedinFollowLink",true))
+                            {
+                                <li><a href="@home.GetPropertyValue("linkedinFollowLink",true)" target="_blank" aria-label="Linkedin Follow"><span class="fa fa-linkedin"></span></a></li>
+                            }
+							@{
+								var PREventsNode = Umbraco.TypedContent(Umbraco.GetDictionaryValue("PRAndEventsNodeID"));
+								<li><a href="@PREventsNode.Url()">PR &amp; Events</a></li>
+							}
+					 	    
+					    </ul>
+					</section>
+				</div>
+				</div>
+		    </div>
+        </div>
+    </section>
+    <section class="footer-bottom bg-drk-grey-3">
+		<div class="container">
+			<div class="row">
+				<div class="inner-container clearfix">
+					<p class="copyright pull-left">
+						@if (home.HasValue("copyrightText"))
+                        {
+                            @home.GetPropertyValue("copyrightText")<br>
+                        }
+					</p>
+					@if (home.HasValue("footerQuickLinks"))
+                    {
+                        <nav class="pull-right top-nav footer-nav">
+                            @if (home.HasValue("footerQuickLinks"))
+                            {
+                                var quickLinks = home.GetPropertyValue<MultiUrls>("footerQuickLinks");
+                                if (quickLinks != null && quickLinks.Any())
+                                {
+                                    <ul class="nav navbar-nav">
+                                        @foreach (var links in quickLinks)
+                                        {
+                                            <li class="hidden-sm hidden-xs"><a href="@Common.getTranslatedUrl(links.Url)">@links.Name</a></li>
+                                        }
+                                        <li><a href="@searchUrl" class="search" aria-label="Footer Search"><span class="fa fa-search"></span></a></li>
+                                    </ul>
+                                }
+                            }
+                        </nav>
+                    }
+				</div>
+			</div>
+		</div>		
+		</section>
+    
+            
+
+            
+    }
+
+}

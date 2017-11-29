@@ -1,0 +1,88 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+	var pdctTag="";
+	var pageId = Model.Content.Id;
+var industryNode = Umbraco.TypedContent(pageId);
+IEnumerable<IPublishedContent> solutionsNd = industryNode.AncestorOrSelf(1).Descendants("productsHome");
+var currentPage = Model.Content;
+<ul class="submenu-list link-lists  first-level list-unstyled solutions clearfix">
+        @foreach (IPublishedContent product in solutionsNd)
+        {
+            <li class="col-md-4 expndbl-box-list">
+                <h3>
+                    <span class="clr-orange">
+                        @product.Name <span class="iconbg hidden-sm hidden-lg hidden-md pull-right"></span>
+                    </span>
+                </h3>
+
+                <div class="box-expand accord-mob-expand">
+
+                    @{var childNodes = product.Children().Where(x => x.IsVisible());
+                      if (childNodes.Any())
+                      {
+                          childNodes = childNodes.Where(x => x.HasValue("industryTags")).ToList();
+                          pdctTag = pageId.ToString();
+                          //childNodes = childNodes.Where( x => x.HasValue("industryTags")).ToList();
+                          childNodes = childNodes.Where( x => x.GetPropertyValue<string>("industryTags")
+                        .Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Contains(pdctTag)).ToList();
+                          childNodes = childNodes.OrderBy(x => x.SortOrder).ToList();
+                      }
+                    var objn = from IPublishedContent nd in childNodes
+                            group nd by (nd.HasProperty("productType") ? nd.GetProperty("productType").Value : Umbraco.Field("#DefaultProductType").ToString()) into prdctgrp
+                            select new { key = prdctgrp.Key, List = prdctgrp };
+                    foreach (var k in objn.Where(x => x.key != Umbraco.Field("#DefaultProductType").ToString()))
+                    {
+                        <ul class="list-unstyled second-level">
+                            @if (@k.key == "Packaged Modules" || @k.key == "Cloud")
+                            {
+                                <h4><a class="clr-grey"><span class="clr-orange" style="display:block">@k.List.FirstOrDefault().GetPropertyValue("productTypeSub"): </span>@k.key </a></h4>
+                            }
+                            else
+                            {
+                                <h4><a class="clr-grey">@k.key</a></h4>
+                            }
+                           @foreach (IPublishedContent s in k.List)
+                           {
+
+                               if (!s.HasProperty("disableClick") || (s.GetPropertyValue<bool>("disableClick") == false))
+                               {
+                                <li><a href="@s.Url">@s.Name</a></li>
+                               }
+                               else
+                               {
+                                <li><a style="pointer-events: none;" href="@s.Url">@s.Name</a></li>
+                               }
+                           }
+                        </ul>
+                    }
+                    foreach (var k in objn.Where(x => x.key == Umbraco.Field("#DefaultProductType").ToString()))
+                    {
+                        <ul class="list-unstyled second-level">
+                            @if (@k.key == "Packaged Modules" || @k.key == "Cloud")
+                            {
+                                <h4><a class="clr-grey"><span class="clr-orange" style="display:block">@k.List.FirstOrDefault().GetPropertyValue("productTypeSub"): </span>@k.key </a></h4>
+                            }
+                            else
+                            {
+                                <h4><a class="clr-grey">@k.key</a></h4>
+                            }
+                            @foreach (IPublishedContent s in k.List)
+                            {
+
+                                if (!s.HasProperty("disableClick") || (s.GetPropertyValue<bool>("disableClick") == false))
+                                {
+                                    <li><a href="@s.Url">@s.Name</a></li>
+                                }
+                                else
+                                {
+                                    <li><a style="pointer-events: none;" href="@s.Url">@s.Name</a></li>
+                                }
+                            }
+                        </ul>
+                    }
+                }           
+            </div>
+        </li>
+     }
+    </ul>
+}

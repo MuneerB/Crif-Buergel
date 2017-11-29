@@ -1,0 +1,40 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+    var IndustryNode = Umbraco.TypedContent(Umbraco.GetDictionaryValue("IndustryCategoryNodeID"));
+    var childNodes = IndustryNode.Children.Where(x => x.IsVisible()).OrderBy("sortOrder");
+<div class="cd-tabs">
+    <nav>
+        <!-- Nav tabs -->
+        <ul class="cd-tabs-navigation">
+            @foreach(var node in childNodes)
+            {
+                string listClass = (childNodes.IndexOf(node) == 0) ? "selected" : "normal";
+                string anchorClass = (childNodes.IndexOf(node) == 0) ? "class=\"selected\"" : "";
+                var tab_name=node.HasValue("menuLabel") ? node.GetPropertyValue("menuLabel") : node.Name;
+                <li class="@listClass">
+                    <a href="#@node.Id" data-content="@tab_name" @Html.Raw(anchorClass)>
+                        @tab_name
+                    </a>
+                </li>
+            }
+        </ul>
+    </nav>
+    <ul class="cd-tabs-content">
+        @foreach(var node in childNodes)
+        {
+            string anchorClass = (childNodes.IndexOf(node) == 0) ? "class=\"selected\"" : "";
+            var tab_name = node.HasValue("menuLabel") ? node.GetPropertyValue("menuLabel") : node.Name;
+            <li data-content="@tab_name" @Html.Raw(anchorClass)>
+                <article class="desc clearfix">
+                        <h2>@node.GetPropertyValue("homeBranchenTabTitle")</h2>
+                        <p>@Html.Raw(@node.GetPropertyValue("homeBranchenTabDescription"))</p>
+						<a href="@node.Url" class="hidden-xs btn btn-orange text-center pull-right">@node.Name <i class="fa fa-caret-right"></i></a>
+						<div class="hidden-lg hidden-md hidden-sm text-center">
+                        	<a href="@node.Url" class="btn btn-orange">@node.Name <i class="fa fa-caret-right"></i></a>
+						</div>	
+                </article>
+            </li>
+         }
+    </ul>
+</div>
+}

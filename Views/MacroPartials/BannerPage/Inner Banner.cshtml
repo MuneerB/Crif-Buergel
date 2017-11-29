@@ -1,0 +1,55 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using CrifAustria.Utils;
+@if (Model.Content.HasValue("backgroundImage") || Model.Content.HasValue("mobileBackgroundImage"))
+{
+    var bannerMobileImage = "";
+	var Mob_Image_Style="";
+	var textColor=(Model.Content.HasValue("bannerTextColor"))?Model.Content.GetPropertyValue<string>("bannerTextColor"):"crif-white";
+    var backgroundImage = Umbraco.TypedMedia(Model.Content.GetPropertyValue("backgroundImage"));
+    string backgroundImageURL = backgroundImage.Url;
+    var Image_Style = string.Format("style=\"background-image : url('{0}')\"", backgroundImageURL);
+	if (Model.Content.HasValue("mobileBackgroundImage"))
+	{
+		var mobileImage = Umbraco.TypedMedia(Model.Content.GetPropertyValue("mobileBackgroundImage"));
+		bannerMobileImage = mobileImage.Url;
+		Mob_Image_Style=string.Format("style=\"background-image : url('{0}')\"", bannerMobileImage);
+	}
+	<section class="banner-inner minus-margin-top">	
+		<div class="figure-container hidden-xs" @Html.Raw(Image_Style)>
+			<div class="container">
+				<div class="row">
+					<div class="inner-container">
+						<div class="caption col-sm-6 no-side-padding">
+							@if (Model.Content.HasValue("bannerTitle"))
+							{
+								<h1 class="h2 @Common.getPredefinedColorSetClass(textColor)">@Model.Content.GetPropertyValue("bannerTitle")</h1>
+							}
+							@if (Model.Content.HasValue("bannerDescription"))
+							{
+								<p class="@Common.getPredefinedColorSetClass(textColor,true)">@Html.Raw(umbraco.library.RemoveFirstParagraphTag(Model.Content.GetPropertyValue("bannerDescription").ToString()))</p>
+							}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> 
+		<div class="figure-container hidden-lg hidden-md hidden-sm" @Html.Raw(Mob_Image_Style)>
+			<div class="container">
+				<div class="row">
+					<div class="inner-container">
+						<div class="caption col-sm-6 no-side-padding">
+							@if (Model.Content.HasValue("bannerTitle"))
+							{
+								<h1 class="h2 @Common.getPredefinedColorSetClass(textColor)">@Model.Content.GetPropertyValue("bannerTitle")</h1>
+							}
+							@if (Model.Content.HasValue("bannerDescription"))
+							{
+								<p class="@Common.getPredefinedColorSetClass(textColor,true)">@Html.Raw(umbraco.library.RemoveFirstParagraphTag(Model.Content.GetPropertyValue("bannerDescription").ToString()))</p>
+							}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> 
+	</section>
+}

@@ -1,0 +1,61 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using RJP.MultiUrlPicker.Models
+@using Archetype.Models;
+@using CrifAustria.Utils;
+@{
+    var home = Model.Content.AncestorOrSelf(1);
+    var searchNode = home.DescendantsOrSelf("ezSearch").FirstOrDefault();
+    searchNode = Common.getTranslatedPage(searchNode);
+    string searchUrl = string.Empty;
+    if (searchNode != null)
+    {
+        searchUrl = searchNode.Url;
+    }
+    <nav class="top-nav hidden-lg hidden-md">
+        <ul class="nav navbar-nav">
+                
+            @*PrintQuickLinks("leftHeaderQuickLinks")*@
+            <li><a href="@searchUrl" class="search" aria-label="Search"><span class="fa fa-search"></span></a></li>
+            @PrintQuickLinks("rightHeaderQuickLinks")
+           <li>
+                <ul class="nav navbar-nav nav-right">
+                    @Umbraco.RenderMacro("LoginMobile")
+                    @Umbraco.RenderMacro("WorldWideLocationMobile")
+                </ul>
+            </li>
+        </ul>
+    </nav>
+}
+@helper PrintQuickLinks(string property)
+{
+    var home = Model.Content.AncestorOrSelf(1);
+    home = Common.getTranslatedPage(home);
+    if (home.HasValue(property))
+    {
+        var quickLinks = home.GetPropertyValue<ArchetypeModel>(property);
+        if (quickLinks!=null&&quickLinks.Any())
+        {
+            <li>
+                <ul class="nav navbar-nav">
+                    @foreach (var links in quickLinks.Where(x => x.GetValue<string>("type") == "Hyper Link"))
+                    {
+                        var linkUrl = links.GetValue<MultiUrls>("link");
+                        if (linkUrl != null && linkUrl.Any())
+                        {
+                            var content = Umbraco.TypedContent(linkUrl.FirstOrDefault().Id);
+                            var menutitle = content.HasValue("menuAlternateText") ? content.GetPropertyValue<string>("menuAlternateText") : content.Name;
+                            <li><a href="@linkUrl.FirstOrDefault().Url">@menutitle</a></li>
+                        }
+                    }
+                </ul>
+                 @foreach(var links in quickLinks.Where(x=>x.GetValue<string>("type")=="Button"))
+                    {
+                        var linkUrl = links.GetValue<MultiUrls>("link");
+                        <div class="sbscrb-btn text-center">
+                            <a href="@linkUrl.FirstOrDefault().Url" class="btn btn-orange" aria-label="Top Menu Button">@linkUrl.FirstOrDefault().Name<span class="fa fa-caret-right"></span></a>
+                        </div>
+                    }
+            </li>
+        }
+    } 
+}

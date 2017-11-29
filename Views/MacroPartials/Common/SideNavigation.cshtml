@@ -1,0 +1,96 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using CrifAustria.Utils;
+@{
+    var home = Model.Content.AncestorOrSelf(1);
+    home = Common.getTranslatedPage(home);
+    bool IsFooterLink=false;
+    var quickLinks = home.GetPropertyValue<RJP.MultiUrlPicker.Models.MultiUrls>("footerQuickLinks");
+
+    if (home.HasValue("footerQuickLinks"))
+    {
+        foreach (var links in quickLinks)
+        {
+            if(Common.getTranslatedPage(Model.Content).Id==links.Id)
+            {
+                IsFooterLink = true;
+            }
+        }
+    }
+    if(!IsFooterLink)
+    {
+        var parentNode = Model.Content.AncestorOrSelf(2);
+        var parentNodeTranslated = Common.getTranslatedPage(parentNode);
+        var parentNodeTranslatedUrl = Common.getTranslatedUrl(parentNodeTranslated.Url);
+        if (parentNode != null)
+        {
+            var childNodes = parentNode.Children().Where(x=> x.IsVisible() && x.TemplateId >0);
+            if (childNodes != null && childNodes.Any())
+            {
+			        <ul class="hidden-xs list-unstyled sublink-list">
+                        @if(parentNode.DocumentTypeAlias=="consumerInternal")
+                        {
+                            string activeClass = Common.getTranslatedPage(Model.Content).Id == parentNodeTranslated.Id ? "class=\"active\"" : "";
+                            <li ><a style="font-weight: bold;" href="@parentNodeTranslatedUrl" @Html.Raw(activeClass)>@parentNodeTranslated.Name</a></li>
+                        }
+				        @foreach (var childNode in childNodes)
+                        {
+                            var childNodeTranslated = Common.getTranslatedPage(childNode);
+                            var childNodeTranslatedUrl = Common.getTranslatedUrl(childNodeTranslated.Url);
+                            var menuTitle = childNodeTranslated.HasValue("menuAlternateText") ? childNodeTranslated
+                                    .GetPropertyValue("menuAlternateText") : childNode.Name;
+                            string activeClass = Common.getTranslatedPage(Model.Content).Id == childNodeTranslated.Id ? "class=\"active\"" : "";
+					        <li ><a href="@childNodeTranslatedUrl" @Html.Raw(activeClass)>@menuTitle</a></li>
+				        }
+			        </ul>
+					<div class="form hidden-lg hidden-md hidden-sm">
+						<label for="sidenavdrop" hidden>Side Navigation</label>
+						<select class="form-control side-nav-dropdown" id="sidenavdrop">
+                            @if(parentNode.DocumentTypeAlias=="consumerInternal")
+                            {
+                                string selectedClass = Model.Content.Id == parentNode.Id ? "selected" : "";
+                                <option @selectedClass value="@parentNodeTranslatedUrl">@parentNodeTranslated.Name</option>
+                            }
+				            @foreach (var childNode in childNodes)
+                            {
+                                var childNodeTranslated = Common.getTranslatedPage(childNode);
+                                var childNodeTranslatedUrl = Common.getTranslatedUrl(childNodeTranslated.Url);
+                                var menuTitle = childNodeTranslated.HasValue("menuAlternateText") ? childNodeTranslated
+                                    .GetPropertyValue("menuAlternateText") : childNode.Name;
+                                string selectedClass = Common.getTranslatedPage(Model.Content).Id == childNodeTranslated.Id ? "selected" : "";
+                                <option @selectedClass value="@childNodeTranslatedUrl">@menuTitle</option>
+				            }
+						</select>
+					</div>
+		        }
+	        }
+        }
+        else
+        {
+            <ul class="hidden-xs list-unstyled sublink-list">
+                @foreach (var childNode in quickLinks)
+                {
+                    var childNodePage = Umbraco.TypedContent(childNode.Id);
+                    var childNodeTranslated = Common.getTranslatedPage(childNodePage);
+                    var childNodeTranslatedUrl = Common.getTranslatedUrl(childNode.Url);
+                    var menuTitle = childNodeTranslated.HasValue("menuAlternateText") ? childNodeTranslated
+                            .GetPropertyValue("menuAlternateText") : childNode.Name;
+                    string activeClass = Common.getTranslatedPage(Model.Content).Id == childNode.Id ? "class=\"active\"" : "";
+					<li @Html.Raw(activeClass)><a href="@childNodeTranslatedUrl">@childNode.Name</a></li>
+                }
+            </ul>
+			<div class="form hidden-lg hidden-md hidden-sm">
+				<select class="form-control side-nav-dropdown">
+					@foreach (var childNode in quickLinks)
+                    {
+                        var childNodePage = Umbraco.TypedContent(childNode.Id);
+                        var childNodeTranslated = Common.getTranslatedPage(childNodePage);
+                        var childNodeTranslatedUrl = Common.getTranslatedUrl(childNode.Url);
+                        var menuTitle = childNodeTranslated.HasValue("menuAlternateText") ? childNodeTranslated
+                                .GetPropertyValue("menuAlternateText") : childNode.Name;
+                        string selectedClass = Common.getTranslatedPage(Model.Content).Id == childNode.Id ? "selected" : "";
+						<option @selectedClass value="@childNodeTranslatedUrl">@childNode.Name</option>
+					}
+				</select>
+			</div>
+        }
+    }

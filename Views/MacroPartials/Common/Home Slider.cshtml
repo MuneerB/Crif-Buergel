@@ -1,0 +1,87 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using RJP.MultiUrlPicker.Models
+@using CrifAustria.Utils;
+@{
+    var home = Common.getTranslatedPage(Model.Content);
+    if (home.HasValue("imageSlider"))
+    {
+        int imageCount = 0;
+        var imageSlider = Umbraco.TypedMedia(Model.Content.GetPropertyValue<int>("imageSlider"));
+        <section class="slider-section blw">
+            <div class="main-slider">
+                <ul class="slider list-unstyled">
+                    @if (imageSlider.ContentType.Alias == "Folder")
+                    {
+                        foreach (var slider in imageSlider.Children.Where(x => x.IsVisible() && (!x.HasValue("umbracoNaviHide") || (x.HasValue("umbracoNaviHide") && x.GetPropertyValue<bool>("umbracoNaviHide")==false))))
+                        {
+                            @displaySlider(slider)
+                            imageCount = imageCount + 1;
+                        }
+                    }
+                    else
+                    {
+                        @displaySlider(imageSlider)
+                    }
+                </ul>
+            </div>
+            <!-- Slider controls  -->
+            @if (imageCount > 1)
+            {
+                <div class="container abslt-box-wrapper">
+                    <!-- Pagination -->
+                    <div id="bx-pager" class="pager">
+
+                        @{var count = 0;}
+                        @foreach (var slider in imageSlider.Children.Where(x => x.IsVisible() && (!x.HasValue("umbracoNaviHide") || (x.HasValue("umbracoNaviHide") && x.GetPropertyValue<bool>("umbracoNaviHide")==false))))
+                        {
+                            <a data-slide-index="@count" href=""></a>
+						    count++;
+					    }
+
+                    </div>
+                </div>
+            }
+            
+        </section>
+    }
+
+}
+
+@helper displaySlider(IPublishedContent slider)
+{
+    var sliderTitle = slider.GetPropertyValue<string>("sliderTitle");
+    //string sliderDescription = Phases.UmbracoUtils.TextFormatter.TruncateAtWord(slider.GetPropertyValue<string>("shortDescription"), 284, "...");
+    string sliderDescription = slider.GetPropertyValue<string>("shortDescription");
+    var sliderSubTitle = slider.GetPropertyValue<string>("subTitle");
+    var sliderLinkTo = slider.GetPropertyValue<MultiUrls>("link"); 
+    string linkTo = "javascript:;", target = "_blank", Name = "";
+    if (sliderLinkTo != null && sliderLinkTo.Any())
+    {
+        linkTo = sliderLinkTo.FirstOrDefault().Url;
+        target = sliderLinkTo.FirstOrDefault().Target;
+        Name = sliderLinkTo.FirstOrDefault().Name;
+    }
+    var sliderImageStyle = "";
+    if(slider.HasValue("image"))
+    {
+        var sliderImage= Umbraco.TypedMedia(slider.GetPropertyValue<string>("image"));
+        sliderImageStyle = string.Format("style=\"background-image : url('{0}')\"", sliderImage.Url);
+    }
+	var textColor=(slider.HasValue("colorForTheTextOverPicture"))?slider.GetPropertyValue<string>("colorForTheTextOverPicture"):"crif-white";
+    <li @Html.Raw(sliderImageStyle)>
+        <div class="container">
+            <div class="caption">
+                <a href="@linkTo"  class="caption-title"><h2 class="caption-title @Common.getPredefinedColorSetClass(textColor)">@Html.Raw(umbraco.library.RemoveFirstParagraphTag(sliderTitle))</h2></a>
+               	<h3 class="caption-title @Common.getPredefinedColorSetClass(textColor)">@Html.Raw(umbraco.library.RemoveFirstParagraphTag(sliderSubTitle))</h3>
+                <div class="caption-content @Common.getPredefinedColorSetClass(textColor,true)">
+                    @Html.Raw(umbraco.library.RemoveFirstParagraphTag(sliderDescription))
+					@*Html.Raw(@Umbraco.ReplaceLineBreaksForHtml((string)sliderDescription))*@
+                </div>
+                    <a href="@linkTo" @target class="cta_span btn btn-warning" rel="nofollow">@Umbraco.Field("#Read More", altText: "Read More")</a>        
+                    @*@Html.Raw(slider.sliderScript)*@
+                            
+            </div>
+        </div>
+    </li>
+}
+

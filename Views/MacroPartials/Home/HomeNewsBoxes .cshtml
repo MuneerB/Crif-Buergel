@@ -1,0 +1,40 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+    var BranchenNewsNode = Umbraco.TypedContent(Umbraco.GetDictionaryValue("BranchenNewsNodeID"));
+    var PRAndEventsNode = Umbraco.TypedContent(Umbraco.GetDictionaryValue("PRAndEventsNodeID"));
+    
+        @PrintNews(BranchenNewsNode)
+        @PrintNews(PRAndEventsNode)
+   
+}
+@helper PrintNews(IPublishedContent NewsNode)
+{
+    var NewsNodeTake = 3;
+    var home = Model.Content.AncestorOrSelf(1);
+    if (Model.Content.HasProperty("noOfItemsToShowInNewsBoxes"))
+    {
+        NewsNodeTake = Model.Content.GetPropertyValue<Int32>("noOfItemsToShowInNewsBoxes");
+    }
+    else if (home.HasProperty("noOfItemsToShowInNewsBoxes"))
+    {
+        NewsNodeTake = home.GetPropertyValue<Int32>("noOfItemsToShowInNewsBoxes");
+    }
+    var childNodes = NewsNode.Descendants().Where(x => x.DocumentTypeAlias == "newsSingle" && x.IsVisible() && !(x.HasProperty("hideFromNewsBoxes") && x.GetPropertyValue<bool>("hideFromNewsBoxes") == true)).OrderBy("publicationDate desc");
+     <div class="col-sm-6 box bg-blue no-side-padding">
+        <div class="">
+            <h3 class="title"> <img src="/images/icon-screen.png" alt="" class="icon" /> <a href="@NewsNode.Url">@NewsNode.Name</a></h3>
+            <ul class="list-unstyled">
+
+                @if (childNodes.Any())
+                {
+                    foreach (var nd in childNodes.Take(NewsNodeTake))
+                    {
+                         <li><h4><i class="hidden-xs fa fa-caret-right"></i><a href="@nd.Url" style="color:#FFFFFF">@nd.Name</a></h4></li>
+                    }
+                    <a href="@NewsNode.Url" rel="nofollow" class="link">@NewsNode.Name<i class="fa fa-caret-right"></i></a>
+                }
+
+            </ul>
+        </div>
+    </div>
+}

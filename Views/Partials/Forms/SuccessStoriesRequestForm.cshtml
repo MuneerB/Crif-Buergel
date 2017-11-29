@@ -1,0 +1,206 @@
+﻿@model CrifAustria.Models.SuccessRequestModel
+@using umbraco.NodeFactory;
+@{
+    Node lstNd = Node.GetCurrent().GetAncestorByPathLevel(2);
+    Dictionary<string, string> industry = new Dictionary<string, string>();
+    Dictionary<string, string> requestTypeoption = new Dictionary<string, string>();
+    var industryNodes = lstNd.GetAncestorByPathLevel(1).GetDescendantNodesByType("industrySingle");
+    if (industryNodes != null && industryNodes.Any())
+    {
+        foreach (var node in industryNodes)
+        {
+            industry.Add(node.Id.ToString(), node.Name);
+        }
+    }
+	industry.Add("Sonstige", "Sonstige");
+	
+    if (TempData["Name"] != null)
+    {
+        Model.FirstName = TempData["Name"].ToString();
+    }
+    if (TempData["SurName"] != null)
+    {
+        Model.LastName = TempData["SurName"].ToString();
+    }
+    if (TempData["Email"] != null)
+    {
+        Model.Email = TempData["Email"].ToString();
+    }
+    if (TempData["Company"] != null)
+    {
+        Model.Company = TempData["Company"].ToString();
+    }
+    if (TempData["Role"] != null)
+    {
+        Model.JobTitle = TempData["Role"].ToString();
+    }
+
+    using (Html.BeginUmbracoForm<CrifAustria.Controllers.SuccessStoriesRequestController>("SuccessRequestSend", null, new { @class = "form lrg-sprtr-top" }))
+    {
+   <div class="form-group form-sprtr-small">
+        <div class="row">
+            <div class="col-sm-6">
+                @Html.TextBoxFor(x => x.FirstName, new
+               {
+                   id = "FnameTxt",
+                   @class = "form-control",
+                   autocorrect = "off",
+                   autocapitalize = "on",
+                   maxlength = 500,
+                   placeholder =lstNd.HasProperty("firstNamePlaceholder")? lstNd.GetProperty("firstNamePlaceholder").Value:"First Name*",
+                   @data_val_required =lstNd.HasProperty("firstNameFieldRequired")? lstNd.GetProperty("firstNameFieldRequired").Value:"First Name Required",
+                   data_val = "true"
+               })
+               @* @Html.TextBoxFor(x => model.FirstName, new { @class = "form-control", placeholder = "FirstName*" })*@
+                @Html.ValidationMessageFor(x => x.FirstName, null, new { @class = "text-danger" })
+            </div>
+            <div class="col-sm-6">
+                @Html.TextBoxFor(x => x.LastName, new
+               {
+                   id = "LnameTxt",
+                   @class = "form-control",
+                   autocorrect = "off",
+                   autocapitalize = "on",
+                   maxlength = 500,
+                   placeholder =lstNd.HasProperty("lastNamePlaceholder")? lstNd.GetProperty("lastNamePlaceholder").Value:"Last Name*",
+                   @data_val_required =lstNd.HasProperty("lastNameFieldRequired")? lstNd.GetProperty("lastNameFieldRequired").Value:"Last Name Required",
+                   data_val = "true"
+               })
+                @*@Html.TextBoxFor(x => model.LastName, new { @class = "form-control", placeholder = "LastName*" })*@
+                @Html.ValidationMessageFor(x => x.LastName, null, new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-6">
+                @Html.TextBoxFor(x => x.Email, new
+               {
+                   id = "emailTxt",
+                   @class = "form-control",
+                   autocorrect = "off",
+                   autocapitalize = "off",
+                   maxlength = 500,
+                   placeholder =lstNd.HasProperty("emailPlaceholder")? lstNd.GetProperty("emailPlaceholder").Value:"Email*",
+                   @data_val_required =lstNd.HasProperty("emailFieldRequired")? lstNd.GetProperty("emailFieldRequired").Value:"Email Required",
+                   @data_val_regex = lstNd.HasProperty("invalidEmailError")? lstNd.GetProperty("invalidEmailError").Value:"Invalid Email",
+                   data_val = "true"
+               })
+@*                @Html.TextBoxFor(x => model.Email, new { @class = "form-control", placeholder = "EMail*" })*@
+                @Html.ValidationMessageFor(x => x.Email, null, new { @class = "text-danger" })
+            </div>
+            <div class="col-sm-6">
+                 @Html.TextBoxFor(x => x.PhoneNumber, new
+               {
+                   id = "LnameTxt",
+                   @class = "form-control",
+                   autocorrect = "off",
+                   autocapitalize = "on",
+                   maxlength = 500,
+                   placeholder =lstNd.HasProperty("phoneNumberPlaceholder")? lstNd.GetProperty("phoneNumberPlaceholder").Value:"Phone Number",
+                   @data_val_regex = lstNd.HasProperty("invalidPhoneError")? lstNd.GetProperty("invalidPhoneError").Value:"Invalid Phone Number", 
+                   data_val = "true"
+               })
+                @*@Html.TextBoxFor(x => model.JobTitle, new { @class = "form-control", placeholder = "PhoneNumber" })*@
+                @Html.ValidationMessageFor(x => x.PhoneNumber, null, new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-6">
+                @Html.DropDownListFor(x => x.Industry, new SelectList(industry, "Key", "Value"), (lstNd.HasProperty("industryPlaceholder")? lstNd.GetProperty("industryPlaceholder").Value:"Industry*"), new 
+                {
+                    @class = "form-control bg-light-grey-var-2",
+                    id = "industryTxt",
+                    @data_val_required =lstNd.HasProperty("industryFieldRequired")? lstNd.GetProperty("industryFieldRequired").Value:"Industry Required",
+                    data_val = "true"
+                })
+                @Html.ValidationMessageFor(x => x.Industry, null, new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-6">
+                @Html.TextBoxFor(x => x.Company, new
+               {
+                   id = "companyTxt",
+                   @class = "form-control",
+                   autocorrect = "off",
+                   autocapitalize = "on",
+                   maxlength = 500,
+                   placeholder =lstNd.HasProperty("companyPlaceholder")? lstNd.GetProperty("companyPlaceholder").Value:"Company*",
+                   @data_val_required =lstNd.HasProperty("companyFieldRequired")? lstNd.GetProperty("companyFieldRequired").Value:"Company Required",
+                   data_val = "true"
+               })
+                @*@Html.TextBoxFor(x => model.Company, new { @class = "form-control", placeholder = "Company*" })*@
+                @Html.ValidationMessageFor(x => x.Company, null, new { @class = "text-danger" })
+            </div>
+            <div class="col-sm-6">
+                @Html.TextBoxFor(x => x.JobTitle, new
+               {
+                   id = "jobTitleTxt",
+                   @class = "form-control",
+                   autocorrect = "off",
+                   autocapitalize = "on",
+                   maxlength = 500,
+                   placeholder =lstNd.HasProperty("jobTitlePlaceholder")? lstNd.GetProperty("jobTitlePlaceholder").Value:"Job Title",
+                   data_val = "true"
+               })
+                @*@Html.TextBoxFor(x => model.JobTitle,  new { @class = "form-control", placeholder = "JobTitle" })
+                @Html.ValidationMessageFor(x => model.JobTitle, null, new { @class = "text-danger" })*@
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-12">
+                <label for="">@(lstNd.HasProperty("privacyTextTitle")?lstNd.GetProperty("privacyTextTitle").Value:"Privacy Policy")</label>
+                    @*@Html.Raw(lstNd.GetProperty("privacyText").ToString())*@
+                    @if (lstNd.HasProperty("privacyText"))
+                    {
+                        <div class="form-control textarea" placeholder="Message" disabled>
+                        @Html.Raw(lstNd.GetProperty("privacyText").Value.ToString())
+                             </div>
+                    }
+               
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group form-sprtr-small">
+        <div class="row">
+            <div class="col-sm-12">
+				<div class="checkbox">
+                    @Html.CheckBoxFor(x => x.Agreement, new {
+                    id = "checkbox1", 
+                    data_val_range = lstNd.HasProperty("AgreementFieldRequired")? lstNd.GetProperty("AgreementFieldRequired").Value:"Please accept",data_val = "true" })
+                    <label for="checkbox1">@(lstNd.HasProperty("privacyCheckboxPlaceholder")? umbraco.library.RemoveFirstParagraphTag(lstNd.GetProperty("privacyCheckboxPlaceholder").Value.ToString()).ToString():"Privacy Policy*")</label> 
+                    @Html.ValidationMessageFor(x => x.Agreement, null, new { @class = "text-danger" })
+			    </div>
+			</div>
+            <div class="col-sm-12">
+                <div class="checkbox">@Html.CheckBoxFor(x => x.Newsletter, new { id = "c2" })<label for="c2"> @(lstNd.HasProperty("newsletterCheckboxPlaceholder")? umbraco.library.RemoveFirstParagraphTag(lstNd.GetProperty("newsletterCheckboxPlaceholder").Value.ToString()).ToString():"Newsletter Policy")</label> </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="submit-wrapper @lstNd.Id">
+        @*<button class="btn btn-orange text-center submit" type="submit" id="submit">SendRequest</button>*@
+        <input tabindex="" type="submit" value="@(lstNd.HasProperty("submitButtonText")?lstNd.GetProperty("submitButtonText").Value:"Send Request")" class="btn btn-orange text-center submit" />
+         <section class="info">
+            <label for="">@(lstNd.HasProperty("CompulsoryFieldsIconText")?lstNd.GetProperty("CompulsoryFieldsIconText").Value:"*Compulsory Fields")</label>
+        </section>
+    </section>
+    @*Html.HiddenFor(x => x.ResourceName, Request.RawUrl)
+	@Html.HiddenFor(x => x.linkedinProfileUrl)*@
+}	
+}

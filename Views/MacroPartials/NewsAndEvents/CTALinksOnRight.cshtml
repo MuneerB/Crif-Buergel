@@ -1,0 +1,111 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using RJP.MultiUrlPicker.Models
+@using Archetype.Models;
+@{
+   var home = Model.Content;
+    //var footerboxes = home.GetPropertyValue<ArchetypeModel>("rightSideCTALinks");
+	bool hideContactUsLink=false;
+	bool hideScheduleConsultationLink=false;
+	if(home.HasValue("hideContactUsLink"))
+	{
+		hideContactUsLink=home.GetPropertyValue<bool>("hideContactUsLink");
+	}
+	if(home.HasValue("hideScheduleConsultationLink"))
+	{
+		hideScheduleConsultationLink=home.GetPropertyValue<bool>("hideScheduleConsultationLink");
+	}
+	var SheduleConsultationNode = Umbraco.TypedContent(Umbraco.GetDictionaryValue("SheduleConsultationNodeID"));
+    var ContactUsNode = Umbraco.TypedContent(Umbraco.GetDictionaryValue("ContactUsNodeID"));
+    var ContactUsNodeLbel=ContactUsNode.Name;
+	if(ContactUsNode.HasValue("newsSingleCTALabel"))
+	{
+		ContactUsNodeLbel=ContactUsNode.GetPropertyValue("newsSingleCTALabel").ToString();
+	}
+	var SheduleConsultationNodeLbel=SheduleConsultationNode.Name;
+	if(SheduleConsultationNode.HasValue("newsSingleCTALabel"))
+	{
+		SheduleConsultationNodeLbel=SheduleConsultationNode.GetPropertyValue("newsSingleCTALabel").ToString();
+	}
+    <ul class="list-unstyled aside-list hidden-xs">
+        @if(!hideContactUsLink)
+        {
+            <li>
+                <a href="@ContactUsNode.Url()" class="drk-blue"><i class="phone-icon"></i>@ContactUsNodeLbel</a>
+            </li>
+		}
+		@if(!hideScheduleConsultationLink)
+		{
+            <li>
+                <h5></h5>
+                <a href="@SheduleConsultationNode.Url()" class="drk-blue"><i class="cal-icon"></i>@SheduleConsultationNodeLbel</a>
+            </li>
+        }
+		@if(Model.Content.DocumentTypeAlias=="newsSingle")
+        {
+            if(Model.Content.HasValue("customCTA"))
+            {
+                var customCTA = Model.Content.GetPropertyValue<MultiUrls>("customCTA");
+                if (customCTA != null && customCTA.Any())
+                {
+                     <li>
+                        <a href="@customCTA.FirstOrDefault().Url" target="@customCTA.FirstOrDefault().Target" class="drk-blue">@customCTA.FirstOrDefault().Name</a>
+                    </li>
+                }
+            }
+        }
+        <li>
+			@if (!home.HasProperty("showSocialMediaShareButtons") || !(home.HasValue("showSocialMediaShareButtons") && home.GetPropertyValue<bool>("showSocialMediaShareButtons") == false))
+            {
+                <h4>Share</h4>
+                <ul class="list-unstyled share-list list-inline">
+	                <li><a href="#" onclick="share_fb()" class="bg-fb"><i class="fa fa-xing"></i></a></li>
+                    <li><a href="#" onclick="share_linkedin()" class="bg-lnkd"><i class="fa fa-linkedin"></i></a></li>
+	                <li><a href="#" onclick="share_twitter()" class="bg-twt"><i class="fa fa-twitter"></i></a></li>
+	                <li><a href="#" onclick="share_google()" class="bg-gp"><i class="fa fa-google-plus"></i></a></li>
+	                <li><a href="#" onclick="share_email()" class="bg-mail"><i class="fa fa-envelope"></i></a></li>
+	                <li><a href="#" onclick="share_print()" class="bg-print"><i class="fa fa-print"></i></a></li>
+                </ul>
+            }
+        </li>
+    </ul>
+     <ul class="list-unstyled aside-list hidden-sm hidden-md hidden-lg">
+        @if(!hideContactUsLink)
+        {
+            <li class="cta-link">
+                <a href="@ContactUsNode.Url()" class="drk-blue"><i class="phone-icon"></i>@ContactUsNode.Name</a>
+            </li>
+		}
+         @if(!hideScheduleConsultationLink)
+		{
+            <li class="cta-link">
+                <a href="@SheduleConsultationNode.Url()" class="drk-blue"><i class="cal-icon"></i>@SheduleConsultationNode.Name</a>
+            </li>
+        }
+		@if(Model.Content.DocumentTypeAlias=="newsSingle")
+        {
+            if(Model.Content.HasValue("customCTA"))
+            {
+                var customCTA = Model.Content.GetPropertyValue<MultiUrls>("customCTA");
+                if (customCTA != null && customCTA.Any())
+                {
+                     <li class="cta-link">
+                        <a href="@customCTA.FirstOrDefault().Url" target="@customCTA.FirstOrDefault().Target" class="drk-blue">@customCTA.FirstOrDefault().Name</a>
+                    </li>
+                }
+            }
+        }
+        <li class="share-list-wrapper">
+            @if (!home.HasProperty("showSocialMediaShareButtons") || !(home.HasValue("showSocialMediaShareButtons") && home.GetPropertyValue<bool>("showSocialMediaShareButtons") == false))
+            {
+                <h4>Share</h4>
+                <ul class="list-unstyled share-list list-inline">
+	                <li><a href="#" onclick="share_fb()" class="bg-fb"><i class="fa fa-xing"></i></a></li>
+                    <li><a href="#" onclick="share_linkedin()" class="bg-lnkd"><i class="fa fa-linkedin"></i></a></li>
+	                <li><a href="#" onclick="share_twitter()" class="bg-twt"><i class="fa fa-twitter"></i></a></li>
+	                <li><a href="#" onclick="share_google()" class="bg-gp"><i class="fa fa-google-plus"></i></a></li>
+	                <li><a href="#" onclick="share_email()" class="bg-mail"><i class="fa fa-envelope"></i></a></li>
+                </ul>
+            }
+        </li>
+    </ul>
+}

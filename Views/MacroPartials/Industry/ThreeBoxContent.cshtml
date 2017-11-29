@@ -1,0 +1,38 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using Archetype.Models;
+@using RJP.MultiUrlPicker.Models
+@{
+    if(Model.Content.HasValue("threeBoxContent"))
+    {
+        var threeboxcontent=Model.Content.GetPropertyValue<ArchetypeModel>("threeBoxContent");
+		if(threeboxcontent.Any())
+		{
+			<section class="three-column-link-listing lrg-sprtr-top border-grey-bottom">
+				<ul class="submenu-list link-lists  first-level list-unstyled solutions clearfix">
+					@foreach(var boxcontent in threeboxcontent)
+					{
+                        var link = boxcontent.GetValue<MultiUrls>("link");
+                        string linkTo = "javascript:;", target = "_blank", Name = "";
+                        if (link != null && link.Any())
+                        {
+                            linkTo = link.FirstOrDefault().Url;
+                            target = link.FirstOrDefault().Target;
+                            Name = link.FirstOrDefault().Name;
+                        }
+						<li class="col-md-4">
+								<h2 class="threeboxtitle clr-drk-blu">
+									@boxcontent.GetValue("title")
+								</h2>
+
+								<p class="threeboxcontent">@boxcontent.GetValue("description") </p>
+                                @if (linkTo != "javascript:;")
+                                {
+								    <a href="@linkTo" target=@target rel="nofollow" class="threeboxlink link clr-drk-blu" aria-label="CTA">@Name <span class="fa fa-caret-right"></span></a>
+                                }
+						</li>
+					}
+				</ul>
+			</section>
+		}
+	}
+}

@@ -1,0 +1,76 @@
+﻿@*
+    PropertyTranslation.cshtml
+    Part of the Polyglot package.
+*@
+@inherits umbraco.MacroEngines.DynamicNodeContext
+@using umbraco.MacroEngines;
+@{
+    int nodeID;
+    string property, selectedLanguage = string.Empty;
+
+    if (PageData.Keys.Count > 0)
+    {
+        nodeID = PageData[0];
+        property = PageData[1];
+        selectedLanguage = PageData[2];
+    }
+    else
+    {
+        nodeID = int.Parse(Parameter.NodeID);
+        property = Parameter.Property;
+    }
+
+    if (selectedLanguage == null || selectedLanguage.Length == 0)
+    {
+        selectedLanguage = RenderPage("SelectedLanguage.cshtml").ToString().Trim();
+    }
+    string selectedLanguageNoDash = selectedLanguage.Replace("-", string.Empty);
+
+    DynamicNode page = new DynamicNode(nodeID);
+
+    var value = string.Empty;
+
+    if (page.HasProperty(property + selectedLanguageNoDash) && !string.IsNullOrEmpty(page.GetPropertyValue(property + selectedLanguageNoDash)))
+    {
+        value = library.RenderMacroContent(page.GetPropertyValue(property + selectedLanguageNoDash), page.Id);
+    }
+
+    if (string.IsNullOrEmpty(value))
+    {
+        foreach (DynamicNode child in page.GetChildrenAsList)
+        {
+            if (child.NodeTypeAlias == page.NodeTypeAlias + "TranslationFolder")
+            {
+                foreach (DynamicNode translation in child.GetChildrenAsList)
+                {
+                    var prop = translation.GetPropertyValue("language");
+
+                    if (prop != null && prop.ToString().ToLower() == selectedLanguage.ToLower())
+                    {
+                        prop = library.RenderMacroContent(translation.GetPropertyValue(property), translation.Id);
+                    }
+                    else
+                    {
+                        prop = null;
+                    }
+
+                    if (prop != null)
+                    {
+                        value = prop;
+                    }
+                }
+            }
+        }
+    }
+
+    if (string.IsNullOrEmpty(value))
+    {
+        var prop = page.GetPropertyValue(property);
+        if (prop != null)
+        {
+            value = prop;
+        }
+    }
+
+    @Html.Raw(Umbraco.Web.Templates.TemplateUtilities.ParseInternalLinks(value))
+}

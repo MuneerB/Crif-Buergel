@@ -1,0 +1,15 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = null;
+}
+<section>
+	@if(Model.Content.HasValue("introductionText"))
+    {
+		<p class="md-para italic">@umbraco.library.RemoveFirstParagraphTag(Model.Content.GetPropertyValue("introductionText").ToString())</p>
+    }
+    @if(Model.Content.HasValue("mainText"))
+    {
+		@Model.Content.GetPropertyValue("mainText")
+    }
+</section>
+								    

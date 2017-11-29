@@ -1,0 +1,47 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using RJP.MultiUrlPicker.Models
+@using Archetype.Models;
+@{
+	Layout = "Pages.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="inner-container">
+            <h1 class="clr-drk-blu h3">@Umbraco.Field("title")</h1>
+            <section class="thankyou-msg  clearfix">
+                <div class="col-sm-7 no-side-padding">
+                    <h4 class="clr-drk-blu">@Umbraco.Field("bodyText")</h4>
+                </div>
+            </section>
+            <section class="three-column-link-listing">
+                <h4 class="lrg-sprtr-bottom">@Umbraco.Field("checkoutResourceText")</h4>
+				 @if(Model.Content.HasValue("threeBoxContent"))
+				 {
+					 var threeboxcontent=Model.Content.GetPropertyValue<ArchetypeModel>("threeBoxContent");
+					 if(threeboxcontent.Any())
+					 {
+						 <ul class="submenu-list link-lists  first-level list-unstyled solutions clearfix">
+								 @foreach(var boxcontent in threeboxcontent)
+								 {
+									 var boxlink = boxcontent.GetValue<MultiUrls>("linkTo");
+                                     string linkTo = "javascript:;", target = "_blank", Name = "";
+                                     if (boxlink != null && boxlink.Any())
+                                     {
+                                         linkTo = boxlink.FirstOrDefault().Url;
+                                         target = boxlink.FirstOrDefault().Target;
+                                         Name = boxlink.FirstOrDefault().Name;
+                                     }
+									 <li class="col-md-4">
+										 <h3 class="threeboxtitle clr-drk-blu">
+											 <a href="@linkTo" @target>@boxcontent.GetValue("title")</a> </h3>
+
+											 <p>@Html.Raw(boxcontent.GetValue("text")) </p>
+												 </li>
+											 }
+						 </ul>
+					 }
+				 }
+            </section>
+</div>
+    </div>
+</div>

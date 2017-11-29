@@ -1,0 +1,672 @@
+C:\77Projects\CrifAustria\CrifAustria\bin\CrifAustria.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\CrifAustria.pdb
+C:\77Projects\CrifAustria\CrifAustria\bin\AutoMapper.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\AutoMapper.Net4.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\businesslogic.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\ClientDependency.Core.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\ClientDependency.Core.Mvc.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\cms.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\controls.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\CookComputing.XmlRpcV2.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\Examine.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\HtmlAgilityPack.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\ICSharpCode.SharpZipLib.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\ImageProcessor.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\ImageProcessor.Web.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\interfaces.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\log4net.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\Lucene.Net.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\MarkdownSharp.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\Microsoft.ApplicationBlocks.Data.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\Microsoft.AspNet.Identity.Core.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\Microsoft.CodeAnalysis.CSharp.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\Microsoft.CodeAnalysis.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\Microsoft.Owin.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.Cookies.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.OAuth.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\Microsoft.Web.Infrastructure.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\MiniProfiler.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\MySql.Data.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\Newtonsoft.Json.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\Owin.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\Semver.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\SQLCE4Umbraco.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\System.Collections.Immutable.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\System.Data.SqlServerCe.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\System.Data.SqlServerCe.Entity.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\System.Net.Http.Formatting.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\System.Reflection.Metadata.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\System.Web.Helpers.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\System.Web.Http.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\System.Web.Http.WebHost.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\System.Web.Mvc.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\System.Web.Razor.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\System.Web.WebPages.Deployment.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\System.Web.WebPages.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\System.Web.WebPages.Razor.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\TidyNet.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\Umbraco.Core.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\umbraco.DataLayer.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\umbraco.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\umbraco.editorControls.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\umbraco.MacroEngines.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\Umbraco.ModelsBuilder.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\umbraco.providers.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\Umbraco.Web.UI.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\UmbracoExamine.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\UrlRewritingNet.UrlRewriter.dll
+C:\77Projects\CrifAustria\CrifAustria\bin\AutoMapper.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\businesslogic.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\ClientDependency.Core.pdb
+C:\77Projects\CrifAustria\CrifAustria\bin\ClientDependency.Core.Mvc.pdb
+C:\77Projects\CrifAustria\CrifAustria\bin\cms.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\controls.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\Examine.pdb
+C:\77Projects\CrifAustria\CrifAustria\bin\HtmlAgilityPack.pdb
+C:\77Projects\CrifAustria\CrifAustria\bin\HtmlAgilityPack.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\interfaces.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\Lucene.Net.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\Microsoft.AspNet.Identity.Core.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\Microsoft.CodeAnalysis.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\Microsoft.CodeAnalysis.CSharp.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\Microsoft.Owin.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.Cookies.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.OAuth.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\MiniProfiler.pdb
+C:\77Projects\CrifAustria\CrifAustria\bin\MiniProfiler.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\Newtonsoft.Json.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\SQLCE4Umbraco.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\System.Collections.Immutable.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\System.Net.Http.Formatting.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\System.Reflection.Metadata.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\System.Web.Helpers.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\System.Web.Http.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\System.Web.Http.WebHost.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\System.Web.Mvc.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\System.Web.Razor.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\System.Web.WebPages.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\System.Web.WebPages.Deployment.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\System.Web.WebPages.Razor.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\umbraco.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\Umbraco.Core.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\umbraco.DataLayer.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\umbraco.editorControls.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\umbraco.MacroEngines.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\Umbraco.ModelsBuilder.pdb
+C:\77Projects\CrifAustria\CrifAustria\bin\umbraco.providers.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\Umbraco.Web.UI.xml
+C:\77Projects\CrifAustria\CrifAustria\bin\UmbracoExamine.xml
+C:\77Projects\CrifAustria\CrifAustria\obj\Debug\CrifAustria.dll
+C:\77Projects\CrifAustria\CrifAustria\obj\Debug\CrifAustria.pdb
+C:\Muneer\CrifAustria\CrifAustria\bin\CrifAustria.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\CrifAustria.pdb
+C:\Muneer\CrifAustria\CrifAustria\bin\AutoMapper.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\AutoMapper.Net4.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\businesslogic.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\ClientDependency.Core.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\ClientDependency.Core.Mvc.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\cms.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\controls.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\CookComputing.XmlRpcV2.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\Examine.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\HtmlAgilityPack.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\ICSharpCode.SharpZipLib.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\ImageProcessor.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\ImageProcessor.Web.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\interfaces.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\log4net.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\Lucene.Net.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\MarkdownSharp.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\Microsoft.ApplicationBlocks.Data.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\Microsoft.CodeAnalysis.CSharp.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\Microsoft.CodeAnalysis.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\Microsoft.Owin.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\Microsoft.Web.Infrastructure.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\MiniProfiler.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\MySql.Data.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\Newtonsoft.Json.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\Owin.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\Semver.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\SQLCE4Umbraco.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\System.Collections.Immutable.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\System.Data.SqlServerCe.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\System.Data.SqlServerCe.Entity.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\System.Net.Http.Formatting.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\System.Reflection.Metadata.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\System.Web.Helpers.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\System.Web.Http.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\System.Web.Http.WebHost.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\System.Web.Mvc.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\System.Web.Razor.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\System.Web.WebPages.Deployment.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\System.Web.WebPages.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\System.Web.WebPages.Razor.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\TidyNet.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\Umbraco.Core.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\umbraco.DataLayer.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\umbraco.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\umbraco.editorControls.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\umbraco.MacroEngines.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\Umbraco.ModelsBuilder.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\umbraco.providers.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\Umbraco.Web.UI.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\UmbracoExamine.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\UrlRewritingNet.UrlRewriter.dll
+C:\Muneer\CrifAustria\CrifAustria\bin\AutoMapper.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\businesslogic.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\ClientDependency.Core.pdb
+C:\Muneer\CrifAustria\CrifAustria\bin\ClientDependency.Core.Mvc.pdb
+C:\Muneer\CrifAustria\CrifAustria\bin\cms.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\controls.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\Examine.pdb
+C:\Muneer\CrifAustria\CrifAustria\bin\HtmlAgilityPack.pdb
+C:\Muneer\CrifAustria\CrifAustria\bin\HtmlAgilityPack.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\interfaces.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\Lucene.Net.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\Microsoft.CodeAnalysis.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\Microsoft.CodeAnalysis.CSharp.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\Microsoft.Owin.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\MiniProfiler.pdb
+C:\Muneer\CrifAustria\CrifAustria\bin\MiniProfiler.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\Newtonsoft.Json.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\SQLCE4Umbraco.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\System.Collections.Immutable.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\System.Net.Http.Formatting.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\System.Reflection.Metadata.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\System.Web.Helpers.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\System.Web.Http.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\System.Web.Http.WebHost.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\System.Web.Mvc.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\System.Web.Razor.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\System.Web.WebPages.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\System.Web.WebPages.Deployment.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\System.Web.WebPages.Razor.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\umbraco.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\Umbraco.Core.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\umbraco.DataLayer.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\umbraco.editorControls.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\umbraco.MacroEngines.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\Umbraco.ModelsBuilder.pdb
+C:\Muneer\CrifAustria\CrifAustria\bin\umbraco.providers.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\Umbraco.Web.UI.xml
+C:\Muneer\CrifAustria\CrifAustria\bin\UmbracoExamine.xml
+C:\Muneer\CrifAustria\CrifAustria\obj\Debug\CrifAustria.dll
+C:\Muneer\CrifAustria\CrifAustria\obj\Debug\CrifAustria.pdb
+C:\Muneer\CrifAustria\CrifAustria\obj\Debug\CrifAustria.csprojResolveAssemblyReference.cache
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\System.Web.Mvc.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\umbraco.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\AutoMapper.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\AutoMapper.Net4.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\businesslogic.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\ClientDependency.Core.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\ClientDependency.Core.Mvc.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\cms.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\controls.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\CookComputing.XmlRpcV2.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\EntityFramework.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\EntityFramework.SqlServer.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Examine.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\HtmlAgilityPack.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\ICSharpCode.SharpZipLib.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\ImageProcessor.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\ImageProcessor.Web.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\interfaces.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\log4net.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Lucene.Net.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\MarkdownSharp.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Microsoft.ApplicationBlocks.Data.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Microsoft.AspNet.Identity.Core.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Microsoft.CodeAnalysis.CSharp.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Microsoft.CodeAnalysis.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.Cookies.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.OAuth.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Microsoft.Web.Infrastructure.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\MiniProfiler.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\MySql.Data.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Newtonsoft.Json.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Owin.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Semver.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\SQLCE4Umbraco.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\System.Collections.Immutable.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\System.Data.SqlServerCe.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\System.Data.SqlServerCe.Entity.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\System.Net.Http.Formatting.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\System.Reflection.Metadata.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\System.Web.Helpers.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\System.Web.Http.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\System.Web.Http.WebHost.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\System.Web.Mvc.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\System.Web.Razor.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\System.Web.WebPages.Deployment.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\System.Web.WebPages.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\System.Web.WebPages.Razor.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\TidyNet.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Umbraco.Core.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\umbraco.DataLayer.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\umbraco.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\umbraco.editorControls.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\umbraco.MacroEngines.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Umbraco.ModelsBuilder.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\umbraco.providers.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Umbraco.Web.UI.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\UmbracoExamine.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\UrlRewritingNet.UrlRewriter.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\AutoMapper.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\businesslogic.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\ClientDependency.Core.pdb
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\ClientDependency.Core.Mvc.pdb
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\cms.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\controls.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\EntityFramework.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\EntityFramework.SqlServer.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Examine.pdb
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\HtmlAgilityPack.pdb
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\HtmlAgilityPack.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\interfaces.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Lucene.Net.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Microsoft.AspNet.Identity.Core.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Microsoft.CodeAnalysis.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Microsoft.CodeAnalysis.CSharp.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.Cookies.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.OAuth.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\MiniProfiler.pdb
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\MiniProfiler.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Newtonsoft.Json.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\SQLCE4Umbraco.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\System.Collections.Immutable.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\System.Net.Http.Formatting.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\System.Reflection.Metadata.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\System.Web.Helpers.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\System.Web.Http.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\System.Web.Http.WebHost.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\System.Web.Razor.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\System.Web.WebPages.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\System.Web.WebPages.Deployment.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\System.Web.WebPages.Razor.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Umbraco.Core.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\umbraco.DataLayer.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\umbraco.editorControls.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\umbraco.MacroEngines.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Umbraco.ModelsBuilder.pdb
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\umbraco.providers.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\Umbraco.Web.UI.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\UmbracoExamine.xml
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\obj\Debug\CrifAustria.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\obj\Debug\CrifAustria.pdb
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\CrifAustria.dll
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\bin\CrifAustria.pdb
+C:\77Projects\Crif Austria\trunk\CrifAustria\CrifAustria\obj\Debug\CrifAustria.csprojResolveAssemblyReference.cache
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\CrifAustria.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\CrifAustria.pdb
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\AutoMapper.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\AutoMapper.Net4.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\businesslogic.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\ClientDependency.Core.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\ClientDependency.Core.Mvc.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\cms.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\controls.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\CookComputing.XmlRpcV2.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\EntityFramework.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\EntityFramework.SqlServer.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Examine.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\HtmlAgilityPack.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\ICSharpCode.SharpZipLib.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\ImageProcessor.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\ImageProcessor.Web.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\interfaces.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\log4net.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Lucene.Net.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\MarkdownSharp.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.ApplicationBlocks.Data.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.AspNet.Identity.Core.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.CodeAnalysis.CSharp.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.CodeAnalysis.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.Cookies.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.OAuth.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.Web.Infrastructure.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\MiniProfiler.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\MySql.Data.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Newtonsoft.Json.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Owin.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Semver.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\SQLCE4Umbraco.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Collections.Immutable.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Data.SqlServerCe.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Data.SqlServerCe.Entity.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Net.Http.Formatting.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Reflection.Metadata.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.Helpers.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.Http.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.Http.WebHost.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.Mvc.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.Razor.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.WebPages.Deployment.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.WebPages.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.WebPages.Razor.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\TidyNet.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Umbraco.Core.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\umbraco.DataLayer.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\umbraco.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\umbraco.editorControls.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\umbraco.MacroEngines.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Umbraco.ModelsBuilder.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\umbraco.providers.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Umbraco.Web.UI.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\UmbracoExamine.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\UrlRewritingNet.UrlRewriter.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\AutoMapper.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\businesslogic.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\ClientDependency.Core.pdb
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\ClientDependency.Core.Mvc.pdb
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\cms.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\controls.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\EntityFramework.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\EntityFramework.SqlServer.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Examine.pdb
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\HtmlAgilityPack.pdb
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\HtmlAgilityPack.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\interfaces.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Lucene.Net.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.AspNet.Identity.Core.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.CodeAnalysis.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.CodeAnalysis.CSharp.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.Cookies.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.OAuth.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\MiniProfiler.pdb
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\MiniProfiler.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Newtonsoft.Json.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\SQLCE4Umbraco.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Collections.Immutable.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Net.Http.Formatting.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Reflection.Metadata.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.Helpers.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.Http.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.Http.WebHost.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.Mvc.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.Razor.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.WebPages.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.WebPages.Deployment.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.WebPages.Razor.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\umbraco.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Umbraco.Core.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\umbraco.DataLayer.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\umbraco.editorControls.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\umbraco.MacroEngines.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Umbraco.ModelsBuilder.pdb
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\umbraco.providers.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Umbraco.Web.UI.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\UmbracoExamine.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\obj\Debug\CrifAustria.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\obj\Debug\CrifAustria.pdb
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Fluentx.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Fluentx.Mvc.dll
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Fluentx.xml
+C:\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Fluentx.Mvc.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\CrifAustria.dll.config
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\CrifAustria.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\CrifAustria.pdb
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\AutoMapper.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\AutoMapper.Net4.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\businesslogic.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\ClientDependency.Core.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\ClientDependency.Core.Mvc.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\cms.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\controls.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\CookComputing.XmlRpcV2.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\EntityFramework.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\EntityFramework.SqlServer.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Examine.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Fluentx.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Fluentx.Mvc.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\HtmlAgilityPack.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\ICSharpCode.SharpZipLib.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\ImageProcessor.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\ImageProcessor.Web.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\interfaces.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\log4net.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Lucene.Net.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\MarkdownSharp.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.ApplicationBlocks.Data.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.AspNet.Identity.Core.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.CodeAnalysis.CSharp.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.CodeAnalysis.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.Cookies.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.OAuth.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.Web.Infrastructure.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\MiniProfiler.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\MySql.Data.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Newtonsoft.Json.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Owin.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Semver.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\SQLCE4Umbraco.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Collections.Immutable.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Data.SqlServerCe.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Data.SqlServerCe.Entity.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Net.Http.Formatting.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Reflection.Metadata.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.Helpers.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.Http.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.Http.WebHost.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.Mvc.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.Razor.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.WebPages.Deployment.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.WebPages.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.WebPages.Razor.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\TidyNet.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Umbraco.Core.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\umbraco.DataLayer.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\umbraco.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\umbraco.editorControls.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\umbraco.MacroEngines.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Umbraco.ModelsBuilder.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\umbraco.providers.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Umbraco.Web.UI.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\UmbracoExamine.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\UrlRewritingNet.UrlRewriter.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\AutoMapper.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\businesslogic.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\ClientDependency.Core.pdb
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\ClientDependency.Core.Mvc.pdb
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\cms.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\controls.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\EntityFramework.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\EntityFramework.SqlServer.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Examine.pdb
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Fluentx.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Fluentx.Mvc.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\HtmlAgilityPack.pdb
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\HtmlAgilityPack.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\interfaces.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Lucene.Net.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.AspNet.Identity.Core.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.CodeAnalysis.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.CodeAnalysis.CSharp.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.Cookies.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.OAuth.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\MiniProfiler.pdb
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\MiniProfiler.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Newtonsoft.Json.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\SQLCE4Umbraco.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Collections.Immutable.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Net.Http.Formatting.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Reflection.Metadata.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.Helpers.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.Http.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.Http.WebHost.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.Mvc.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.Razor.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.WebPages.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.WebPages.Deployment.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\System.Web.WebPages.Razor.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\umbraco.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Umbraco.Core.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\umbraco.DataLayer.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\umbraco.editorControls.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\umbraco.MacroEngines.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Umbraco.ModelsBuilder.pdb
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\umbraco.providers.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\Umbraco.Web.UI.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\bin\UmbracoExamine.xml
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\obj\Debug\CrifAustria.csproj.CoreCompileInputs.cache
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\obj\Debug\CrifAustria.dll
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\obj\Debug\CrifAustria.pdb
+D:\lenovo_pc_bak_last\77Projects\Crif Austria-Content\trunk\CrifAustria\CrifAustria\obj\Debug\CrifAustria.csprojResolveAssemblyReference.cache
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\CrifAustria.dll.config
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\CrifAustria.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\CrifAustria.pdb
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\AutoMapper.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\AutoMapper.Net4.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\businesslogic.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\ClientDependency.Core.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\ClientDependency.Core.Mvc.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\cms.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\controls.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\CookComputing.XmlRpcV2.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\EntityFramework.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\EntityFramework.SqlServer.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Examine.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Fluentx.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Fluentx.Mvc.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\HtmlAgilityPack.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\ICSharpCode.SharpZipLib.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\ImageProcessor.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\ImageProcessor.Web.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\interfaces.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\log4net.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Lucene.Net.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\MarkdownSharp.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Microsoft.ApplicationBlocks.Data.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Microsoft.AspNet.Identity.Core.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Microsoft.CodeAnalysis.CSharp.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Microsoft.CodeAnalysis.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.Cookies.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.OAuth.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Microsoft.Web.Infrastructure.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\MiniProfiler.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\MySql.Data.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Newtonsoft.Json.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Owin.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Semver.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\SQLCE4Umbraco.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\System.Collections.Immutable.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\System.Data.SqlServerCe.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\System.Data.SqlServerCe.Entity.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\System.Net.Http.Formatting.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\System.Reflection.Metadata.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\System.Web.Helpers.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\System.Web.Http.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\System.Web.Http.WebHost.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\System.Web.Mvc.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\System.Web.Razor.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\System.Web.WebPages.Deployment.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\System.Web.WebPages.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\System.Web.WebPages.Razor.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\TidyNet.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Umbraco.Core.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\umbraco.DataLayer.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\umbraco.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\umbraco.editorControls.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\umbraco.MacroEngines.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Umbraco.ModelsBuilder.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\umbraco.providers.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Umbraco.Web.UI.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\UmbracoExamine.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\UrlRewritingNet.UrlRewriter.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\AutoMapper.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\businesslogic.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\ClientDependency.Core.pdb
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\ClientDependency.Core.Mvc.pdb
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\cms.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\controls.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\EntityFramework.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\EntityFramework.SqlServer.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Examine.pdb
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Fluentx.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Fluentx.Mvc.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\HtmlAgilityPack.pdb
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\HtmlAgilityPack.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\interfaces.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Lucene.Net.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Microsoft.AspNet.Identity.Core.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Microsoft.CodeAnalysis.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Microsoft.CodeAnalysis.CSharp.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.Cookies.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Microsoft.Owin.Security.OAuth.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\MiniProfiler.pdb
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\MiniProfiler.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Newtonsoft.Json.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\SQLCE4Umbraco.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\System.Collections.Immutable.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\System.Net.Http.Formatting.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\System.Reflection.Metadata.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\System.Web.Helpers.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\System.Web.Http.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\System.Web.Http.WebHost.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\System.Web.Mvc.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\System.Web.Razor.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\System.Web.WebPages.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\System.Web.WebPages.Deployment.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\System.Web.WebPages.Razor.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\umbraco.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Umbraco.Core.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\umbraco.DataLayer.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\umbraco.editorControls.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\umbraco.MacroEngines.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Umbraco.ModelsBuilder.pdb
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\umbraco.providers.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\Umbraco.Web.UI.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\bin\UmbracoExamine.xml
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\obj\Debug\CrifAustria.csproj.CoreCompileInputs.cache
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\obj\Debug\CrifAustria.dll
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\obj\Debug\CrifAustria.pdb
+F:\Umbraco Projects\CrifBuergelUmbraco\trunk\CrifAustria\CrifAustria\obj\Debug\CrifAustria.csprojResolveAssemblyReference.cache

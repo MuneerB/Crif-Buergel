@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DocumentType>
+  <Info>
+    <Name>News Home</Name>
+    <Alias>newsHome</Alias>
+    <Icon>icon-newspaper-alt color-orange</Icon>
+    <Thumbnail>folder.png</Thumbnail>
+    <Description />
+    <AllowAtRoot>False</AllowAtRoot>
+    <IsListView>False</IsListView>
+    <Compositions>
+      <Composition>ContentMaster</Composition>
+      <Composition>commonStandardPage</Composition>
+      <Composition>leftWidgets</Composition>
+    </Compositions>
+    <AllowedTemplates>
+      <Template>NewsHome</Template>
+    </AllowedTemplates>
+    <DefaultTemplate>NewsHome</DefaultTemplate>
+  </Info>
+  <Structure>
+    <DocumentType>newsSinglePage</DocumentType>
+    <DocumentType>singleEventPage</DocumentType>
+  </Structure>
+  <GenericProperties>
+    <GenericProperty>
+      <Name>No items Found message</Name>
+      <Alias>noItemsFoundMessage</Alias>
+      <Type>Umbraco.Textbox</Type>
+      <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+      <Tab>Content</Tab>
+      <SortOrder>7</SortOrder>
+      <Mandatory>False</Mandatory>
+      <Description><![CDATA[Message to display if there is no items [noItemsFoundMessage]]]></Description>
+    </GenericProperty>
+    <GenericProperty>
+      <Name>Number of Items per Page</Name>
+      <Alias>numberOfNews</Alias>
+      <Type>Umbraco.Textbox</Type>
+      <Definition>0cc0eba1-9960-42c9-bf9b-60e150b429ae</Definition>
+      <Tab>Content</Tab>
+      <SortOrder>2</SortOrder>
+      <Mandatory>False</Mandatory>
+      <Description><![CDATA[This count will use to display the items per page [numberOfNews]]]></Description>
+    </GenericProperty>
+    <GenericProperty>
+      <Name>Highlighted Items</Name>
+      <Alias>highlightedNews</Alias>
+      <Type>Umbraco.MultiNodeTreePicker</Type>
+      <Definition>87ba0f75-de9f-4c7a-b786-818527aa9da7</Definition>
+      <Tab>Content</Tab>
+      <SortOrder>6</SortOrder>
+      <Mandatory>False</Mandatory>
+      <Description><![CDATA[Select the Items to show in in the highlighted section [highlightedNews]]]></Description>
+    </GenericProperty>
+    <GenericProperty>
+      <Name>External Links</Name>
+      <Alias>externalLinks</Alias>
+      <Type>RJP.MultiUrlPicker</Type>
+      <Definition>b52a750a-36ff-43ba-b2c9-a03bdac91020</Definition>
+      <Tab>Content</Tab>
+      <SortOrder>5</SortOrder>
+      <Mandatory>False</Mandatory>
+      <Description><![CDATA[[externalLinks]]]></Description>
+    </GenericProperty>
+    <GenericProperty>
+      <Name>Internal  links</Name>
+      <Alias>internalLinks</Alias>
+      <Type>RJP.MultiUrlPicker</Type>
+      <Definition>b52a750a-36ff-43ba-b2c9-a03bdac91020</Definition>
+      <Tab>Content</Tab>
+      <SortOrder>4</SortOrder>
+      <Mandatory>False</Mandatory>
+      <Description><![CDATA[[internalLinks]]]></Description>
+    </GenericProperty>
+  </GenericProperties>
+  <Tabs>
+    <Tab>
+      <Id>48</Id>
+      <Caption>Content</Caption>
+      <SortOrder>2</SortOrder>
+    </Tab>
+  </Tabs>
+</DocumentType>

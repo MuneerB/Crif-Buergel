@@ -1,0 +1,51 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+	var pdctTag="";
+	var pageId = Model.Content.Id;
+      var industryNode = Umbraco.TypedContent(pageId);
+        IEnumerable<IPublishedContent> childNodes = industryNode.AncestorOrSelf(1).Descendants("successSingle");
+        var currentPage = Model.Content;
+        if (childNodes.Any())
+        {
+            childNodes = childNodes.Where(x => x.HasValue("industryTags")).ToList();
+            pdctTag = pageId.ToString();
+            //childNodes = childNodes.Where( x => x.HasValue("industryTags")).ToList();
+            childNodes = childNodes.Where(x => x.GetPropertyValue<string>("industryTags")
+          .Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Contains(pdctTag)).ToList();
+            childNodes = childNodes.OrderBy(x => x.SortOrder).ToList();
+			<ul class="list-unstyled single-slider">
+                    @foreach (var news in childNodes)
+                    {
+
+						<li class="clearfix">
+                            <article class="common-article-strctr">
+                                @if (news.HasValue("image") != null)
+                                {
+                                    var newsImage = Umbraco.TypedMedia(news.GetPropertyValue("image"));
+                                    <figure class="article-figure col-xs-3">
+                                        <a class="resize-image article-image"><img src="@newsImage.Url" class="img-responsive" /></a>
+                                    </figure>
+                                }
+                                <div class="article-content col-xs-9">
+                                    @if (news.HasProperty("title"))
+                                    {
+                                        <h3 class="h4"><a href="@news.Url" class="clr-drk-blu">@news.GetPropertyValue("title") </a></h3>
+                                    }
+                                    @if(news.HasProperty("shortDescription"))
+                                    {
+                                        <div class="article-caption"><p>@news.GetPropertyValue("shortDescription")</p></div>
+                                    }
+                                    <a href="@news.Url" rel="nofollow" class="link clr-drk-blu">@Umbraco.Field("#Read More", altText: "Read More") <i class="fa fa-caret-right"></i></a>
+
+                                </div>
+                            </article>
+                        </li>
+
+                    }
+                </ul>
+
+            
+        }
+            
+
+}

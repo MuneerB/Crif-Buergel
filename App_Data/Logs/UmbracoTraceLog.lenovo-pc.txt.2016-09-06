@@ -1,0 +1,65 @@
+﻿ 2016-09-06 10:25:56,736 [P516/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.4.3 application starting on LENOVO-PC
+ 2016-09-06 10:25:56,843 [P516/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2016-09-06 10:25:56,856 [P516/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 13ms)
+ 2016-09-06 10:25:56,902 [P516/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2016-09-06 10:25:57,241 [P516/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 338ms)
+ 2016-09-06 10:25:57,363 [P516/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2016-09-06 10:25:57,364 [P516/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
+ 2016-09-06 10:25:57,365 [P516/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2016-09-06 10:25:57,388 [P516/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 23ms)
+ 2016-09-06 10:25:57,406 [P516/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2016-09-06 10:25:57,452 [P516/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 46ms)
+ 2016-09-06 10:25:57,453 [P516/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2016-09-06 10:25:57,550 [P516/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 96ms)
+ 2016-09-06 10:25:57,671 [P516/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2016-09-06 10:25:57,672 [P516/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 0ms)
+ 2016-09-06 10:25:57,672 [P516/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2016-09-06 10:25:57,673 [P516/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 0ms)
+ 2016-09-06 10:25:58,522 [P516/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-09-06 10:25:58,727 [P516/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-09-06 10:25:58,902 [P516/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-09-06 10:25:58,988 [P516/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2016-09-06 10:25:59,000 [P516/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2016-09-06 10:25:59,001 [P516/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2016-09-06 10:25:59,020 [P516/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 2372ms)
+ 2016-09-06 10:26:02,451 [P516/D2/T11] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:56643/umbraco (UmbracoModule request)
+ 2016-09-06 10:26:02,597 [P516/D2/T11] INFO  umbraco.content - Load Xml from file...
+ 2016-09-06 10:26:02,605 [P516/D2/T11] INFO  umbraco.content - Loaded Xml from file.
+ 2016-09-06 10:26:04,251 [P516/D2/T11] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2016-09-06 10:26:04,253 [P516/D2/T11] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 1ms)
+ 2016-09-06 10:26:04,506 [P516/D2/T11] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2016-09-06 10:26:04,507 [P516/D2/T11] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 0ms)
+ 2016-09-06 10:26:07,084 [P516/D2/T11] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.cms.businesslogic.macro.IMacroEngine
+ 2016-09-06 10:26:07,085 [P516/D2/T11] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 0 (took 0ms)
+ 2016-09-06 10:26:07,883 [P516/D2/T11] WARN  RJP.MultiUrlPicker.Models.MultiUrls - MultiUrlPicker value converter skipped a link as the node has been upublished/deleted (Id: 1108), 
+ 2016-09-06 10:26:07,900 [P516/D2/T11] WARN  RJP.MultiUrlPicker.Models.MultiUrls - MultiUrlPicker value converter skipped a link as the node has been upublished/deleted (Id: 1108), 
+ 2016-09-06 10:27:02,681 [P516/D2/T15] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2016-09-05 10:27:02
+ 2016-09-06 10:31:57,984 [P516/D2/T24] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username CrifAustria from IP address ::1
+ 2016-09-06 10:32:44,070 [P516/D2/T41] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username CrifAustria from IP address ::1
+ 2016-09-06 10:32:45,488 [P516/D2/T41] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username CrifAustria from IP address ::1
+ 2016-09-06 10:32:45,724 [P516/D2/T38] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username CrifAustria from IP address ::1, the user is locked
+ 2016-09-06 10:33:01,060 [P516/D2/T41] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username muneer.baleri@gmail.com from IP address ::1
+ 2016-09-06 10:33:04,592 [P516/D2/T10] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username muneer@27technologies.com from IP address ::1
+ 2016-09-06 10:33:04,593 [P516/D2/T10] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: muneer@27technologies.com logged in from IP address ::1
+ 2016-09-06 10:33:04,734 [P516/D2/T24] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2016-09-06 10:33:04,736 [P516/D2/T24] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 1ms)
+ 2016-09-06 10:33:05,015 [P516/D2/T24] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplication
+ 2016-09-06 10:33:05,017 [P516/D2/T24] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplication, found 0 (took 1ms)
+ 2016-09-06 10:33:05,075 [P516/D2/T24] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ITree
+ 2016-09-06 10:33:05,076 [P516/D2/T24] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ITree, found 0 (took 1ms)
+ 2016-09-06 10:33:05,081 [P516/D2/T41] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2016-09-06 10:33:05,081 [P516/D2/T41] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 0ms)
+ 2016-09-06 10:33:05,085 [P516/D2/T41] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ITree
+ 2016-09-06 10:33:05,085 [P516/D2/T41] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ITree, found 0 (took 0ms)
+ 2016-09-06 10:33:14,832 [P516/D2/T41] INFO  Umbraco.Web.Editors.AuthenticationController - User muneer@27technologies.com from IP address ::1 has logged out
+ 2016-09-06 10:33:18,760 [P516/D2/T10] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username CrifAustria from IP address ::1, the user is locked
+ 2016-09-06 10:33:37,288 [P516/D2/T41] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username m.baleri@77agency.com from IP address ::1
+ 2016-09-06 10:33:47,283 [P516/D2/T47] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username CrifAustria from IP address ::1, the user is locked
+ 2016-09-06 10:33:58,800 [P516/D2/T46] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username CrifAustria from IP address ::1, the user is locked
+ 2016-09-06 14:27:02,696 [P516/D2/T17] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2016-09-05 14:27:02
+ 2016-09-06 18:27:06,165 [P516/D2/T17] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2016-09-05 18:27:06
+ 2016-09-06 20:38:48,238 [P516/D2/T110] WARN  RJP.MultiUrlPicker.Models.MultiUrls - MultiUrlPicker value converter skipped a link as the node has been upublished/deleted (Id: 1108), 
+ 2016-09-06 20:38:48,257 [P516/D2/T110] WARN  RJP.MultiUrlPicker.Models.MultiUrls - MultiUrlPicker value converter skipped a link as the node has been upublished/deleted (Id: 1108), 
+ 2016-09-06 21:42:06,547 [P516/D2/T66] WARN  RJP.MultiUrlPicker.Models.MultiUrls - MultiUrlPicker value converter skipped a link as the node has been upublished/deleted (Id: 1108), 
+ 2016-09-06 21:42:06,548 [P516/D2/T66] WARN  RJP.MultiUrlPicker.Models.MultiUrls - MultiUrlPicker value converter skipped a link as the node has been upublished/deleted (Id: 1108), 
+ 2016-09-06 22:27:06,181 [P516/D2/T17] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2016-09-05 22:27:06

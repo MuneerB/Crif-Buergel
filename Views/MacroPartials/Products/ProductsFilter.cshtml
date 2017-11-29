@@ -1,0 +1,27 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+    var industries = Model.Content.AncestorOrSelf(1).Descendants("industrySingle");
+    var CCFphases = Model.Content.AncestorOrSelf(1).Descendants("creditFrameworkPhase");
+    <form class="form" data-id="@Model.Content.Id">
+        <label for="">@Umbraco.Field("#Filter by", altText: "Filter by")</label>
+        <div class="col-sm-12 no-side-padding form-sprtr-small form-group">
+            <select type="name" value="" id="productindustry" class="form-control">
+                <option value="null">@Umbraco.Field("#Industry", altText: "Industry")</option>
+                @foreach (var industry in industries)
+                {
+                    <option value="@industry.Id"> @industry.Name</option>
+                }
+            </select>
+        </div>
+        <div class="col-sm-12 no-side-padding">
+            <select type="name" value="" id="productphase" class="form-control">
+                <option value=null>Credit Framework Phase</option>
+                @foreach (var pahse in CCFphases)
+                {
+                    <option value="@pahse.Id"> @pahse.GetPropertyValue("menuTitle")</option>
+                }
+            </select>
+        </div>
+
+    </form>
+}

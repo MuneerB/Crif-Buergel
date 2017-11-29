@@ -1,0 +1,58 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{Layout = null;}<?xml version="1.0" encoding="UTF-8" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+    @ListChildNodes(Model.Content.AncestorOrSelf(1))
+</urlset>
+@helper ListChildNodes(IPublishedContent startNode)
+{
+var domains = umbraco.library.GetCurrentDomains(startNode.Id);
+string url = "";
+foreach (var domain in domains)
+{
+    if (domain.Name.Contains("https://"))
+    {
+        Uri uri = new Uri(domain.Name);
+        int defaultPort = Request.IsSecureConnection ? 443 : 80;
+        url = uri.Scheme + System.Uri.SchemeDelimiter + uri.Host + (uri.Port != defaultPort ? ":" + uri.Port : "");
+    }
+}
+
+string pageurl = "";
+Response.ContentType = "text/xml";
+const int maxLevelForSiteMap = 100;
+foreach (var node in startNode.Children
+    .Where(n =>
+    @*n.IsVisible())&& *@
+            !(n.GetPropertyValue<bool>("hideFromSitemap")) &&
+            (n.TemplateId > 0 || (n.TemplateId == 0 && n.Children.Count() > 0)) &&
+            !Umbraco.IsProtected(n.Id, n.Path))
+        .Select(n => n.AsDynamic()))
+{
+    if (node.TemplateId > 0)
+    {
+        if (!String.IsNullOrEmpty(url))
+        {
+            pageurl = @url + (((IPublishedContent)node).Url);
+        }
+        else
+        {
+            pageurl = ((IPublishedContent)node).UrlAbsolute();
+        }
+        <url>
+            <loc>@pageurl</loc>
+            <lastmod>@node.UpdateDate.ToString("s")+00:00</lastmod>
+            @if (node.SearchEngineSitemapChangeFreq.ToString() != "")
+            {<changefreq>@node.SearchEngineSitemapChangeFreq</changefreq>}
+            @if (node.SearchEngineSitemapPriority.ToString() != "")
+            {<priority>@node.SearchEngineSitemapPriority</priority>}
+        </url>
+    }
+
+    if (node.Level <= maxLevelForSiteMap)
+    {
+            @ListChildNodes(node)
+    }
+}
+}

@@ -1,0 +1,19 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "_Layout.cshtml";
+}
+@Umbraco.RenderMacro("Breadcrumb")
+	<div class="container">
+				<div class="row">
+					<div class="inner-container">
+							<section class="border-grey-top clearfix two-clmn-main">
+								<aside class="col-sm-3">
+									@Umbraco.RenderMacro("SideNavigation")
+								</aside>
+								
+								@RenderBody()
+								
+							</section>
+			 </div>
+			</div>
+		 </div>

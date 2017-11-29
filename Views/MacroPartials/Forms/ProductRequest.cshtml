@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using  CrifAustria.Models
+@{
+    //ProductRequestModel prModel=new ProductRequestModel();
+    //Dictionary<string, string> industries = new Dictionary<string, string>();
+    //var marketNodes = Model.Content.AncestorOrSelf(1).Descendants("industrySingle");
+    //if (marketNodes != null && marketNodes.Any())
+    //{
+    //    foreach (var marketnode in marketNodes)
+    //    {
+    //        industries.Add(marketnode.Id.ToString(), marketnode.Name);
+    //    }
+    //}
+    @Html.Action("Index", "ProductRequest")
+
+}	

@@ -1,0 +1,53 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+    var industryNodeId = int.Parse(Model.MacroParameters["industryNodeId"].ToString());
+    var currentPage = Umbraco.TypedContent(industryNodeId);
+    if (currentPage.HasValue("testimonialsSlider"))
+    {
+        int imageCount = 0;
+        var imageSlider = Umbraco.TypedMedia(currentPage.GetPropertyValue<int>("testimonialsSlider"));
+        <div class="quote-slider-wrapper">
+            <h5 class="title">Testimonials</h5>
+            <ul class="quote-slider list-unstyled" data-speed="@Umbraco.Field("sliderspeed")">
+                @if (imageSlider.ContentType.Alias == "Folder")
+                    {
+                        foreach (var slider in imageSlider.Children.Where(x => x.IsVisible()))
+                        {
+                            if (slider.HasValue("icon"))
+                            {
+								@displaySlider(slider)
+                            }
+
+                            imageCount = imageCount + 1;
+                        }
+                    }
+                    else
+                    {
+                        @displaySlider(imageSlider)
+                    }
+            </ul>
+        </div>
+    }
+}
+@helper displaySlider(IPublishedContent slider)
+{
+if (slider.HasValue("icon"))
+{
+	
+    var sliderTitle = slider.GetPropertyValue<string>("title");
+    string sliderDescription = slider.GetPropertyValue<string>("shortDescription");
+    var sliderImage= Umbraco.TypedMedia(slider.GetPropertyValue<string>("icon"));
+     <li>
+		<div class="pull-left">
+				<figure class="figure">
+					<img src="@sliderImage.Url" alt="" class="img-responsive" />
+				</figure>
+		</div>
+        <figcaption class="text">
+            <h5>@sliderTitle</h5>
+            <p>@Html.Raw(umbraco.library.RemoveFirstParagraphTag(sliderDescription))</p>
+        </figcaption>
+    </li>
+}
+}
+

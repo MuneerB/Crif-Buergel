@@ -1,0 +1,28 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "_Layout.cshtml";
+}
+<section class="inner-content bg-cyan">
+	<!-- Bread crumbs -->
+	@Umbraco.RenderMacro("Breadcrumb")
+	<!-- Bread crumbs end -->
+	@Umbraco.RenderMacro("IndustryInnerTab")
+</section>
+<div class="container">
+	<div class="row">
+		<div class="inner-container">	
+			<div id="section3" class="bottom-prdct-listing">
+				<section class="three-column-link-listing lrg-sprtr-top">
+					@Umbraco.RenderMacro("BottomProduct")
+				</section>
+				<section class="single-slider-wrapper lrg-sprtr-top">
+					@Umbraco.RenderMacro("SuccessTaggedToIndustry")
+				</section>
+			</div>
+		</div>
+	</div>
+</div>
+<input type="hidden" id="industryTagId" value="@Model.Content.Id" />
+@section js{
+	<script type="text/javascript" src="/scripts/ajax/industryTaggingAjaxHandler.js"></script>
+}

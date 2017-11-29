@@ -1,0 +1,17 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "PagesWithSideMenu.cshtml";
+}
+<article class="col-sm-9 pull-right">
+	<h1 class="clr-drk-blu h2">@Model.Content.GetPropertyValue("title")</h1>
+	@*(Model.Content.GetGridHtml("bodyContent"))*@
+	@if(Model.Content.HasValue("introductionText"))
+    {
+		<p>@Html.Raw(umbraco.library.RemoveFirstParagraphTag(Model.Content.GetPropertyValue("introductionText").ToString()))</p>
+    }
+    @if(Model.Content.HasValue("bodyContent"))
+    {
+		@Model.Content.GetPropertyValue("bodyContent")
+    }
+	@Umbraco.RenderMacro("LinkBoxes")
+</article>

@@ -1,0 +1,65 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using CrifAustria.Models
+@{
+    LoginModel login=new LoginModel();
+    <li class="submenu clr-orange">
+		<a href="#login-popup-mob" class="popup-trigger-button" aria-label="Login">
+			<span class="login-icon"></span><span class="close-icon-small active-icon"></span>
+							&nbsp;&nbsp;&nbsp;Login <span class="hidden-xs  caret"></span></a>
+        <div id="login-popup-mob" class="login-popup menu-dropdown">
+            <div class="login-form-wrapper">
+                @using (Html.BeginUmbracoForm<CrifAustria.Controllers.ContactController>("Login", null, new { id = "loginForm" }))
+                        {
+							@*Html.AntiForgeryToken()*@
+                            Html.EnableClientValidation();
+                            Html.EnableUnobtrusiveJavaScript();
+                            <div class="h4">Check Online</div>
+                            <div class="form-group">
+                             
+                                @Html.TextBoxFor(x => login.UserName, new
+                           {
+                               id = "userNameTxt",
+                               @class = "form-control",
+                               placeholder = "Name",
+                               @data_val_required = "usernameRequiredMessage",
+                               autocorrect = "off",
+                               autocapitalize = "off",
+                               Name = "Username"
+                           })      
+                                @Html.ValidationMessageFor(x => login.UserName, null, new { @class = "errormessage", @data_valmsg_for = "Username" })         
+                            </div>
+                            <div class="form-group">
+                              
+                                @Html.PasswordFor(x => login.PassWord, new
+                           {
+                               id = "passwordTxthome",
+                               @class = "form-control",
+                               placeholder = "Passwort",
+                               @data_val_required = "Password Required",
+                               autocorrect = "off",
+                               Name = "Password"
+                           })         
+                                @Html.ValidationMessageFor(x => login.PassWord, null, new { @class = "errormessage", @data_valmsg_for = "Password" }) 
+                            </div>
+                            <div class="button-wrapper">
+                        <button class="btn btn-orange text-center pull-right" aria-label="Login Button">Login<span class="fa fa-caret-right"></span></button>
+                    </div> 
+                        } 
+                @*<form action="https://www.crif-online.at/sb/checkperson">
+                    <div class="h4">Check Online</div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Name" title="Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Passwort" title="Password">
+                    </div>
+                    <div class="button-wrapper">
+                        <button class="btn btn-orange text-center pull-right" aria-label="Login Button">Login<span class="fa fa-caret-right"></span></button>
+                    </div>
+                </form>*@
+            </div>
+        </div>
+    </li>
+}
+
+							

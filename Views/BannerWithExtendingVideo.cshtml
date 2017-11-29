@@ -1,0 +1,82 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using CrifAustria.Utils;
+@{
+	Layout = null;
+}
+@{
+string alignClass = "", offsetImageClass = "", offsetContentClass="";
+    bool rightAlign = false;
+    if (Model.Content.HasValue("videoRightAlign") && Model.Content.GetPropertyValue<bool>("videoRightAlign"))
+    {
+        alignClass = "with-image-right";
+        rightAlign = true;
+    }
+    else
+    {
+        alignClass = "with-image-left";
+    }
+<section class="bnr-ext-img bg-light-grey-var-3">
+			
+			<div class="container">
+				<div class="row">
+					<div class="inner-container">
+						<div class="map-wrapper uber-uns-video-box-wrapper clearfix">
+							@if (rightAlign)
+							{
+								offsetImageClass = "col-sm-offset-6";
+								@BannerContentDisplay(Model.Content, offsetContentClass)
+								@BannerVideoDisply(Model.Content, offsetImageClass)
+							}
+							else
+							{
+								offsetContentClass = "col-sm-offset-6";
+								@BannerVideoDisply(Model.Content, offsetImageClass)
+								@BannerContentDisplay(Model.Content, offsetContentClass)
+							}
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</section>
+}
+@helper BannerContentDisplay(IPublishedContent node,string offsetContentClass)
+{
+var multiUrlPicker = node.GetPropertyValue<RJP.MultiUrlPicker.Models.MultiUrls>("linkTo");
+IPublishedContent nodeItem = Common.getTranslatedPage(node);
+string url = "javascript:;";
+if (multiUrlPicker != null && multiUrlPicker.Any() && multiUrlPicker.Count() == 1)
+{
+    url = multiUrlPicker.FirstOrDefault().Url;
+}
+	<div class="col-sm-5 text">
+		@if (nodeItem.HasValue("bannerTitle"))
+		{
+			<h2 class="clr-drk-blu">@nodeItem.GetPropertyValue("bannerTitle")</h2>
+		}
+		@if (nodeItem.HasValue("bannerDescription"))
+		{
+			<p>@nodeItem.GetPropertyValue("bannerDescription").ToString().Replace("\n", "<br/>")</p>
+		}
+		<ul class="list-unstyled cta-list">
+			@foreach (var item in multiUrlPicker)
+			{
+				<li><h3><a href="@Common.getTranslatedUrl(item.Url)" class="link clr-drk-blu" target="@item.Target">@item.Name<i class="fa fa-caret-right"></i></a></h3></li>
+			}
+		</ul>
+	</div>
+    
+}
+@helper BannerVideoDisply(IPublishedContent nodeItem, string offsetClass)
+{
+	if (nodeItem.HasValue("youtubeOrVimeoUrl"))
+	{
+		 <div class="col-md-6 col-sm-6 col-xs-12 map uber-uns-video-box">
+			<div class="videocontent">
+				<video style="width:100%;height:100%;" controls="controls" width="100%" height="100%" id="player1" preload="none">
+				 	<source type="video/youtube" src="@nodeItem.GetPropertyValue("youtubeOrVimeoUrl")" />
+				</video>
+			</div>
+		</div>
+	}
+}

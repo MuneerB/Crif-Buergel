@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CrifAustriaEntity.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="contactUs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstName" Type="varchar(max)" />
+          <Property Name="lastName" Type="varchar(max)" />
+          <Property Name="email" Type="varchar" MaxLength="500" />
+          <Property Name="telephone" Type="varchar" MaxLength="200" />
+          <Property Name="industry" Type="varchar(max)" />
+          <Property Name="jobTitle" Type="varchar(max)" />
+          <Property Name="company" Type="varchar(max)" />
+          <Property Name="bestWayToReach" Type="varchar(max)" />
+          <Property Name="message" Type="varchar(max)" />
+          <Property Name="agreement" Type="varchar" MaxLength="50" />
+          <Property Name="newsletter" Type="varchar" MaxLength="50" />
+          <Property Name="culture" Type="varchar" MaxLength="50" />
+          <Property Name="createdDate" Type="datetime" />
+          <Property Name="modifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="newsletterSubscription">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstName" Type="varchar(max)" />
+          <Property Name="lastName" Type="varchar(max)" />
+          <Property Name="email" Type="varchar" MaxLength="500" />
+          <Property Name="industry" Type="varchar(max)" />
+          <Property Name="jobTitle" Type="varchar(max)" />
+          <Property Name="company" Type="varchar(max)" />
+          <Property Name="agreement" Type="varchar" MaxLength="50" />
+          <Property Name="newsletter" Type="varchar" MaxLength="50" />
+          <Property Name="culture" Type="varchar" MaxLength="50" />
+          <Property Name="createdDate" Type="datetime" />
+          <Property Name="modifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ProductRequests">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="First_Name" Type="nvarchar(max)" />
+          <Property Name="Last_Name" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Telephone" Type="nvarchar(max)" />
+          <Property Name="Industry" Type="nvarchar(max)" />
+          <Property Name="JobTitle" Type="nvarchar(max)" />
+          <Property Name="Company" Type="nvarchar(max)" />
+          <Property Name="Agreement" Type="nvarchar(max)" />
+          <Property Name="Newsletter" Type="nvarchar(max)" />
+          <Property Name="Culture" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="ProductName" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="sheduleConsultation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstName" Type="varchar(max)" />
+          <Property Name="lastName" Type="varchar(max)" />
+          <Property Name="email" Type="varchar" MaxLength="500" />
+          <Property Name="telephone" Type="varchar" MaxLength="200" />
+          <Property Name="industry" Type="varchar(max)" />
+          <Property Name="jobTitle" Type="varchar(max)" />
+          <Property Name="company" Type="varchar(max)" />
+          <Property Name="bestWayToReach" Type="varchar(max)" />
+          <Property Name="howDidYouHearAbout" Type="varchar(max)" />
+          <Property Name="message" Type="varchar(max)" />
+          <Property Name="agreement" Type="varchar" MaxLength="50" />
+          <Property Name="newsletter" Type="varchar" MaxLength="50" />
+          <Property Name="culture" Type="varchar" MaxLength="50" />
+          <Property Name="createdDate" Type="datetime" />
+          <Property Name="modifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SuccessStoryRequests">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="First_Name" Type="nvarchar(max)" />
+          <Property Name="Last_Name" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Telephone" Type="nvarchar(max)" />
+          <Property Name="Industry" Type="nvarchar(max)" />
+          <Property Name="JobTitle" Type="nvarchar(max)" />
+          <Property Name="Company" Type="nvarchar(max)" />
+          <Property Name="Agreement" Type="nvarchar(max)" />
+          <Property Name="Newsletter" Type="nvarchar(max)" />
+          <Property Name="Culture" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="ProductName" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="CrifAustriaEntityStoreContainer">
+          <EntitySet Name="contactUs" EntityType="Self.contactUs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="newsletterSubscription" EntityType="Self.newsletterSubscription" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductRequests" EntityType="Self.ProductRequests" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sheduleConsultation" EntityType="Self.sheduleConsultation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SuccessStoryRequests" EntityType="Self.SuccessStoryRequests" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="CrifAustriaEntity" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="CrifAustriaEFContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ProductRequests" EntityType="CrifAustriaEntity.ProductRequest" />
+          <EntitySet Name="SuccessStoryRequests" EntityType="CrifAustriaEntity.SuccessStoryRequest" />
+          <EntitySet Name="contactUs" EntityType="CrifAustriaEntity.contactUs" />
+          <EntitySet Name="newsletterSubscriptions" EntityType="CrifAustriaEntity.newsletterSubscription" />
+          <EntitySet Name="sheduleConsultations" EntityType="CrifAustriaEntity.sheduleConsultation" />
+        </EntityContainer>
+        <EntityType Name="ProductRequest">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="First_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Industry" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="JobTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Company" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Agreement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Newsletter" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Culture" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SuccessStoryRequest">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="First_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Industry" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="JobTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Company" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Agreement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Newsletter" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Culture" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="contactUs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="lastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="telephone" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="industry" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="jobTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="company" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="bestWayToReach" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="agreement" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="newsletter" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="culture" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdDate" Type="DateTime" Precision="3" />
+          <Property Name="modifiedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="newsletterSubscription">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="lastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="industry" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="jobTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="company" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="agreement" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="newsletter" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="culture" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdDate" Type="DateTime" Precision="3" />
+          <Property Name="modifiedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="sheduleConsultation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="lastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="telephone" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="industry" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="jobTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="company" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="bestWayToReach" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="howDidYouHearAbout" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="agreement" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="newsletter" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="culture" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdDate" Type="DateTime" Precision="3" />
+          <Property Name="modifiedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="CrifAustriaEntity" />
+        <Alias Key="Target" Value="CrifAustriaEntity.Store" />
+        <EntityContainerMapping CdmEntityContainer="CrifAustriaEFContainer" StorageEntityContainer="CrifAustriaEntityStoreContainer">
+          <EntitySetMapping Name="ProductRequests">
+            <EntityTypeMapping TypeName="CrifAustriaEntity.ProductRequest">
+              <MappingFragment StoreEntitySet="ProductRequests">
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Culture" ColumnName="Culture" />
+                <ScalarProperty Name="Newsletter" ColumnName="Newsletter" />
+                <ScalarProperty Name="Agreement" ColumnName="Agreement" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+                <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SuccessStoryRequests">
+            <EntityTypeMapping TypeName="CrifAustriaEntity.SuccessStoryRequest">
+              <MappingFragment StoreEntitySet="SuccessStoryRequests">
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Culture" ColumnName="Culture" />
+                <ScalarProperty Name="Newsletter" ColumnName="Newsletter" />
+                <ScalarProperty Name="Agreement" ColumnName="Agreement" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+                <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contactUs">
+            <EntityTypeMapping TypeName="CrifAustriaEntity.contactUs">
+              <MappingFragment StoreEntitySet="contactUs">
+                <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="culture" ColumnName="culture" />
+                <ScalarProperty Name="newsletter" ColumnName="newsletter" />
+                <ScalarProperty Name="agreement" ColumnName="agreement" />
+                <ScalarProperty Name="message" ColumnName="message" />
+                <ScalarProperty Name="bestWayToReach" ColumnName="bestWayToReach" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="jobTitle" ColumnName="jobTitle" />
+                <ScalarProperty Name="industry" ColumnName="industry" />
+                <ScalarProperty Name="telephone" ColumnName="telephone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="newsletterSubscriptions">
+            <EntityTypeMapping TypeName="CrifAustriaEntity.newsletterSubscription">
+              <MappingFragment StoreEntitySet="newsletterSubscription">
+                <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="culture" ColumnName="culture" />
+                <ScalarProperty Name="newsletter" ColumnName="newsletter" />
+                <ScalarProperty Name="agreement" ColumnName="agreement" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="jobTitle" ColumnName="jobTitle" />
+                <ScalarProperty Name="industry" ColumnName="industry" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sheduleConsultations">
+            <EntityTypeMapping TypeName="CrifAustriaEntity.sheduleConsultation">
+              <MappingFragment StoreEntitySet="sheduleConsultation">
+                <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="culture" ColumnName="culture" />
+                <ScalarProperty Name="newsletter" ColumnName="newsletter" />
+                <ScalarProperty Name="agreement" ColumnName="agreement" />
+                <ScalarProperty Name="message" ColumnName="message" />
+                <ScalarProperty Name="howDidYouHearAbout" ColumnName="howDidYouHearAbout" />
+                <ScalarProperty Name="bestWayToReach" ColumnName="bestWayToReach" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="jobTitle" ColumnName="jobTitle" />
+                <ScalarProperty Name="industry" ColumnName="industry" />
+                <ScalarProperty Name="telephone" ColumnName="telephone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

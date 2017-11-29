@@ -1,0 +1,53 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using RJP.MultiUrlPicker.Models
+@using Archetype.Models;
+@using CrifAustria.Utils;
+@{
+    var home = Model.Content.AncestorOrSelf(1);
+    home = Common.getTranslatedPage(home);
+    var footerboxes = home.GetPropertyValue<ArchetypeModel>("footerBoxes");
+    if (footerboxes != null && footerboxes.Any())
+    {
+        <section class="bottom-section bg-drk-grey section-sprtr">
+            <div class="container">
+                <div class="row">
+                    <div class="clearfix">
+                        @foreach (var footerbox in footerboxes)
+                        {
+                            var footerBoxIcon = Umbraco.TypedMedia(footerbox.GetValue<string>("icon"));
+                            var footerBoxTitle = footerbox.GetValue<string>("title");
+                            var footerBoxDescription = footerbox.GetValue<string>("shortDescription");
+                            var footerBoxlink = footerbox.GetValue<MultiUrls>("link");
+                            string linkTo = "javascript:;", target = "_blank", Name = "";
+                            if (footerBoxlink != null && footerBoxlink.Any())
+                            {
+                                linkTo = footerBoxlink.FirstOrDefault().Url;
+                                target = footerBoxlink.FirstOrDefault().Target;
+                                Name = footerBoxlink.FirstOrDefault().Name;
+                            }
+                            
+                            <div class="col-xs-4 text-center box-strctr">
+                                <img src="@footerBoxIcon.Url" class="icon hidden-sm hidden-xs" alt="" />
+                                <h3 class="hidden-sm hidden-xs">@footerBoxTitle</h3>
+                                @if (!String.IsNullOrEmpty(footerBoxDescription))
+                                {
+                                    <p class="hidden-sm hidden-xs">@Html.Raw(umbraco.library.RemoveFirstParagraphTag(footerBoxDescription))</p>
+                                }
+                                <a href="@Common.getTranslatedUrl(linkTo)" rel="nofollow" target=@target class="btn clr-drk-blu grad-grey" aria-label="Footer Box CTA">@Name <span class="fa fa-caret-right"></span></a>
+                                <a href="@linkTo" @target class="link hidden-lg hidden-md" aria-label="Footer Box CTA">
+                                    <img src="@footerBoxIcon.Url" class="icon" alt="" />
+                                    <h3>@footerBoxTitle<span class="fa fa-caret-right pull-right "></span></h3>
+                                    @if (!String.IsNullOrEmpty(footerBoxDescription))
+                                    {
+                                        <p>@Html.Raw(umbraco.library.RemoveFirstParagraphTag(footerBoxDescription))</p>
+                                    }
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+}
+
