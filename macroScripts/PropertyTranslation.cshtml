@@ -1,0 +1,53 @@
+﻿@*
+    PropertyTranslation.cshtml
+    Part of the Polyglot package.
+*@
+@inherits umbraco.MacroEngines.DynamicNodeContext
+@using umbraco.MacroEngines;
+@{
+
+    string selectedLanguage = RenderPage("SelectedLanguage.cshtml").ToString().Trim();
+    string selectedLanguageNoDash = selectedLanguage.Replace("-", string.Empty);
+
+    DynamicNode page = Model;
+
+    var contentFound = false;
+
+    if (page.HasProperty(Parameter.Property + selectedLanguageNoDash) && !string.IsNullOrEmpty(page.GetPropertyValue(Parameter.Property + selectedLanguageNoDash)))
+    {
+        contentFound = true;
+        @Html.Raw(Umbraco.Web.Templates.TemplateUtilities.ParseInternalLinks(library.RenderMacroContent(page.GetPropertyValue(Parameter.Property + selectedLanguageNoDash), page.Id)))
+    }
+
+    if (!contentFound)
+    {
+        foreach (DynamicNode child in page.GetChildrenAsList)
+        {
+            if (child.NodeTypeAlias == page.NodeTypeAlias + "TranslationFolder")
+            {
+                foreach (DynamicNode translation in child.GetChildrenAsList)
+                {
+                    var language = translation.GetPropertyValue("language");
+
+                    if (language != null && language.ToString().ToLower() == selectedLanguage.ToLower())
+                    {
+                        if (translation.HasProperty(Parameter.Property) && !string.IsNullOrEmpty(translation.GetPropertyValue(Parameter.Property)))
+                        {
+                            contentFound = true;
+                            @Html.Raw(Umbraco.Web.Templates.TemplateUtilities.ParseInternalLinks(library.RenderMacroContent(translation.GetPropertyValue(Parameter.Property), translation.Id)))
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    if (!contentFound)
+    {
+
+        if (page.HasProperty(Parameter.Property) && !string.IsNullOrEmpty(page.GetPropertyValue(Parameter.Property)))
+        {
+            @Html.Raw(Umbraco.Web.Templates.TemplateUtilities.ParseInternalLinks(library.RenderMacroContent(page.GetPropertyValue(Parameter.Property), page.Id)))
+        }
+    }
+}

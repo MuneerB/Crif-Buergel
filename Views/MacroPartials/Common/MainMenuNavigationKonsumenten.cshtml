@@ -1,0 +1,192 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+    var home = Model.Content.AncestorOrSelf(1);
+    var childNodes = home.Children.Where(x => x.IsVisible());
+    <ul class="nav navbar-nav">
+        @foreach (var child in childNodes)
+        {
+            @PrintMenu(child, true)
+            @*<li>
+                <ul class="nav navbar-nav nav-right">
+                    @Umbraco.RenderMacro("Login")
+                    @Umbraco.RenderMacro("WorldWideLocation")
+                </ul>
+            </li>*@
+        }
+    </ul>
+}
+
+@helper PrintMenu(IPublishedContent node, bool isMainMenuItem = false)
+{
+    string[] nodeTypeList = { "newsSingle","successSingle" };
+    
+    var childNodes = node.Children.Where(x => x.IsVisible() && x.GetPropertyValue("umbracoNaviHide") != null 
+        && x.GetPropertyValue<bool>("umbracoNaviHide")==false && !nodeTypeList.Contains(x.DocumentTypeAlias) && x.Level <= 3);
+    bool hasChild = childNodes.Any();
+    var thirdLevelChildNodes = node.Descendants().Where(x => x.IsVisible() && x.Level == 4);
+    bool has3rdLevelChild = thirdLevelChildNodes.Any();
+    string className = string.Empty;
+    string dropdownMenuClassName = string.Empty;
+    string secondLevelMenuClassName = string.Empty;
+    if (hasChild)
+    {
+        className = "class=\"submenu \"";
+        if (has3rdLevelChild)
+        {
+            dropdownMenuClassName = "class=\"submenu-list first-level list-unstyled solutions clearfix  \"";
+            secondLevelMenuClassName = "class=\"col-md-4 expndbl-list \"";
+        }
+        else
+        {
+            dropdownMenuClassName = "class=\"submenu-list first-level list-unstyled industry clearfix gothic-font \"";
+            secondLevelMenuClassName = "";
+        }
+    }
+    else
+    {
+        className = "";
+    }
+
+    var pageUrl = node.Url();
+
+        <li @Html.Raw(className) @Html.Raw(secondLevelMenuClassName)>
+            @if ((node.HasValue("disableLink") && node.GetPropertyValue<bool>("disableLink") == true) || node.DocumentTypeAlias=="category")
+            {
+                <a class="industry_category" href="@pageUrl">
+                @if (node.HasValue("menuAlternateText"))
+                {
+                     @node.GetPropertyValue("menuAlternateText")
+                }
+                else
+                {
+                    @node.Name
+                }
+                @if (hasChild && isMainMenuItem)
+                {
+                    <span class="caret"></span>
+                }
+                else if (hasChild)
+                {
+                    // <i class="fa fa-angle-right"></i>
+                }
+                </a>
+            }
+            else {
+                <a href="@pageUrl">
+                    @if (node.HasValue("menuAlternateText"))
+                    {
+                        @node.GetPropertyValue("menuAlternateText")
+                    }
+                    else
+                    {
+                        @node.Name
+                    }
+            
+
+                @if (hasChild && isMainMenuItem)
+                {
+                    <span class="caret"></span>
+                }
+                else if (hasChild)
+                {
+                    // <i class="fa fa-angle-right"></i>
+                }
+                </a>
+            }
+            @if (hasChild)
+            {
+                <ul @Html.Raw(dropdownMenuClassName)>
+                    @if(has3rdLevelChild)
+                    {
+                        @Print3rdLevelMenu(childNodes)
+                    }
+                    else
+                    {
+                        foreach (var child in childNodes)
+                        {
+                            @PrintMenu(child,false)
+                        }
+                    }
+                </ul>
+            }
+
+        </li>
+    }
+@helper Print3rdLevelMenu(IEnumerable<IPublishedContent> nodes)
+{
+    
+    foreach (var node in nodes)
+    {
+        var childNodes = node.Children.Where(x => x.IsVisible());
+        bool hasChild = childNodes.Any();
+        <li class="col-md-4 expndbl-list">
+            <a href="javascript:void(0)" class="bck-to-menu hidden clr-drk-blu" aria-label="Back to menu"><span class="fa fa-caret-left"></span>&nbsp;&nbsp;Back to Menu</a>
+            <div class="h3">
+                @if ((node.HasValue("disableLink") && node.GetPropertyValue<bool>("disableLink") == true) || node.DocumentTypeAlias=="category")
+                {
+                    <a class="industry_category clr-orange" href="@node.Url">
+                    @if (node.HasValue("menuAlternateText"))
+                    {
+                            @node.GetPropertyValue("menuAlternateText")
+                    }
+                    else
+                    {
+                        @node.Name
+                    }
+                    
+                    </a>
+                }
+                else {
+                    <a class="clr-orange" href="@node.Url">
+                        @if (node.HasValue("menuAlternateText"))
+                        {
+                            @node.GetPropertyValue("menuAlternateText")
+                        }
+                        else
+                        {
+                            @node.Name
+                        }
+            
+
+                    @*@if (hasChild)
+                    {
+                        <span class="caret"></span>
+                    }*@
+                    </a>
+                }
+            </div>
+            @{
+                var objn = from IPublishedContent nd in childNodes
+                            group nd by (nd.HasProperty("productType") ? nd.GetProperty("productType").Value : Umbraco.Field("#DefaultProductType").ToString()) into prdctgrp
+                            select new { key = prdctgrp.Key, List = prdctgrp };
+                           
+                foreach (var k in objn)
+                {
+                    string expandClass= (k.key==null || k.key==String.Empty)?"":"expand";
+                    if(k.key!=null && k.key!=string.Empty)
+                    {
+                     <div class="h4 hidden-xs hidden-sm"><a class="clr-grey">@k.key</a><span class="iconbg"></span></div>
+                    }
+                    <ul class="list-unstyled second-level @expandClass">
+                        @if(k.key!=null && k.key!=string.Empty)
+                        {
+                            <div class="h4 hidden-lg hidden-md"><a class="clr-grey">@k.key</a></div>
+                        }
+                        @foreach (IPublishedContent s in k.List)
+                        {
+                            if (!s.HasProperty("disableClick") || (s.GetPropertyValue<bool>("disableClick") == false))
+                            {
+                                <li><a href="@s.Url">@s.Name</a></li>
+                            }
+                            else
+                            {
+                                <li><a style="pointer-events: none;" href="@s.Url">@s.Name</a></li>
+                            }
+
+                        }
+                    </ul>
+                }
+            }
+        </li>
+    }
+}

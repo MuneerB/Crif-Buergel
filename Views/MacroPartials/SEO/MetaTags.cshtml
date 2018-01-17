@@ -1,0 +1,79 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using CrifAustria.Utils
+@{
+    var domains = umbraco.library.GetCurrentDomains(Model.Content.AncestorOrSelf(1).Id);
+    var homeNodes = Umbraco.TypedContentAtRoot().ToList();
+    string url = Common.GetSiteDomainName();
+    string pageurl = "";
+    foreach (var domain in domains)
+    {
+        if (domain.Name.Contains("https://"))
+        {
+            Uri uri = new Uri(domain.Name);
+            int defaultPort = Request.IsSecureConnection ? 443 : 80;
+            url = uri.Scheme + System.Uri.SchemeDelimiter + uri.Host + (uri.Port != defaultPort ? ":" + uri.Port : "");
+        }
+    }
+    if (Model != null)
+    {
+        string browserTitle, metaDescription="", socialMediaTitle, socialMediaDescription;
+
+        if (Model.Content.HasValue("browserTitle"))
+        {
+            browserTitle = Umbraco.RenderMacro("PropertyTranslation", new { Property = "browserTitle" }).ToString();
+        }
+        else
+        {
+            browserTitle = (Model.Content.HasValue("websiteName", true) ? Model.Content.Name + Html.Raw(" - ") + Model.Content.GetPropertyValue<string>("websiteName", true) : Model.Content.Name);
+        }
+        if (Model.Content.HasValue("metaDescription"))
+        {
+            metaDescription = Umbraco.RenderMacro("PropertyTranslation", new { Property = "metaDescription" }).ToString();
+        }
+        else if (Model.Content.HasValue("socialMediaDescription"))
+        {
+            socialMediaDescription = Umbraco.RenderMacro("PropertyTranslation", new { Property = "socialMediaDescription" }).ToString();
+        }
+        else
+        {
+            socialMediaTitle = Umbraco.RenderMacro("PropertyTranslation", new { Property = "socialMediaTitle" }).ToString();
+        }
+        <title>@browserTitle</title>
+        if (!string.IsNullOrEmpty(metaDescription))
+        {
+            <meta name="description" content="@metaDescription" /> }
+        if (Model.Content.HasValue("metaKeywords", true))
+        {
+            <meta name="keywords" content="@Umbraco.RenderMacro(" PropertyTranslation", new {Property="metaKeywords" })" /> }
+        if (Model.Content.HasValue("socialMediaTitle"))
+        {
+            socialMediaTitle = Umbraco.RenderMacro("PropertyTranslation", new { Property = "socialMediaTitle" }).ToString();
+        }
+        else
+        {
+            socialMediaTitle = browserTitle;
+        }
+        <meta property="og:title" content="@socialMediaTitle" />
+
+        if (Model.Content.HasValue("socialMediaDescription"))
+        {
+            socialMediaDescription = Umbraco.RenderMacro("PropertyTranslation", new { Property = "socialMediaDescription" }).ToString();
+        }
+        else
+        {
+            socialMediaDescription = Umbraco.RenderMacro("PropertyTranslation", new { Property = "socialMediaDescription" }).ToString();
+        }
+        if (!string.IsNullOrEmpty(socialMediaDescription))
+        {
+            <meta property="og:description" content="@socialMediaDescription" /> }
+        if (Model.Content.HasValue("socialMediaImage"))
+        {
+            var image = Umbraco.TypedMedia(Umbraco.RenderMacro("PropertyTranslation", new { Property = "socialMediaImage" }));
+            if (image != null && !string.IsNullOrEmpty(image.Url))
+            {
+                <meta property="og:image" content="@url@(image.Url)" />
+            }
+        }
+        <meta property="og:url" content="@(url + Model.Content.Url)" />
+    }
+}

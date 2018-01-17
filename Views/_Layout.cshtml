@@ -1,0 +1,212 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = null;
+   var homePage = CurrentPage.AncestorsOrSelf(1).First();
+	Umbraco.RenderMacro("ExternalRedirect");
+	var cookieText = System.Text.RegularExpressions.Regex.Replace(homePage.cookieBannerText.ToString(), @"[\r\n\x00\x1a\\'""]", @"\$0");
+	string[] myCookies = Request.Cookies.AllKeys;
+    if (Request.Cookies["cb-enabled"] == null)
+    {
+           foreach (string cookie in myCookies)
+           {
+               Response.Cookies[cookie].Expires = DateTime.Now.AddDays(-1);
+           }
+		Session.Abandon();
+    }
+	if (Request.RawUrl.ToLower().Contains("lang="))
+    {
+        var culture = Model.Content.GetCulture().TwoLetterISOLanguageName.ToString();
+        var lang = Request.Params["lang"];
+        if (lang.Contains(","))
+        {
+            lang = lang.Split(',').Last();
+        }
+        if(lang==culture)
+        {
+            Response.RedirectPermanent(Request.Path);
+        }
+        else
+        {
+            Response.RedirectPermanent("/" + lang + Request.Path);
+        }
+    }
+
+}
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+    Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="author" content="Crif Austria">
+    @if ((Request.Url.Host == "www.crif.at") || (Request.Url.Host == "crif.at"))
+    {
+    <meta name="robots" content="noindex,nofollow">
+    }
+    else
+    {
+    <meta name="robots" content="nofollow">
+    }
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    @Umbraco.RenderMacro("MetaTags")
+    <!-- Favicons and app icons -->
+    <link rel="shortcut icon" href="/images/icons/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/images/icons/android-chrome-192x192.png" sizes="192x192">
+    <meta name="msapplication-square70x70logo" content="/images/icons/smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="/images/icons/mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="/images/icons/widetile.png" />
+    <meta name="msapplication-square310x310logo" content="/images/icons/largetile.png" />
+    <!-- Styles -->
+    <link rel="stylesheet" media="screen" href="/css/styles.css" />
+    <link rel="stylesheet" media="screen" href="/css/custom.css" />
+    <link rel="stylesheet" media="screen" href="/css/update.css" />
+    <link rel="stylesheet" media="screen" href="/css/updated-styles.css" />
+    <link rel="stylesheet" media="print" href="/css/print.css" />
+    <link rel="stylesheet" media="screen" href="/css/mediaelementplayer.css" />
+    <link rel="stylesheet" media="screen" href="/css/mejs-skins.css" />
+    <script src="/scripts/lib/jquery-2.1.1.min.js"></script>
+    @RenderSection("css", required: false)
+    @if ((Request.Url.Host == "www.crif.at") || (Request.Url.Host == "www.crif.at"))
+    {
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MSSMND');</script>
+    <!-- End Google Tag Manager -->
+    }
+</head>
+
+<body>
+	@if ((Request.Url.Host == "www.crif.at") || (Request.Url.Host == "www.crif.at"))
+    {
+    <!-- Google Tag Manager (noscript)-->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-MSSMND"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript)-->
+    }
+    <!-- Header -->
+    <header id="main-header" class="@(CurrentPage.Id == homePage.Id ? " homepage" : "" )">
+        @Umbraco.RenderMacro("PrintHeader")
+        <div class="container no-side-padding">
+            <div class="inner-container">
+                <section class="top clearfix">
+                    @Umbraco.RenderMacro("SiteLogo")
+                    <!-- Mobile nav toggler -->
+                    <section class="navbar-default pull-right">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </section>
+                    <!-- Top nav -->
+                    @Umbraco.RenderMacro("TopMenuNavigation")
+            </div>
+            <!-- Main nav -->
+            <nav class="main-nav navbar-collapse collapse" id="main-nav">
+                @{
+                if (Model.Content.DocumentTypeAlias == "consumerInternal")
+                {
+                @Umbraco.RenderMacro("MainMenuNavigationKonsumenten")
+                }
+                else
+                {
+                @Umbraco.RenderMacro("MainMenuNavigation");
+                }
+                }
+                <!-- Mobile extra navigation -->
+                <section class="hidden-md hidden-lg mobile-nav">
+                    @Umbraco.RenderMacro("MobileTopMenuNavigation")
+                    @*div class="sbscrb-btn text-center">
+                        <a href="@Umbraco.Field(" #urlScheduleAConsultation")" class="btn btn-orange">@Umbraco.Field("#scheduleConsultation") <i class="fa fa-caret-right"></i></a>
+                    </div>*@
+                </section>
+            </nav>
+        </div>
+        <!-- Search section -->
+		
+        @Umbraco.RenderMacro("SearchBox")
+    </header>
+    @RenderBody()
+    <!-- Bottom contents and footer -->
+    @Umbraco.RenderMacro("FooterBoxes")
+    <!-- Main footer -->
+    <footer id="main-footer">
+        @Umbraco.RenderMacro("Footer")
+    </footer>
+    <input id="subjectForEmailSharing" type="hidden" value="@Umbraco.RenderMacro("PropertyTranslation", new {Property="subjectForEmailSharing"})" />
+    <!-- Scripts -->
+    <script src="/scripts/lib/jquery-ui.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="/scripts/bootstrap.js"></script>
+    <script src="/scripts/jquery.bxslider.min.js"></script>
+    <script src="/scripts/owl.carousel.min.js"></script>
+    <script src="/scripts/wow.min.js"></script>
+    <script src="/scripts/jquery-validation/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="/scripts/jquery-validation/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
+    <script src="/scripts/jquery.dotdotdot.min.js"></script>
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/script.js"></script>
+    <script src="/scripts/jquery.shapeshift.js"></script>
+    <script src="/scripts/jquery.touch-punch.min.js"></script>
+    @if (Request.Cookies["cb-enabled"] != null)
+    {
+    <script src="/scripts/lib/htm5player.js"></script>
+    }
+    <script src="/scripts/lib/jquery.cookiebar.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(window).on("load", function () {
+            var clearThis = setInterval(function () {
+                $("style").remove();
+                $(".cta_button > span")
+                    .css({
+                        "color": "#000",
+                        'font-size': '13px',
+                        'font-weight': 'bold'
+                    })
+                    .addClass('cta_span btn btn-warning');
+            }, 1);
+            setTimeout(function () { clearInterval(clearThis); }, 4000);
+        });
+        (function ($) {
+            $(document).ready(function () {
+                if ('@Html.Raw(cookieText)' != "") {
+                    $.cookieBar({
+                        message: '@Html.Raw(cookieText)',
+                        acceptButton: true,
+                        acceptText: '<span class="search-icon">X</span>' //Text on accept/enable button
+                    });
+                }
+            });
+        })(jQuery);
+    </script>
+    @RenderSection("js", required: false)
+
+</body>
+
+</html>

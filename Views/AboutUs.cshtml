@@ -1,0 +1,15 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "Pages.cshtml";
+}
+			
+			@Umbraco.RenderMacro("InnerBanner")
+			@(Model.Content.GetGridHtml(Html, "bodyContent"))
+            <section class="boxes uber-uns-newsbox clearfix lrg-sprtr-top">
+                <div class="container no-side-padding">
+                    @Umbraco.RenderMacro("HomeNewsBoxes")
+                </div>
+            </section>
+@section innerJs{
+
+}

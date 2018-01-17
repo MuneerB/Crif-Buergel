@@ -1,0 +1,201 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using CrifAustria.Utils;
+@{
+    var home = Model.Content.AncestorOrSelf(1);
+    var childNodes = home.Children.Where(x => x.IsVisible());
+    <ul class="nav navbar-nav">
+        @foreach (var child in childNodes)
+        {
+            @PrintMenu(child, true)
+            @*<li>
+                <ul class="nav navbar-nav nav-right">
+                    @Umbraco.RenderMacro("Login")
+                    @Umbraco.RenderMacro("WorldWideLocation")
+                </ul>
+            </li>*@
+        }
+    </ul>
+}
+
+@helper PrintMenu(IPublishedContent page, bool isMainMenuItem = false)
+{
+
+    string[] nodeTypeList = { "newsSingle", "successSingle", "standardPageWithSideMenu" };
+    var selectedLanguage = RenderPage("~/macroScripts/SelectedLanguage.cshtml").ToString().Trim();
+
+    var childNodes = page.Children.Where(x => x.IsVisible() && x.GetPropertyValue("umbracoNaviHide") != null
+        && x.GetPropertyValue<bool>("umbracoNaviHide") == false && !nodeTypeList.Contains(x.DocumentTypeAlias) && x.Level <= 3);
+    bool hasChild = childNodes.Any();
+    var thirdLevelChildNodes = page.Descendants().Where(x => x.IsVisible() && x.Level == 4);
+    bool has3rdLevelChild = thirdLevelChildNodes.Any();
+    string className = string.Empty;
+    string dropdownMenuClassName = string.Empty;
+    string secondLevelMenuClassName = string.Empty;
+    if (hasChild)
+    {
+        className = "class=\"submenu \"";
+        if (has3rdLevelChild)
+        {
+            dropdownMenuClassName = "class=\"submenu-list first-level list-unstyled solutions clearfix  \"";
+            secondLevelMenuClassName = "class=\"col-md-4 expndbl-list \"";
+        }
+        else
+        {
+            dropdownMenuClassName = "class=\"submenu-list first-level list-unstyled industry clearfix gothic-font \"";
+            secondLevelMenuClassName = "";
+        }
+    }
+    else
+    {
+        className = "";
+    }
+    var node = CrifAustria.Utils.Common.getTranslatedPage(page);
+    var pageUrl = CrifAustria.Utils.Common.getTranslatedUrl(node.Url());
+    if (selectedLanguage!="en" || page.Id != node.Id)
+    {
+        <li @Html.Raw(className) @Html.Raw(secondLevelMenuClassName)>
+            @if ((node.HasValue("disableLink") && node.GetPropertyValue<bool>("disableLink") == true) || node.DocumentTypeAlias == "category")
+            {
+                <a class="industry_category" href="@pageUrl">
+                    @if (node.HasValue("menuAlternateText"))
+                    {
+                        @node.GetPropertyValue("menuAlternateText")
+                    }
+                    else
+                    {
+                        @node.Name
+                    }
+                    @if (hasChild && isMainMenuItem)
+                    {
+                        <span class="caret"></span>
+                    }
+                    else if (hasChild)
+                    {
+                        // <i class="fa fa-angle-right"></i>
+                    }
+                </a>
+            }
+            else
+            {
+                <a href="@pageUrl" class="@selectedLanguage">
+                    @if (node.HasValue("menuAlternateText"))
+                    {
+                        @node.GetPropertyValue("menuAlternateText")
+                    }
+                    else
+                    {
+                        @node.Name
+                    }
+
+                    @if (hasChild && isMainMenuItem)
+                    {
+                        <span class="caret"></span>
+                    }
+                    else if (hasChild)
+                    {
+                        // <i class="fa fa-angle-right"></i>
+                    }
+                </a>
+            }
+            @if (hasChild)
+            {
+                <ul @Html.Raw(dropdownMenuClassName)>
+                    @if (has3rdLevelChild)
+                    {
+                        @Print3rdLevelMenu(childNodes)
+                    }
+                    else
+                    {
+                        foreach (var child in childNodes)
+                        {
+                            @PrintMenu(child, false)
+                        }
+                    }
+                </ul>
+            }
+        </li>
+}
+}
+@helper Print3rdLevelMenu(IEnumerable<IPublishedContent> nodes)
+{
+var selectedLanguage = RenderPage("~/macroScripts/SelectedLanguage.cshtml").ToString().Trim();
+foreach (var node in nodes)
+{
+    var childNodes = node.Children.Where(x => x.IsVisible());
+    bool hasChild = childNodes.Any();
+    var translatedNode = CrifAustria.Utils.Common.getTranslatedPage(node);
+    var translatedNodeUrl = CrifAustria.Utils.Common.getTranslatedUrl(translatedNode.Url);
+    if (translatedNode.Id != node.Id)
+    {
+            <li class="col-md-4 expndbl-list">
+                <a href="javascript:void(0)" class="bck-to-menu hidden clr-drk-blu" aria-label="Back to menu"><span class="fa fa-caret-left"></span>&nbsp;&nbsp;Back to Menu</a>
+                <h3>
+                    @if ((translatedNode.HasValue("disableLink") && translatedNode.GetPropertyValue<bool>("disableLink") == true) || translatedNode.DocumentTypeAlias == "category")
+                    {
+                        <a class="industry_category clr-orange" href="@translatedNodeUrl">
+                            @if (translatedNode.HasValue("menuAlternateText"))
+                            {
+                                @translatedNode.GetPropertyValue("menuAlternateText")
+                            }
+                            else
+                            {
+                                @translatedNode.Name
+                            }
+
+                        </a>
+                    }
+                    else
+                    {
+                        <a class="clr-orange" href="@translatedNodeUrl">
+                            @if (translatedNode.HasValue("menuAlternateText"))
+                            {
+                                @translatedNode.GetPropertyValue("menuAlternateText")
+                            }
+                            else
+                            {
+                                @translatedNode.Name
+                            }
+
+                            @*@if (hasChild)
+                                {
+                                    <span class="caret"></span>
+                                }*@
+                        </a>
+                    }
+                </h3>
+                @{
+                    var objn = from IPublishedContent nd in childNodes
+                               group nd by (nd.HasProperty("productType") ? CrifAustria.Utils.Common.getTranslatedPage(node).GetProperty("productType").Value : Umbraco.Field("#DefaultProductType").ToString()) into prdctgrp
+                               select new { key = prdctgrp.Key, List = prdctgrp };
+
+                    foreach (var k in objn)
+                    {
+                        string expandClass = (k.key == null || k.key == String.Empty) ? "" : "expand";
+                        if (k.key != null && k.key != string.Empty)
+                        {
+                            <h4 class="hidden-xs hidden-sm"><a class="clr-grey">@k.key</a><span class="iconbg"></span></h4>
+                        }
+                        <ul class="list-unstyled second-level @expandClass">
+                            @if (k.key != null && k.key != string.Empty)
+                            {
+                                <h4 class="hidden-lg hidden-md"><a class="clr-grey">@k.key</a></h4>
+                            }
+                            @foreach (IPublishedContent s in k.List)
+                            {
+                                if (!s.HasProperty("disableClick") || (s.GetPropertyValue<bool>("disableClick") == false))
+                                {
+                                    <li><a href="@s.Url">@s.Name</a></li>
+                                }
+                                else
+                                {
+                                    <li><a style="pointer-events: none;" href="@s.Url">@s.Name</a></li>
+                                }
+
+                            }
+                        </ul>
+                    }
+                }
+            </li>
+                        }
+                    }
+}

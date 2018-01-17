@@ -1,0 +1,25 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "Pages.cshtml";
+}
+@Umbraco.RenderMacro("InnerBanner")
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="inner-container">											
+	<!-- content list -->			
+				<section class="article-list-wrapper lrg-sprtr-top">
+					@Umbraco.RenderMacro("HighlightedNewsListing")
+					@Umbraco.RenderMacro("NewsFilter")
+                    <div class="post-content-wrapper event-listing"> 
+					    @Umbraco.RenderMacro("NewsFilterAjaxHandler")	
+                    </div>						
+				</section>
+                <input type="text" id="txtNodId" value="@Model.Content.Id" style="display:none;" />							
+			</div>
+		</div>
+	</div>
+</section>
+@section innerJs{
+	<script type="text/javascript" src="/scripts/ajax/newsAjaxHandler.js"></script>
+}

@@ -1,0 +1,59 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using RJP.MultiUrlPicker.Models
+@using Archetype.Models;
+@using CrifAustria.Utils;
+@{
+    
+    <nav class="pull-right top-nav hidden-sm hidden-xs">
+        <ul class="nav navbar-nav">
+                
+            @*PrintQuickLinks("leftHeaderQuickLinks")*@
+			<li>@Umbraco.RenderMacro("LanguageSelector")</li>
+            <li><a href="#" aria-label="Search" class="search search-toggler"><span class="fa fa-search"></span></a></li>
+            @PrintQuickLinks("rightHeaderQuickLinks")
+           <li>
+                <ul class="nav navbar-nav nav-right">
+					@Umbraco.RenderMacro("Login")
+                    @Umbraco.RenderMacro("WorldWideLocation")
+                </ul>
+            </li>
+        </ul>
+    </nav>
+}
+@helper PrintQuickLinks(string property)
+{
+    var home = Model.Content.AncestorOrSelf(1);
+    home = Common.getTranslatedPage(home);
+    if (home.HasValue(property))
+    {
+        var quickLinks = home.GetPropertyValue<ArchetypeModel>(property);
+        if (quickLinks!=null&&quickLinks.Any())
+        {
+            <li>
+                <ul class="nav navbar-nav">
+                    @foreach(var links in quickLinks)
+        {
+            var linkUrl = links.GetValue<MultiUrls>("link");
+            var linkType = links.GetValue<string>("type");
+            //string linkType=umbraco.library.GetPreValueAsString(Convert.ToInt32(links.GetValue<string>("type")));
+            if (linkType == "Hyper Link")
+            {
+                if(linkUrl!=null && linkUrl.Any())
+                {
+                    var content = Umbraco.TypedContent(linkUrl.FirstOrDefault().Id);
+                    var menutitle = content.HasValue("menuAlternateText") ? content.GetPropertyValue<string>("menuAlternateText") : content.Name;
+                                <li><a href="@linkUrl.FirstOrDefault().Url">@menutitle</a></li>
+
+                            }
+            }
+            else if(linkType=="Button")
+            {
+                            <li class="no-left-sprtr"><a href="@linkUrl.FirstOrDefault().Url" class="btn btn-orange">@linkUrl.FirstOrDefault().Name</a></li>
+                        }
+}
+					
+                </ul>
+            </li>
+        }
+    } 
+}

@@ -1,0 +1,180 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+    var pageId = 0;
+    string pdctTag = "", pdctSinglePhase = "";
+    if (Request["type"] == null)
+    {
+        pageId = Model.Content.Id;
+    }
+    else if (Request["type"] != null && Request["type"] == "productlist")
+    {
+        if (Request["pdctTag"] != null && Request["pdctTag"] != "")
+        {
+            pageId = int.Parse(Request["pdctTag"].ToString());
+        }
+        else
+        {
+            pageId = Model.Content.Id;
+        }
+    var industryNode = Umbraco.TypedContent(pageId);
+    IEnumerable<IPublishedContent> solutionsNd = industryNode.AncestorOrSelf(1).Descendants("productsHome");
+    var currentPage = Model.Content;
+    <ul class="submenu-list link-lists  first-level list-unstyled solutions clearfix">
+        @foreach (IPublishedContent product in solutionsNd)
+        {
+            <li class="col-md-4 expndbl-box-list">
+                <h3>
+                    <span class="clr-orange">
+                        @product.Name <span class="iconbg hidden-sm hidden-lg hidden-md pull-right"></span>
+                    </span>
+                </h3>
+
+                <div class="box-expand  accord-mob-expand">
+
+                    @{var childNodes = product.Children().Where(x => x.IsVisible());
+                      if (childNodes.Any())
+                      {
+                          childNodes = childNodes.Where(x => x.HasValue("industryTags")).ToList();
+                          pdctTag = pageId.ToString();
+                          //childNodes = childNodes.Where( x => x.HasValue("industryTags")).ToList();
+                          childNodes = childNodes.Where( x => x.GetPropertyValue<string>("industryTags")
+                        .Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Contains(pdctTag)).ToList();
+                          childNodes = childNodes.OrderBy(x => x.SortOrder).ToList();
+                          if (Request["pdctSinglePhase"] != null && Request["pdctSinglePhase"] != "" && Request["pdctSinglePhase"] != "null")
+                              {
+                                  pdctSinglePhase = Request["pdctSinglePhase"].ToString();
+                                  childNodes = childNodes.Where(x => x.HasValue("frameworkPhaseTags")).ToList();
+                                  if (pdctSinglePhase != "")
+                                  {
+                                      childNodes = childNodes.Where(x => x.GetPropertyValue<string>("frameworkPhaseTags")
+                                      .Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Contains(pdctSinglePhase)).ToList();
+                                  }
+
+                              }
+                      }
+                    var objn = from IPublishedContent nd in childNodes
+                            group nd by (nd.HasProperty("productType") ? nd.GetProperty("productType").Value : Umbraco.Field("#DefaultProductType").ToString()) into prdctgrp
+                            select new { key = prdctgrp.Key, List = prdctgrp };
+                    foreach (var k in objn.Where(x => x.key != Umbraco.Field("#DefaultProductType").ToString()))
+                    {
+                        <ul class="list-unstyled second-level">
+                            @if (@k.key == "Packaged Modules" || @k.key == "Cloud")
+                            {
+                                <h4><a class="clr-grey"><span class="clr-orange" style="display:block">@k.List.FirstOrDefault().GetPropertyValue("productTypeSub"): </span>@k.key </a></h4>
+                            }
+                            else
+                            {
+                                <h4><a class="clr-grey">@k.key</a></h4>
+                            }
+                           @foreach (IPublishedContent s in k.List)
+                           {
+
+                               if (!s.HasProperty("disableClick") || (s.GetPropertyValue<bool>("disableClick") == false))
+                               {
+                                <li><a href="@s.Url">@s.Name</a></li>
+                               }
+                               else
+                               {
+                                <li><a style="pointer-events: none;" href="@s.Url">@s.Name</a></li>
+                               }
+                           }
+                        </ul>
+                    }
+                    foreach (var k in objn.Where(x => x.key == Umbraco.Field("#DefaultProductType").ToString()))
+                    {
+                        <ul class="list-unstyled second-level">
+                            @if (@k.key == "Packaged Modules" || @k.key == "Cloud")
+                            {
+                                <h4><a class="clr-grey"><span class="clr-orange" style="display:block">@k.List.FirstOrDefault().GetPropertyValue("productTypeSub"): </span>@k.key </a></h4>
+                            }
+                            else
+                            {
+                                <h4><a class="clr-grey">@k.key</a></h4>
+                            }
+                            @foreach (IPublishedContent s in k.List)
+                            {
+
+                                if (!s.HasProperty("disableClick") || (s.GetPropertyValue<bool>("disableClick") == false))
+                                {
+                                    <li><a href="@s.Url">@s.Name</a></li>
+                                }
+                                else
+                                {
+                                    <li><a style="pointer-events: none;" href="@s.Url">@s.Name</a></li>
+                                }
+                            }
+                        </ul>
+                    }
+                }           
+            </div>
+        </li>
+     }
+    </ul>
+}
+else if (Request["type"] != null && Request["type"] == "successlist")
+    {
+        if (Request["pdctTag"] != null && Request["pdctTag"] != "")
+        {
+            pageId = int.Parse(Request["pdctTag"].ToString());
+        }
+        else
+        {
+            pageId = Model.Content.Id;
+        }
+        var industryNode = Umbraco.TypedContent(pageId);
+        IEnumerable<IPublishedContent> childNodes = industryNode.AncestorOrSelf(1).Descendants("successSingle");
+        var currentPage = Model.Content;
+        if (childNodes.Any())
+        {
+            childNodes = childNodes.Where(x => x.HasValue("industryTags")).ToList();
+            pdctTag = Request["pdctTag"].ToString();
+            //childNodes = childNodes.Where( x => x.HasValue("industryTags")).ToList();
+            childNodes = childNodes.Where(x => x.GetPropertyValue<string>("industryTags")
+          .Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Contains(pdctTag)).ToList();
+            childNodes = childNodes.OrderBy(x => x.SortOrder).ToList();
+            if (Request["pdctSinglePhase"] != null && Request["pdctSinglePhase"] != "" && Request["pdctSinglePhase"] != "null")
+            {
+                pdctSinglePhase = Request["pdctSinglePhase"].ToString();
+                childNodes = childNodes.Where(x => x.HasValue("frameworkPhaseTags")).ToList();
+                if (pdctSinglePhase != "")
+                {
+                    childNodes = childNodes.Where(x => x.GetPropertyValue<string>("frameworkPhaseTags")
+                    .Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Contains(pdctSinglePhase)).ToList();
+                }
+
+            }
+        }
+            <ul class="list-unstyled single-slider">
+                    @foreach (var news in childNodes)
+                    {
+
+						<li class="clearfix">
+                            <article class="common-article-strctr">
+                                @if (news.HasValue("image") != null)
+                                {
+                                    var newsImage = Umbraco.TypedMedia(news.GetPropertyValue("image"));
+                                    <figure class="article-figure col-xs-3">
+                                        <a class="resize-image article-image"><img src="@newsImage.Url" class="img-responsive" /></a>
+                                    </figure>
+                                }
+                                <div class="article-content col-xs-9">
+                                    @if (news.HasProperty("title"))
+                                    {
+                                        <h4><a href="@news.Url" class="clr-drk-blu">@news.GetPropertyValue("title") </a></h4>
+                                    }
+                                    @if(news.HasProperty("shortDescription"))
+                                    {
+                                        <div class="article-caption"><p>@news.GetPropertyValue("shortDescription")</p></div>
+                                    }
+                                    <a href="@news.Url" class="link clr-drk-blu">Read More <i class="fa fa-caret-right"></i></a>
+
+                                </div>
+                            </article>
+                        </li>
+
+                    }
+                </ul>
+}
+}
+
+    

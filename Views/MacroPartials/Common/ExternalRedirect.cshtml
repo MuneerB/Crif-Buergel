@@ -1,0 +1,6 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using CrifAustria.Utils;
+@if (Model != null && Common.getTranslatedPage(Model.Content).HasValue("externalRedirect"))
+{
+  Response.Redirect( Model.Content.GetPropertyValue<string>("externalRedirect"));
+}

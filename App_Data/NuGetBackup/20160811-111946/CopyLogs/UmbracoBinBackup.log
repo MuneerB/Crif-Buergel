@@ -1,0 +1,41 @@
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : 11 August 2016 11:19:46
+   Source : C:\77Projects\CrifAustria\CrifAustria\bin\
+     Dest : C:\77Projects\CrifAustria\CrifAustria\App_Data\NuGetBackup\20160811-111946\bin\
+
+    Files : *.*
+	    
+  Options : *.* /S /E /DCOPY:DA /COPY:DAT /R:1000000 /W:30 
+
+------------------------------------------------------------------------------
+
+	                  11	C:\77Projects\CrifAustria\CrifAustria\bin\
+	    New File  		   45416	Microsoft.Web.Infrastructure.dll  0%  100%  
+	    New File  		  374784	Newtonsoft.Json.dll  0%   34%   69%  100%  
+	    New File  		  168544	System.Net.Http.Formatting.dll  0%   77%  100%  
+	    New File  		  138328	System.Web.Helpers.dll  0%   94%  100%  
+	    New File  		  323168	System.Web.Http.dll  0%   40%   81%  100%  
+	    New File  		   73312	System.Web.Http.WebHost.dll  0%  100%  
+	    New File  		  506976	System.Web.Mvc.dll  0%   25%   51%   77%  100%  
+	    New File  		  264792	System.Web.Razor.dll  0%   49%   98%  100%  
+	    New File  		   41048	System.Web.WebPages.Deployment.dll  0%  100%  
+	    New File  		  204376	System.Web.WebPages.dll  0%   64%  100%  
+	    New File  		   39512	System.Web.WebPages.Razor.dll  0%  100%  
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :         1         0         0         0         0         0
+   Files :        11        11         0         0         0         0
+   Bytes :    2.07 m    2.07 m         0         0         0         0
+   Times :   0:00:00   0:00:00                       0:00:00   0:00:00
+
+
+   Speed :           103821714 Bytes/sec.
+   Speed :            5940.726 MegaBytes/min.
+   Ended : 11 August 2016 11:19:46
+

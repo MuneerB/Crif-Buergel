@@ -1,0 +1,84 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+    var currentModel = Model.Content;
+	var recentArticlesTitle=Umbraco.Field("#Most recent articles", altText: "Most recent articles").ToString();
+    if(Model.Content.DocumentTypeAlias=="newsSingle")
+    {
+        currentModel = Model.Content.Ancestors("NewsAndEventsMainHome").FirstOrDefault();
+		recentArticlesTitle=Umbraco.Field("#Other recent articles", altText: "Other recent articles").ToString();
+    }
+	var newsItemSearchPlaceholder="";
+	if(currentModel.HasValue("newsItemSearchPlaceholder"))
+	{
+		newsItemSearchPlaceholder=currentModel.GetPropertyValue<string>("newsItemSearchPlaceholder");
+	}
+	else
+	{
+		newsItemSearchPlaceholder="Type here something to search...";
+	}
+    List<string> excludedList = new List<string> { "uDateFoldersyFolderYear", "uDateFoldersyFolderMonth", "uDateFoldersyFolderDay" };
+    var years = currentModel.Descendants("newsSingle").Select((x => x.GetPropertyValue<DateTime>("publicationDate"))).ToList().DistinctBy(x => x.Year);
+    var RPandEvents = currentModel.Children().Where(x => !excludedList.Contains(x.DocumentTypeAlias));
+    <div class="filter lrg-sprtr-top">
+		<div class="clearfix">
+			<h5 class="pull-left title">@recentArticlesTitle</h5>
+				<section class="filter-form pull-right">
+					<form action="" class="form">        
+                        @if (years.Any())
+                        {
+                            <select name="" id="filtertagmob" class="form-control hidden-lg hidden-md hidden-sm">
+                                    <option value="-1">@Umbraco.Field("#All", altText: "All")</option>
+                                    @foreach (var node in RPandEvents)
+                                    {
+                                        if (node.DocumentTypeAlias == "standardPageWithSideMenu")
+                                        {
+                                            <option value="@node.Url" class="sing-page">@node.Name</option>
+                                        }
+                                        else
+                                        {
+					                        <option value="@node.Id" >@node.Name</option>
+                                        }
+                                    }
+                            </select>
+                            <select name="" id="newsfilter" class="form-control">
+                                    <option value="null">@Umbraco.Field("#Year", altText: "Year")</option>
+                                    <option value="-1">@Umbraco.Field("#All", altText: "All")</option>
+                                    @foreach (var year in years.OrderByDescending(x=>x.Year))
+                                    {
+                                        <option value="@year.Year">@year.Year</option>
+                                    }
+                            </select>
+					    }
+                    </form>
+                <form action="" method="GET" class="form search-form hidden-lg hidden-md hidden-sm">
+						<input type="text" name="txtfiltersearchmob" class="form-control" placeholder="@newsItemSearchPlaceholder" />
+						<button id="filtersearchmob" class="submit-button"><i class="fa fa-search"></i></button>
+				</form>
+				</section>
+                <section class="article-filter pull-right hidden-xs">
+				    <ul class="list-unstyled filter-list"  data-id="@Model.Content.Id">
+                        <li class="filtertag active"><a id="all" href="">@Umbraco.Field("#All", altText: "All")</a></li>
+                        @foreach (var node in RPandEvents)
+                        {
+                            if (node.DocumentTypeAlias == "standardPageWithSideMenu")
+                            {
+                                <li><a id="@node.Id" href="@node.Url">@node.Name</a></li>
+                            }
+                            else
+                            {
+					            <li class="filtertag"><a id="@node.Id" href="">@node.Name</a></li>
+                            }
+                        }
+					    <li class="search-filter-wrapper"><a class="search-fitler" href="javascript:void(0)"><i class="fa fa-search"></i>
+					    <section class="form search-form">
+					    <input type="text" name="txtfiltersearch" class="form-control bg-cyan" placeholder="@newsItemSearchPlaceholder" />
+						<button id="filtersearch" class="submit-button"><i class="fa fa-search"></i></button>
+					    </section>
+					    </a>
+					    </li>
+				    </ul>
+				</section>
+        </div>
+    </div>
+}
+

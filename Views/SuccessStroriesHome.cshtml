@@ -1,0 +1,100 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "Pages.cshtml";
+    var IndustryNode = Umbraco.TypedContent(Umbraco.GetDictionaryValue("IndustryCategoryNodeID"));
+    var childNodes = IndustryNode.Children.Where(x => x.IsVisible()).OrderBy("sortOrder");
+}
+@Umbraco.RenderMacro("InnerBanner")
+<div class="container">
+        <div class="row">
+            <div class="inner-container no-side-padding">
+<div class="cd-tabs">
+    <div class="content-tab aside-tab abv-top">
+    <nav>
+        <!-- Nav tabs -->
+        <ul class="cd-tabs-navigation">
+            @foreach(var node in childNodes)
+            {
+                string listClass = (childNodes.IndexOf(node) == 0) ? "selected" : "normal";
+                string anchorClass = (childNodes.IndexOf(node) == 0) ? "class=\"selected\"" : "";
+                var tab_name=node.HasValue("menuLabel") ? node.GetPropertyValue("menuLabel") : node.Name;
+                <li class="@listClass">
+                    <a href="#@node.Id" data-content="@tab_name" @Html.Raw(anchorClass)>
+                        @tab_name
+                    </a>
+                </li>
+            }
+        </ul>
+    </nav>
+    <ul class="cd-tabs-content" data-id="@Model.Content.Id">
+        @foreach(var node in childNodes)
+        {
+            string anchorClass = (childNodes.IndexOf(node) == 0) ? "class=\"selected\"" : "";
+            var tab_name = node.HasValue("menuLabel") ? node.GetPropertyValue("menuLabel") : node.Name;
+            <li data-content="@tab_name" @Html.Raw(anchorClass)>
+                @Umbraco.RenderMacro("TestimonialSlider", new { industryNodeId=node.Id })
+                <section  data-id="@node.Id" class="article-list-wrapper lrg-sprtr-top">
+                    @Umbraco.RenderMacro("SuccessFilter")
+                    <div class="post-content-wrapper event-listing">
+                        @Umbraco.RenderMacro("SuccessFilterAjaxHandler", new { industryNodeId=node.Id })
+                    </div>
+            </section>
+            </li>
+         }
+    </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+@*<div role="tabpanel" class="content-tab aside-tab abv-top">
+    <div class="container">
+        <div class="row">
+            <div class="inner-container no-side-padding">
+                <!-- Nav tabs -->
+
+                <ul class="nav nav-tabs" role="tablist">
+                    @foreach(var node in childNodes)
+                        {
+                            string active = (childNodes.IndexOf(node) == childNodes.Count() - 1) ? "active" : "";
+                            <li role="presentation" class="@active col-xs-2 pull-right">
+                                <a href="#@node.Id" aria-controls="@node.Id" role="tab" data-toggle="tab">
+                                    @(node.HasValue("menuLabel") ? node.GetPropertyValue("menuLabel") : node.Name)
+                                </a>
+                            </li>
+                        }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab panes -->
+    <div class="tab-content" data-id="@Model.Content.Id">
+        @foreach(var node in childNodes)
+        {
+            string active = (childNodes.IndexOf(node) == childNodes.Count() - 1) ? "active" : "";
+            <div role="tabpanel" class="tab-pane @active" id="@node.Id" data-id="@node.Id">
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <div class="inner-container">
+                                @Umbraco.RenderMacro("TestimonialSlider", new { industryNodeId=node.Id })
+                                <section class="article-list-wrapper lrg-sprtr-top">
+                                    @Umbraco.RenderMacro("SuccessFilter")
+                                    <div class="post-content-wrapper event-listing">
+                                        @Umbraco.RenderMacro("SuccessFilterAjaxHandler", new { industryNodeId=node.Id })
+                                    </div>
+                                </section>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+        }
+</div>*@
+@section innerJs{
+	<script type="text/javascript" src="/scripts/ajax/SuccessStoriesAjaxHandler.js"></script>
+}

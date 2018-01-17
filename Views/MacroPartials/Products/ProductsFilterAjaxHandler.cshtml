@@ -1,0 +1,189 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+        var pageId = 0;
+        string pdctTag = "", pdctSinglePhase = "";
+        string test = string.Empty;
+        if (Request["type"] == null)
+        {
+            pageId = Model.Content.Id;
+        }
+        else if(Request["type"] != null && Request["type"] == "productlist")
+        {
+            if (Request["pageId"] != null && Request["pageId"] != "")
+            {
+                pageId = int.Parse(Request["pageId"].ToString());
+            }
+            else
+            {
+                pageId = Model.Content.Id;
+            }
+        }
+        var productsNode = Umbraco.TypedContent(pageId);
+
+        var productSingle = productsNode.Children().Where(x => x.IsVisible());
+        if (Request["pdctTag"] != null || Request["pdctSinglePhase"] != null)
+        {
+            if (Request["pdctTag"] != null && Request["pdctTag"] != "" && Request["pdctTag"] != "null")
+            {
+                productSingle = productSingle.Where(x => x.HasValue("industryTags")).ToList();
+                pdctTag = Request["pdctTag"].ToString();
+                if (pdctTag != "")
+                {
+                    productSingle = productSingle.Where(x => x.GetPropertyValue<string>("industryTags")
+                        .Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Contains(pdctTag)).ToList();
+                    productSingle = productSingle.OrderBy(x => x.SortOrder).ToList();
+                }
+             }
+            if (Request["pdctSinglePhase"] != null && Request["pdctSinglePhase"] != "" && Request["pdctSinglePhase"] != "null")
+            {
+                pdctSinglePhase = Request["pdctSinglePhase"].ToString();
+                productSingle = productSingle.Where(x => x.HasValue("frameworkPhaseTags")).ToList();
+                IEnumerable<IPublishedContent> Nd;
+                if (pdctSinglePhase != "")
+                {
+                    productSingle = productSingle.Where(x => x.GetPropertyValue<string>("frameworkPhaseTags")
+                    .Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Contains(pdctSinglePhase)).ToList();
+                }
+
+            }
+        }
+       
+        <section class="col-sm-9 prdct-list-area">
+            @{
+                if (productSingle.Count() > 0)
+                {
+                    var objn = from IPublishedContent nd in productSingle
+                               group nd by (nd.HasProperty("productType") ? nd.GetProperty("productType").Value : Umbraco.Field("#DefaultProductType").ToString()) into prdctgrp
+                               select new { key = prdctgrp.Key, List = prdctgrp };
+                    if (objn.Count() > 0)
+                          {
+                              foreach (var k in objn.Where(x => x.key != Umbraco.Field("#DefaultProductType").ToString()))
+                              {
+                                    <div class="prdct-list-wrapper">
+                                        <h2 class="clr-orange border-grey-bottom h3">
+                                            @if (k.List.FirstOrDefault().HasValue("productTypeSub"))
+                                            {
+                                                <span class="clr-orange">@k.List.FirstOrDefault().GetPropertyValue("productTypeSub"): </span>@k.key
+                                            }
+                                            else
+                                            {
+                                                @k.key
+                                            }
+                                        </h2>
+                                        <ul class="prdct-list list-unstyled clearfix">
+
+                                            @foreach (var node in k.List)
+                                            {
+                                                <li class="col-sm-6">
+                                                    <article class="prdct-content hidden-xs">
+                                                        @if(node.HasValue("productIcon"))
+                                                        {
+                                                            var productIcon=Umbraco.TypedMedia(node.GetPropertyValue("productIcon"));
+                                                            <img src="@productIcon.Url" alt="" class="icon" />
+                                                        }
+                                                        @if (node.HasValue("productTitle"))
+                                                        {
+                                                            var productTitle = node.GetPropertyValue("productTitle");
+                                                            <h2 class="h4"><a href="@node.Url" class="clr-drk-blu">@productTitle</a></h2>
+                                                        }
+                                                        @if (node.HasValue("productAbstract"))
+                                                        {
+                                                            var productAbstract = node.GetPropertyValue("productAbstract");
+                                                            <p>@umbraco.library.RemoveFirstParagraphTag(productAbstract.ToString())</p>
+                                                        }
+                                                        <a href="@node.Url" rel="nofollow" class="link clr-drk-blu">@Umbraco.Field("#More", altText: "More")<i class="fa fa-caret-right"></i></a>
+                                                    </article>
+                                                    <article class="prdct-content hidden-lg hidden-md hidden-sm">
+                                                        <a href="@node.Url" class="clr-drk-blu">
+                                                            @if(node.HasValue("productIcon"))
+                                                            {
+                                                                var productIcon=Umbraco.TypedMedia(node.GetPropertyValue("productIcon"));
+                                                                <img src="@productIcon.Url" alt="" class="icon" />
+                                                            }
+                                                            @if (node.HasValue("productTitle"))
+                                                            {
+                                                                var productTitle = node.GetPropertyValue("productTitle");
+                                                                <h2 class="h4">@productTitle</h2>
+                                                            }
+                                                            @if (node.HasValue("productAbstract"))
+                                                            {
+                                                                var productAbstract = node.GetPropertyValue("productAbstract");
+                                                                <p>@umbraco.library.RemoveFirstParagraphTag(productAbstract.ToString())</p>
+                                                            }
+                                                        </a>
+                                                     </article>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </div>
+                               }
+                               foreach (var k in objn.Where(x => x.key == Umbraco.Field("#DefaultProductType").ToString()))
+                              {
+                                    <div class="prdct-list-wrapper">
+                                        <h2 class="clr-orange border-grey-bottom h3">
+                                            @if (k.List.FirstOrDefault().HasValue("productTypeSub"))
+                                            {
+                                                <span class="clr-orange">@k.List.FirstOrDefault().GetPropertyValue("productTypeSub"): </span>@k.key
+                                            }
+                                            else
+                                            {
+                                                @k.key
+                                            }
+                                        </h2>
+                                        <ul class="prdct-list list-unstyled clearfix">
+
+                                            @foreach (var node in k.List)
+                                            {
+                                                <li class="col-sm-6">
+                                                    <article class="prdct-content hidden-xs">
+                                                        @if(node.HasValue("productIcon"))
+                                                        {
+                                                            var productIcon=Umbraco.TypedMedia(node.GetPropertyValue("productIcon"));
+                                                            <img src="@productIcon.Url" alt="" class="icon" />
+                                                        }
+                                                        @if (node.HasValue("productTitle"))
+                                                        {
+                                                            var productTitle = node.GetPropertyValue("productTitle");
+                                                            <h2 class="h4"><a href="@node.Url" class="clr-drk-blu">@productTitle</a></h2>
+                                                        }
+                                                        @if (node.HasValue("productAbstract"))
+                                                        {
+                                                            var productAbstract = node.GetPropertyValue("productAbstract");
+                                                            <p>@umbraco.library.RemoveFirstParagraphTag(productAbstract.ToString())</p>
+                                                        }
+                                                        <a href="@node.Url" rel="nofollow" class="link clr-drk-blu">@Umbraco.Field("#More", altText: "More")<i class="fa fa-caret-right"></i></a>
+                                                    </article>
+                                                    <article class="prdct-content hidden-lg hidden-md hidden-sm">
+                                                        <a href="@node.Url" class="clr-drk-blu">
+                                                            @if(node.HasValue("productIcon"))
+                                                            {
+                                                                var productIcon=Umbraco.TypedMedia(node.GetPropertyValue("productIcon"));
+                                                                <img src="@productIcon.Url" alt="" class="icon" />
+                                                            }
+                                                            @if (node.HasValue("productTitle"))
+                                                            {
+                                                                var productTitle = node.GetPropertyValue("productTitle");
+                                                                <h2 class="h4">@productTitle</h2>
+                                                            }
+                                                            @if (node.HasValue("productAbstract"))
+                                                            {
+                                                                var productAbstract = node.GetPropertyValue("productAbstract");
+                                                                <p>@umbraco.library.RemoveFirstParagraphTag(productAbstract.ToString())</p>
+                                                            }
+                                                        </a>
+                                                     </article>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </div>
+                               }
+            
+                          }
+                        }
+                        else
+                        {
+                        <h2 class="text-center">@Umbraco.Field("#SolutionFilterNoResultsFound")</h2>
+                        }
+            }
+</section>
+}

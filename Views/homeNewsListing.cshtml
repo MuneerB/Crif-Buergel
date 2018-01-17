@@ -1,0 +1,90 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@using RJP.MultiUrlPicker.Models
+@using Archetype.Models;
+@{
+    Layout = null;
+    var home = Model.Content.AncestorOrSelf(1);
+    if (Model.Content.HasValue("newsItems"))
+    {
+        string cssClass = "";
+        var excludedDoctypes = new[] { "uDateFoldersyFolderYear", "uDateFoldersyFolderMonth","PRAndEventsHome" };
+        bool isContainChild = false;
+        int count = 6;
+        if (Model.Content.HasValue("noOfItemsToShow"))
+        {
+            count = Model.Content.GetPropertyValue<Int32>("noOfItemsToShow");
+        }
+        // var NodeList = Model.Content.GetPropertyValue<string>("newsItems").Split(',');
+        var nodeListValue = Model.Content.GetPropertyValue<string>("newsItems");
+        var nodeList = nodeListValue.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+        /*check list contains data*/
+        if (nodeList != null && nodeList.Any())
+        {
+            foreach(var nodeItem in nodeList)
+            {
+                var nodeID = Umbraco.TypedContent(nodeItem);
+                if(nodeID.Descendants().Where(x => x.IsVisible() && !excludedDoctypes.Contains(x.DocumentTypeAlias)).Any())
+                {
+                    isContainChild = true;
+                    break;
+                }
+            }
+        }
+        /*check list contains data*/
+
+
+        if (isContainChild)
+        {
+            var actualDate = "";
+            string eventLocation = "";
+            var literalChar = "";
+            <section class="boxes clearfix lrg-sprtr-top">
+
+                            @if (nodeList.Count() == 3)
+                            {
+                                cssClass = "col-sm-4";
+                            }
+                            else if (nodeList.Count() == 2)
+                            {
+                                cssClass = "col-sm-6";
+                            }
+                            else if (nodeList.Count() == 1)
+                            {
+                                cssClass = "col-sm-12";
+                            }
+                            else
+                            {
+                                cssClass = "col-sm-6";
+                            }
+
+                            @foreach (var nodes in nodeList)
+                            {
+                                var singleNode = Umbraco.TypedContent(nodes);
+
+                                <div class="col-sm-6 box bg-blue no-side-padding">
+					    			<div class="">
+                                        <h3 class="title"> <img src="/images/icon-screen.png" alt="" class="icon" /> @singleNode.Name</h3>
+                                        <ul class="list-unstyled">
+                                            @{
+                                                if (singleNode != null && singleNode.Children.Any())
+                                                {
+                                                    foreach (var childNode in singleNode.Descendants().Where(x => x.IsVisible()&& !excludedDoctypes.Contains(x.DocumentTypeAlias)).OrderByDescending(x => x.GetPropertyValue("publicationDate")).Take(count))
+                                                    { 
+                                                        <li><i class="fa fa-caret-right"></i><a href="@childNode.Url" style="color:#FFFFFF">@childNode.Name</a></li>
+                                                    }
+                                                }
+                                                <a href="@singleNode.Url" class="link">More @singleNode.Name <i class="fa fa-caret-right"></i></a>
+                                              } 
+                                        </ul>
+                                    </div>
+                                 </div>
+                               }
+                              </section>
+                        }
+                        }
+                        }
+
+
+
+ 

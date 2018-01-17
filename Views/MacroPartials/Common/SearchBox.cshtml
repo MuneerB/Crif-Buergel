@@ -1,0 +1,32 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+    @using CrifAustria.Utils;
+@{
+    var home = Model.Content.AncestorOrSelf(1);
+    var searchNode = home.DescendantsOrSelf("ezSearch").FirstOrDefault();
+    searchNode = Common.getTranslatedPage(searchNode);
+    string searchUrl = string.Empty;
+    if (searchNode != null)
+    {
+        searchUrl = Common.getTranslatedUrl(searchNode.Url);
+    }
+
+    <section id="search-section" class="search-section">
+            <div class="container">
+                <div class="row">
+                    <div class="inner-container">
+                        <div class="col-xs-3 no-side-padding text"><span class="h4">@Umbraco.Field("#Search")</span></div>
+                        <div class="form-wrapper col-xs-7 no-side-padding">
+                            <form id="search" class="form search-form" action="@searchUrl">
+                                <input type="text" class="form-control" name="q" placeholder="@Umbraco.Field("#SearchText")" title="Search Text"/>
+                                <button type="submit" class="submit-button" aria-label="Submit Search"><span class="fa fa-search"></span></button>
+                            </form>
+                        </div>
+                        <div class="col-xs-2 close-link no-side-padding"><span id="close-search" aria-label="Close Search">Schließen <span class="search-icon">X</span></span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+}
+
+

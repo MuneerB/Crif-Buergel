@@ -1,0 +1,68 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using CrifAustria.Utils;
+@using CrifAustria.Utils;
+@{  var home = Model.Content.AncestorOrSelf(1);
+    home = Common.getTranslatedPage(home);
+    var homeUrl = Common.getTranslatedUrl(home.Url);
+    var excludedDoctypes = new[] { "uDateFoldersyFolderYear", "uDateFoldersyFolderMonth","uDateFoldersyFolderDay"};
+    }
+
+<article class="article sitemap">
+    <div class="container"> 
+        <div class="sitemap">
+            <div class="sitemap_wrapper">
+                <ul>
+                    <li><a href="@homeUrl" title="@home.Name">@home.Name</a></li>
+                    @{
+                        var childNodes = home.Children.Where(x =>!x.GetPropertyValue<bool>("hideFromSitemap"));
+                        foreach (var child in childNodes)
+                        {
+                            @PrintMenu(child, true)
+                        }
+                    }
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+@helper PrintMenu(IPublishedContent node, bool isMainMenuItem = false)
+{
+var childNodes = node.Children.Where(x =>!x.GetPropertyValue<bool>("hideFromSitemap") && x.Level <= 7 );
+bool hasChild = childNodes.Any();
+string className = string.Empty;
+if (hasChild)
+{
+    className = "dropdown";
+}
+className = Model.Content.Path.Split(",".ToCharArray()).Contains(node.Id.ToSafeString()) ? className + " current-menu-item" : className;
+    <li>
+        @{
+            var TranslatedNode = Common.getTranslatedPage(node);
+            var pageUrl = Common.getTranslatedUrl(TranslatedNode.Url);
+            if (node.DocumentTypeAlias =="category" ||node.DocumentTypeAlias =="productsMainHome" || node.DocumentTypeAlias =="contactHome" || node.DocumentTypeAlias == "uDateFoldersyFolderDay" || node.DocumentTypeAlias == "uDateFoldersyFolderYear" || node.DocumentTypeAlias == "uDateFoldersyFolderMonth")
+            {
+                    <span>
+                        @TranslatedNode.Name
+                    </span>
+                }
+            else
+            {
+                    <a href="@pageUrl">
+                        @TranslatedNode.Name
+                    </a>
+                }
+            if (hasChild)
+            {
+                    <ul>
+                        @foreach (var child in childNodes)
+                        {
+                    @PrintMenu(child)
+                        }
+                    </ul>
+                }
+          }
+
+</li>
+}

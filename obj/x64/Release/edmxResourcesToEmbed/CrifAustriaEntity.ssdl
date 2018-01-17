@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CrifAustriaEntity.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="contactUs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstName" Type="varchar(max)" />
+    <Property Name="lastName" Type="varchar(max)" />
+    <Property Name="email" Type="varchar" MaxLength="500" />
+    <Property Name="telephone" Type="varchar" MaxLength="200" />
+    <Property Name="industry" Type="varchar(max)" />
+    <Property Name="jobTitle" Type="varchar(max)" />
+    <Property Name="company" Type="varchar(max)" />
+    <Property Name="bestWayToReach" Type="varchar(max)" />
+    <Property Name="message" Type="varchar(max)" />
+    <Property Name="agreement" Type="varchar" MaxLength="50" />
+    <Property Name="newsletter" Type="varchar" MaxLength="50" />
+    <Property Name="culture" Type="varchar" MaxLength="50" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="modifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="newsletterSubscription">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstName" Type="varchar(max)" />
+    <Property Name="lastName" Type="varchar(max)" />
+    <Property Name="email" Type="varchar" MaxLength="500" />
+    <Property Name="industry" Type="varchar(max)" />
+    <Property Name="jobTitle" Type="varchar(max)" />
+    <Property Name="company" Type="varchar(max)" />
+    <Property Name="agreement" Type="varchar" MaxLength="50" />
+    <Property Name="newsletter" Type="varchar" MaxLength="50" />
+    <Property Name="culture" Type="varchar" MaxLength="50" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="modifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ProductRequests">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="First_Name" Type="nvarchar(max)" />
+    <Property Name="Last_Name" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="Telephone" Type="nvarchar(max)" />
+    <Property Name="Industry" Type="nvarchar(max)" />
+    <Property Name="JobTitle" Type="nvarchar(max)" />
+    <Property Name="Company" Type="nvarchar(max)" />
+    <Property Name="Agreement" Type="nvarchar(max)" />
+    <Property Name="Newsletter" Type="nvarchar(max)" />
+    <Property Name="Culture" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ProductName" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="sheduleConsultation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstName" Type="varchar(max)" />
+    <Property Name="lastName" Type="varchar(max)" />
+    <Property Name="email" Type="varchar" MaxLength="500" />
+    <Property Name="telephone" Type="varchar" MaxLength="200" />
+    <Property Name="industry" Type="varchar(max)" />
+    <Property Name="jobTitle" Type="varchar(max)" />
+    <Property Name="company" Type="varchar(max)" />
+    <Property Name="bestWayToReach" Type="varchar(max)" />
+    <Property Name="howDidYouHearAbout" Type="varchar(max)" />
+    <Property Name="message" Type="varchar(max)" />
+    <Property Name="agreement" Type="varchar" MaxLength="50" />
+    <Property Name="newsletter" Type="varchar" MaxLength="50" />
+    <Property Name="culture" Type="varchar" MaxLength="50" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="modifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SuccessStoryRequests">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="First_Name" Type="nvarchar(max)" />
+    <Property Name="Last_Name" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="Telephone" Type="nvarchar(max)" />
+    <Property Name="Industry" Type="nvarchar(max)" />
+    <Property Name="JobTitle" Type="nvarchar(max)" />
+    <Property Name="Company" Type="nvarchar(max)" />
+    <Property Name="Agreement" Type="nvarchar(max)" />
+    <Property Name="Newsletter" Type="nvarchar(max)" />
+    <Property Name="Culture" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ProductName" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="CrifAustriaEntityStoreContainer">
+    <EntitySet Name="contactUs" EntityType="Self.contactUs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="newsletterSubscription" EntityType="Self.newsletterSubscription" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductRequests" EntityType="Self.ProductRequests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sheduleConsultation" EntityType="Self.sheduleConsultation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SuccessStoryRequests" EntityType="Self.SuccessStoryRequests" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

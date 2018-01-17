@@ -1,0 +1,55 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using RJP.MultiUrlPicker.Models
+@using CrifAustria.Utils;
+<ul class="aside-slider list-unstyled">
+	@if (Model.Content.HasValue("industrySlider"))
+	{
+		int imageCount = 0;
+		var imageSlider = Umbraco.TypedMedia(Model.Content.GetPropertyValue<int>("industrySlider"));
+		if (imageSlider.ContentType.Alias == "Folder")
+		{
+			foreach (var slider in imageSlider.Children.Where(x => x.IsVisible()))
+			{
+				if (slider.HasValue("image"))
+				{
+
+					@displaySlider(slider)
+				}
+
+				imageCount = imageCount + 1;
+			}
+		}
+		else
+		{
+			@displaySlider(imageSlider)
+		}
+	}
+</ul>
+@helper displaySlider(IPublishedContent slider)
+{
+if (slider.HasValue("image"))
+{
+    var sliderTitle = slider.GetPropertyValue<string>("sliderTitle");
+    //string sliderDescription = Phases.UmbracoUtils.TextFormatter.TruncateAtWord(slider.GetPropertyValue<string>("shortDescription"), 284, "...");
+    string sliderDescription = slider.GetPropertyValue<string>("shortDescription");
+    var sliderSubTitle = slider.GetPropertyValue<string>("subTitle");
+    var sliderLinkTo = slider.GetPropertyValue<MultiUrls>("link"); 
+    string linkTo = "javascript:;", target = "_blank", Name = "";
+    if (sliderLinkTo != null && sliderLinkTo.Any())
+    {
+        linkTo = sliderLinkTo.FirstOrDefault().Url;
+        target = sliderLinkTo.FirstOrDefault().Target;
+        Name = sliderLinkTo.FirstOrDefault().Name;
+    }
+    var sliderImage= Umbraco.TypedMedia(slider.GetPropertyValue<string>("image"));
+	var textColor=(slider.HasValue("colorForTheTextOverPicture"))?slider.GetPropertyValue<string>("colorForTheTextOverPicture"):"crif-white";
+    <li>
+        <figure style="background-image: url(@sliderImage.Url)">
+                <a href="@linkTo" class="@Common.getPredefinedColorSetClass(textColor)"><h2>@sliderTitle</h2></a>
+                <h3 class="@Common.getPredefinedColorSetClass(textColor)">@Html.Raw(umbraco.library.RemoveFirstParagraphTag(sliderSubTitle))</h3>
+				<p class="@Common.getPredefinedColorSetClass(textColor,true)"> @Html.Raw(umbraco.library.RemoveFirstParagraphTag(sliderDescription))</p>
+				<a href="@linkTo" target=@target class="btn btn-orange text-center" rel="nofollow">@Name</a>                    
+            </figure>
+    </li>
+}
+}

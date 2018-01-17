@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+  <Alias Key="Model" Value="CrifAustriaEntity" />
+  <Alias Key="Target" Value="CrifAustriaEntity.Store" />
+  <EntityContainerMapping CdmEntityContainer="CrifAustriaEFContainer" StorageEntityContainer="CrifAustriaEntityStoreContainer">
+    <EntitySetMapping Name="ProductRequests">
+      <EntityTypeMapping TypeName="CrifAustriaEntity.ProductRequest">
+        <MappingFragment StoreEntitySet="ProductRequests">
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Culture" ColumnName="Culture" />
+          <ScalarProperty Name="Newsletter" ColumnName="Newsletter" />
+          <ScalarProperty Name="Agreement" ColumnName="Agreement" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="Industry" ColumnName="Industry" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SuccessStoryRequests">
+      <EntityTypeMapping TypeName="CrifAustriaEntity.SuccessStoryRequest">
+        <MappingFragment StoreEntitySet="SuccessStoryRequests">
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Culture" ColumnName="Culture" />
+          <ScalarProperty Name="Newsletter" ColumnName="Newsletter" />
+          <ScalarProperty Name="Agreement" ColumnName="Agreement" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="Industry" ColumnName="Industry" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contactUs">
+      <EntityTypeMapping TypeName="CrifAustriaEntity.contactUs">
+        <MappingFragment StoreEntitySet="contactUs">
+          <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="culture" ColumnName="culture" />
+          <ScalarProperty Name="newsletter" ColumnName="newsletter" />
+          <ScalarProperty Name="agreement" ColumnName="agreement" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="bestWayToReach" ColumnName="bestWayToReach" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="jobTitle" ColumnName="jobTitle" />
+          <ScalarProperty Name="industry" ColumnName="industry" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="newsletterSubscriptions">
+      <EntityTypeMapping TypeName="CrifAustriaEntity.newsletterSubscription">
+        <MappingFragment StoreEntitySet="newsletterSubscription">
+          <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="culture" ColumnName="culture" />
+          <ScalarProperty Name="newsletter" ColumnName="newsletter" />
+          <ScalarProperty Name="agreement" ColumnName="agreement" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="jobTitle" ColumnName="jobTitle" />
+          <ScalarProperty Name="industry" ColumnName="industry" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sheduleConsultations">
+      <EntityTypeMapping TypeName="CrifAustriaEntity.sheduleConsultation">
+        <MappingFragment StoreEntitySet="sheduleConsultation">
+          <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="culture" ColumnName="culture" />
+          <ScalarProperty Name="newsletter" ColumnName="newsletter" />
+          <ScalarProperty Name="agreement" ColumnName="agreement" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="howDidYouHearAbout" ColumnName="howDidYouHearAbout" />
+          <ScalarProperty Name="bestWayToReach" ColumnName="bestWayToReach" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="jobTitle" ColumnName="jobTitle" />
+          <ScalarProperty Name="industry" ColumnName="industry" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,131 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "Pages.cshtml";
+    string strUserAgent = Request.UserAgent.ToString().ToLower(); 
+    var clientId = System.Configuration.ConfigurationManager.AppSettings["ClientIDForLinkedInRegister"];
+}
+@section css {
+    <script type="text/javascript" src="/scripts/linkedin.signin.js"></script>
+}
+<section class="main-content single">
+    <div class="container">
+        <div class="row">
+            <div class="inner-container border-grey-top">
+                <div class="two-clmns clearfix">
+                    <article class="col-sm-8 no-side-padding">
+                        <section class="breadcrumb-wrapper">
+                            <ul class="breadcrumb-post breadcrumb">
+                                <li><a href="#">@CurrentPage.Parent.Name</a></li>
+                                <li class="active">@CurrentPage.Name</li>
+                            </ul>
+                        </section>
+                        <section class="content">
+                           <h1 class="clr-drk-blu h3">@Umbraco.Field("title")</h1>
+							  @if (Model.Content.HasValue("subtitle"))
+								{
+									<p>@Html.Raw(Model.Content.GetPropertyValue("subtitle"))</p>
+								}
+								@if (Model.Content.HasValue("bodyText"))
+								{
+									<p>@Html.Raw(Model.Content.GetPropertyValue<string>("bodyText"))</p>
+								}
+                            <section class="mob-preview hidden-sm hidden-md hidden-lg">
+                                <div class="aside">
+                                    @if (Model.Content.HasValue("image"))
+                                    {
+                                        var thumbNailImage = Umbraco.TypedMedia(Model.Content.GetPropertyValue("image"));
+                                        if (thumbNailImage != null)
+                                        {
+                                            <div class="ftrd-img">
+                                                <img src="@thumbNailImage.Url" alt="@thumbNailImage.Name" class="img-responsive">
+                                            </div>
+                                        }
+                                                               
+                                    }
+                                </div>
+
+                                @Umbraco.RenderMacro("CTALinksOnRight")
+                            </section>
+                        </section>
+                        <section class="form-wrapper lrg-sprtr-top">
+							@{ 
+                               var productHome=Model.Content.AncestorOrSelf(2);
+                               var captionText = productHome.HasValue("formInstructionText") ? productHome.GetPropertyValue("formInstructionText").ToString() : string.Empty;
+                             }
+							<h4>@captionText</h4>
+							@if (strUserAgent != null)
+	                        {
+		                        if (strUserAgent.Contains("ipad") || strUserAgent.Contains("iphone"))
+		                        {
+			                        using (Html.BeginUmbracoForm<CrifAustria.Controllers.LinkedInController>("index", null))
+                                    {
+	                                     <input type="submit" value="Sign in with Linkedin" class="btn btn-lnkd" /><i class="fa fa-linkedin fa-2x"></i>
+                                    }
+                                }
+                                else
+                                {
+                                    <button id="libtn" class="btn btn-lnkd" onclick="liAuth()"><i class="fa fa-linkedin fa-2x"></i>Sign in with Linkedin</button>
+                                }
+                            }
+                            
+                           @* </script>/*@
+                            <section class="form lrg-sprtr-top">
+                                @Umbraco.RenderMacro("SuccessStoriesRequest")
+                            </section>
+                        </section>
+                    </article>
+                    <aside class="col-sm-4 no-side-padding hidden-xs">
+                         <div class="aside">
+                            @if (Model.Content.HasValue("image"))
+                            {
+                                var thumbNailImage = Umbraco.TypedMedia(Model.Content.GetPropertyValue("image"));
+                                if (thumbNailImage != null)
+                                {
+                                    <div class="ftrd-img">
+                                        <img src="@thumbNailImage.Url" alt="@thumbNailImage.Name" class="img-responsive">
+                                    </div>
+                                }
+
+                            }
+                        </div>
+
+                        @Umbraco.RenderMacro("CTALinksOnRight")
+                            
+
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<input id="hdApiClientId" type="hidden" value="@clientId" />
+@section innerJs{
+	<script type="text/javascript">
+	     $('input').bind('keypress', function (event) {
+	         var regex = new RegExp("^[-a-zA-Z0-9@@.ÄäÖöÜü?!_ß%&/+\"\b\t ]+$");
+	        var code= (!event.charCode) ? event.keyCode : event.charCode;
+	         var key = String.fromCharCode(!event.charCode ? event.keyCode : event.charCode);
+			
+	         if (!regex.test(key)) {
+				 if(code!=35 && code!=36)
+				 {
+					 event.preventDefault();
+					 return false;
+				 }
+	         }
+	     });
+		var defaultRangeValidator = jQuery.validator.methods.range;
+				console.log(defaultRangeValidator);
+				 jQuery.validator.methods.range = function (value, element, param) {
+					 console.log(defaultRangeValidator);
+					 if (element.type === 'checkbox') {
+						 // if it's a checkbox return true if it is checked
+						 return element.checked;
+					 } else {
+						 // otherwise run the default validation function
+						 return defaultRangeValidator.call(this, value, element, param);
+					 }
+				 }
+    </script> 
+    <script src="~/scripts/share.js"></script>
+    <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>}

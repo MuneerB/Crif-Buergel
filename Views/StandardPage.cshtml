@@ -1,0 +1,41 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "Pages.cshtml";
+}
+<div class="container">
+				<div class="row">
+					<div class="inner-container">
+<article>
+	<h1 class="clr-drk-blu">@Model.Content.GetPropertyValue("title")</h1>
+	@if(Model.Content.HasValue("introductionText"))
+    {
+		<p class="md-para italic">@umbraco.library.RemoveFirstParagraphTag(Model.Content.GetPropertyValue("introductionText").ToString())</p>
+    }
+    @if(Model.Content.HasValue("bodyText"))
+    {
+		@Model.Content.GetPropertyValue("bodyText")
+    }
+	@if(Model.Content.DocumentTypeAlias=="pageNotFound")
+    {
+		var home = Model.Content.AncestorOrSelf(1);
+		var searchNode = home.DescendantsOrSelf("ezSearch").FirstOrDefault();
+		string searchUrl = string.Empty;
+		if (searchNode != null)
+		{
+			searchUrl = searchNode.Url;
+		} 
+		string searchPlaceholderText = "Type here something to search...";
+		if(searchNode.HasValue("searchBoxPlaceholder"))
+		{
+            searchPlaceholderText = searchNode.GetPropertyValue("searchBoxPlaceholder").ToString();
+		}
+		<div class="form-wrapper search-bx-border col-xs-7 no-side-padding">
+                            <form id="search" class="form search-form" action="@searchUrl">
+                                <input type="text" class="form-control" name="q" placeholder="@searchPlaceholderText" title="Search Text"/>
+                                <button type="submit" class="submit-button" aria-label="Submit Search"><span class="fa fa-search"></span></button>
+                            </form>
+                        </div>
+    }
+</article>
+	</div>
+</div></div>

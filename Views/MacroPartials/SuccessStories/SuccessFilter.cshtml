@@ -1,0 +1,26 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+    var CCFphases = Model.Content.AncestorOrSelf(1).Descendants("creditFrameworkPhase");
+}
+<div class="filter">
+	<div class="clearfix">
+		<section class="filter-form pull-right">
+			<form action="" class="form">
+				<span class="filter-desc">@Umbraco.Field("#Filter by tag", altText: "Filter by tag")</span>
+					<select name=""  class="ccfPhasefilter form-control">
+						<option value="null">@Umbraco.Field("#View All", altText: "View All")</option>
+                        @foreach (var pahse in CCFphases)
+                        {
+                            <option value="@pahse.Id"> @pahse.GetPropertyValue("menuTitle")</option>
+                        }
+						@*@foreach (in CCFphases)
+						{
+							var selected = child.GetProperty("tagName").Value == selectedsinglephase ? "selected" : "";
+							<option @selected value="@child.GetProperty("tagName")">@child.GetProperty("tagName")</option>
+						}*@
+					</select>
+
+	</form>
+	</section>
+	</div>
+	</div>

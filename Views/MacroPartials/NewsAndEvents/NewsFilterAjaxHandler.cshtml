@@ -1,0 +1,202 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using RJP.MultiUrlPicker.Models
+@using CrifAustria.Utils
+@{
+    IPublishedContent newsHome = null;
+    IPublishedContent newsMainHome = null;
+    var newsId = 0;
+    var takeCount = 4;
+    bool excludeCurrentNode=false;
+    if (!string.IsNullOrEmpty(Request["newsId"]))
+    {
+        newsHome = Umbraco.TypedContent(Request["newsId"]);
+		newsMainHome = newsHome.Ancestors("NewsAndEventsMainHome").FirstOrDefault();
+        if (newsHome.DocumentTypeAlias == "newsSingle")
+        {
+            newsHome = newsHome.Ancestors("NewsAndEventsMainHome").FirstOrDefault();
+            takeCount = 2;
+            excludeCurrentNode = true;
+            //newsMainHome = newsHome;
+        }
+    }
+    else if(Model.Content.DocumentTypeAlias=="newsSingle")
+    {
+        newsHome = Model.Content.Ancestors("NewsAndEventsMainHome").FirstOrDefault();
+		takeCount = 2;
+        excludeCurrentNode = true;
+        //newsMainHome = newsHome;
+    }
+    else
+    {
+        newsHome = Model.Content;
+        //newsMainHome = newsHome;
+    }
+    newsMainHome = newsHome;
+    if (Request["newsId"] != null && Request["newsId"] != "")
+    {
+        newsId = int.Parse(Request["newsId"].ToString());
+    }
+    else
+    {
+        newsId = Model.Content.Id;
+    }
+    //if (Request["takeCount"] != null && Request["takeCount"] != "")
+    //{
+    //    takeCount = int.Parse(Request["takeCount"].ToString());
+    //}
+    List<string> excludedList = new List<string> { "uDateFoldersyFolderYear", "uDateFoldersyFolderMonth", "uDateFoldersyFolderDay", "PRAndEventsHome", "standardPageWithSideMenu" };
+    List<int> featuredNewsNodeId = new List<int>();
+    if (newsHome.HasValue("highlightedNews"))
+    {
+        var newsListValue = newsHome.GetPropertyValue<string>("highlightedNews");
+        var newsList = newsListValue.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
+        var newsCollection = Umbraco.TypedContent(newsList).Where(x => x != null);
+        foreach (var item in newsCollection)
+        {
+            featuredNewsNodeId.Add(item.Id);
+        }
+    }
+    if (Request["docFilter"] != null && Request["docFilter"] != "all")
+    {
+        newsHome = Umbraco.TypedContent(Request["docFilter"]);
+        newsMainHome = newsHome.Ancestors("NewsAndEventsMainHome").FirstOrDefault();
+    } 
+
+    IEnumerable<IPublishedContent> newsNodes = newsHome.Descendants().Where(x => !excludedList.Contains(x.DocumentTypeAlias) && !featuredNewsNodeId.Contains(x.Id) && !(newsId==x.Id)).OrderByDescending(x => x.GetPropertyValue("publicationDate"));
+   bool NoItem =true;
+    if (newsNodes != null && newsNodes.Any())
+    {
+        NoItem = false;
+        string dateString = Request["yearFilter"];
+        string searchText = Request["searchText"];
+        //select nodes by date
+        if (!string.IsNullOrEmpty(dateString) && dateString != "null" && dateString != "-1")
+        {
+            int yearFilter = int.Parse(dateString);
+            newsNodes = newsNodes.Where(x => x.HasValue("publicationDate") && DateTime.Parse(x.GetPropertyValue("publicationDate").ToString()).Year == yearFilter);
+        }
+        if (!string.IsNullOrEmpty(searchText))
+        {
+            //(x.HasValue("bodyText") && x.GetPropertyValue("bodyText").ToString().ToLower().Contains(key))
+            //    || 
+            var key = searchText.ToLower();
+            newsNodes = newsNodes.Where(x => (x.HasValue("shortDescription") && x.GetPropertyValue("shortDescription").ToString().ToLower().Contains(key))
+                || (x.HasValue("title") && x.GetPropertyValue("title").ToString().ToLower().Contains(key)));
+        }
+        int totalItems = newsNodes.Count();
+        int page = 1;
+        int pageSize = newsHome.HasValue("numberOfNews") ? newsHome.GetPropertyValue<int>("numberOfNews") : 4;
+        string pageIndex = Request["page"];
+        string currentClass = "";
+        int totalPages = (int)Math.Ceiling((double)totalItems / (double)pageSize);
+        if (excludeCurrentNode==true)
+        {
+            if(Request["docFilter"] == null || Request["docFilter"] == "all")
+            {
+                takeCount = 4;
+            }
+        }
+        else if (!int.TryParse(pageIndex, out page) || page <= 0)
+        {
+            page = 1;
+        }
+		else if(Model.Content.DocumentTypeAlias!="newsSingle")
+		{
+			takeCount=takeCount*int.Parse(pageIndex);
+		}
+        string nextLinkCssClass = "";
+        string prevLinkCssClass = "";
+        if (newsNodes != null && newsNodes.Any())
+        {
+            NoItem = false;
+            <ul class="list-unstyled article-list clearfix border-grey-bottom">
+                    @foreach (var news in newsNodes.WhereNotNull().Take(takeCount))
+                    {
+                         string shortDescription = news.HasValue("shortDescripion")
+                            ? Common.TruncateAtWord(library.StripHtml(news.GetPropertyValue<string>("shortDescripion")), 130, "...")
+                            : Common.TruncateAtWord(library.StripHtml(news.GetPropertyValue<string>("bodyText")), 130, "...");
+                        string title = news.HasValue("title")
+                            ? news.GetPropertyValue<string>("title")
+                            : news.Name;
+                        //string daysuffix
+                        string date = news.HasValue("actualDate")
+                            ? news.GetPropertyValue<DateTime>("actualDate").ToString("dd. MMMM yyyy")
+                            :"";
+                        
+                        //string pubdate = news.HasValue("publicationDate")
+                        //    ? news.GetPropertyValue<DateTime>("publicationDate").ToString("dd MMMM yyy")
+                        //    : "";
+
+                            <li class="clearfix">
+							    <article class="article-structure">
+                                    @if (news.HasValue("thumbnailImage"))
+                                    {
+                                        var newsImagesList = news.GetPropertyValue<string>("thumbnailImage")
+                                                            .Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
+                                        var newsImagesCollection = Umbraco.TypedMedia(newsImagesList).Where(x => x != null);
+                                        if (newsImagesCollection != null && newsImagesCollection.Any())
+                                        {
+                                            var imageItem = newsImagesCollection.FirstOrDefault();
+                                            <figure class="article-image resize-image pull-left hidden-xs">
+									            <img src="@imageItem.Url" alt="@imageItem.Name">	
+								            </figure>
+                                        }
+                                    }
+                                    <section class="article-content col-sm-8">
+                                        @if (news.HasValue("actualDate"))
+                                        { 
+                                            <time class="clr-light-grey-var-2">@date</time>
+                                        }
+                                        <h3 class="h4"><a href="@news.Url" class="clr-drk-blu">@title</a></h3>
+                                        @if (news.HasValue("thumbnailImage"))
+                                        {
+                                            var thumbnailImage = Umbraco.TypedMedia(news.GetPropertyValue("thumbnailImage"));
+                                            if(thumbnailImage != null)
+                                            {
+                                                <figure class="hidden-sm hidden-lg hidden-md mob-img">
+                                                    <img src="@thumbnailImage.Url" alt="@thumbnailImage.Name" class="">
+                                                </figure>
+                                            }           
+                                        }
+                                        <div style="word-wrap: break-word;" class="article-caption"><p>@Html.Raw(shortDescription)</p></div>
+                                        <a href="@news.Url" rel="nofollow" class="link clr-drk-blu">@Umbraco.Field("#Read More", altText: "Read More")<i class="fa fa-caret-right"></i></a>
+                                </section>
+                            </article>
+                        </li>
+                        }
+                    </ul>
+                    @*<div class="loader" id="loader">
+                        <img src="/images/default.gif" alt="loader">
+                    </div>*@
+            if (totalPages > 1 && Umbraco.TypedContent(newsId).DocumentTypeAlias != "newsSingle")
+                {
+                    if (page < totalPages)
+                    {
+                        <div class="loadmore text-center">
+                            <a href="#" class="clr-drk-blu loadmore-link" data-page="@(page+1)" data-id="@newsId">@Umbraco.Field("#Load More", altText: "Load More")</a>
+                        </div>
+                    }
+                }
+            }
+            else
+             {
+                 NoItem = true;
+             }   
+            <input type="text" id="txtPage" value="@page" style="display:none;" />
+
+				<input type="text" id="txtTotlaPage" value="@totalPages" style="display:none;" />
+}
+	
+if(NoItem)
+{
+    if (newsMainHome.HasValue("noItemsFoundMessage"))
+    {
+        <p class="text-center">@newsMainHome.GetPropertyValue("noItemsFoundMessage")</p>
+    }
+    else
+    {
+        <p class="text-center">No items to be displayed</p>
+    }
+}  
+}
+

@@ -1,0 +1,38 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using umbraco.cms.businesslogic.web
+@using Umbraco.Core.Services;
+@{
+	Layout = null;
+}
+@{
+	
+@***Delete nodes under news***@
+@*Document parentNode = new Document(1346);//use id of parent node 
+foreach (Document child in parentNode.Children)
+{
+	var id=child.Id;
+    child.delete();
+        umbraco.library.UpdateDocumentCache(child.Id);  
+	@id 
+}
+umbraco.library.RefreshContent();*@
+	
+	
+@****Assign Templates to resigna stamba ****@
+    IContentService cs = ApplicationContext.Current.Services.ContentService;
+    
+foreach (var page in Model.Content.AncestorOrSelf(1).DescendantsOrSelf("uDateFoldersyFolderMonth"))
+{
+    var content = cs.GetById(page.Id);
+    int month = DateTime.ParseExact(content.Name, "MMMM", new System.Globalization.CultureInfo("en-US")).Month;
+    var nth=System.Globalization.CultureInfo.CurrentUICulture.DateTimeFormat.GetMonthName(month);
+    content.Name = nth;
+    cs.SaveAndPublishWithStatus(content);
+    content.Template = content.ContentType.DefaultTemplate;
+    cs.SaveAndPublish(content);
+	@content.Name
+	//cs.Delete(content);
+    
+}
+        
+}

@@ -1,0 +1,440 @@
+h1,h2,h3,h4,h5,h6{
+    font-family: Verdana,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+    text-decoration: none;
+}
+h2,h3{
+    font-size:15px;
+}
+.tel:before{
+    content: "✆";
+    font-size: inherit;
+    font-weight: bold;
+    position: relative;
+    margin-right: 12px;
+}
+@media only screen and (min-width: 768px){
+    .abtusbox.home {
+        min-height: 300px;
+    }
+}
+@media (min-width: 1106px){
+  .main-content.home .container{
+        max-width: 1140px;
+        width: 1180px;
+    }
+}
+@media (min-width: 980px) and (max-width: 1105px){
+    .container.newsbox {
+        width: 960px;
+    }
+}
+@media (min-width: 1106px) and (max-width: 1120px){
+    .main-block-system {
+        left:-17px;
+    }
+}
+.main-block-system{
+    z-index: 10;
+    position: relative;
+    margin: 0px auto;
+    background: none #fff;
+}
+.main-block-system{
+    margin-top: 0;
+    clear: both;
+}
+.content-row{
+    position: relative;
+    zoom: 1;
+    margin: 0px auto;
+    padding: 0px;
+    background-color: transparent;
+    max-width: 1120px;
+}
+.content-column{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+}
+@media screen and  (max-width: 979px)
+{
+    .content-row {
+        height: auto !important;
+    }
+    .content-column{
+        margin: 10px 0;
+        position: static;
+    }
+}
+.teaser-article{
+    min-height: 460px;
+    height: auto !important;
+    max-height: 460px;
+    min-width: 543px;
+    width: auto !important;
+    max-width: 543px;
+    background-color: #ffffff;
+    border-bottom: 2px solid #e2e2e3;
+    border-right: 2px solid #e2e2e3;
+    color: #343434;
+    font-size: 1em;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+}
+.image-field{
+    display: block;
+    min-width: 100%;
+    width: auto !important;
+    max-width: 100%;
+    position: relative;
+    text-align: right;
+}
+.image-field img{
+    width: 100%;
+    height: 100%;
+    
+}
+@media screen and (max-width: 979px)
+{
+    .image-field img {
+        display: block;
+        height: auto;
+        max-width: 100%;
+        max-height: inherit;
+    }
+}
+
+@media screen and  (min-width: 980px)
+{
+    .image-field img {
+        max-width: 540px;
+        max-height: 330px;
+    }
+}
+.image-field .field-items{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+.element-invisible{
+    display: none;
+}
+.element-invisible {
+    position: absolute !important;
+    clip: rect(1px,1px,1px,1px);
+    overflow: hidden;
+    height: 1px;
+}
+/* article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary { */
+    /* display: block; */
+/* } */
+.teaser-article header{
+    margin: 0;
+    padding: 10px 10px 0 10px;
+}
+@media screen and  (max-width: 979px){
+    .teaser-article header{
+        padding: 10px;
+    }
+}
+.teaser-article .field-type-taxonomy-term-reference{
+    color: #afafb0;
+    font-weight: bold;
+    letter-spacing: .05em;
+    margin: 0 .5em .5em 0;
+    word-spacing: .05em;
+    display: inline-block;
+    zoom: 1;
+    line-height: 1.15;
+}
+.teaser-article .date-submitted{
+    display: inline-block;
+    zoom: 1;
+    line-height: 1.15;
+    margin-bottom: .5em;
+}
+time {
+    font-feature-settings: "kern" 1,"liga" 1,"pnum" 1,"tnum" 0,"onum" 1,"lnum" 0;
+}
+.teaser-article .node-title{
+    color: #003B79;
+    font-weight: normal;
+    line-height: 1.15;
+    margin: 0;
+    text-align: left;
+}
+.teaser-article .field-name-body{
+    margin: 10px 0;
+    padding: 0 10px;
+}
+@media screen and (max-width: 575px){
+    .teaser-article .field-name-body {
+        padding-bottom: 10px;
+    }
+}
+article p:last-child {
+    margin-bottom: 0;
+}
+.teaser-article a.read-more{
+    background: url("../images/trans.gif");
+    bottom: 0;
+    display: block;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    padding: 1em;
+    position: absolute;
+    right: 0;
+    text-decoration: none;
+    text-indent: -9999em;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    -moz-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+}
+/*.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}*/
+.content-column-highlight .teaser-article{
+    background-color: #003B79;
+    color: #ffffff;
+    -moz-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+  
+}
+@media screen and  (max-width: 979px){
+    .teaser-article{
+        min-height: 0;
+        max-height: none;
+        min-width: 100%;
+        width: auto !important;
+    }
+    .content-column-highlight .teaser-article{
+        padding-bottom: 10px;
+        background-color: #003B79;
+        color: #ffffff;
+    }
+}
+.content-column-highlight .teaser-article .field-type-taxonomy-term-reference{
+    color: #ffffff;
+}
+.field-image-icon{
+    display: block;
+    height: 100px;
+    margin: 0;
+    margin-bottom: 1em;
+    width: 100%;
+}
+@media screen and  (max-width: 979px){
+    .field-image-icon{
+        display: block;
+        height: 120px;
+        margin: 1.5em 0;
+        width: 100%;
+    }
+}
+.field-image-icon img{
+    display: block;
+    margin: 0 auto;
+}
+.content-column-highlight .teaser-article .node-title{
+    color: #ffffff;
+}
+.content-column-highlight .teaser-article .field-name-body{
+    display: none;
+}
+.article-webform{
+    background-color: #eceded;
+    border-bottom: 2px solid #e2e2e3;
+    border-right: 2px solid #e2e2e3;
+    color: #343434;
+}
+.teaser-article form{
+    margin: 0;
+    padding: 0 10px;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+#webform-clientForm .form-item, #webform-clientForm .form-legend, #webform-clientForm .form-actions, #webform-clientForm .action-buttons {
+    display: block;
+    margin: .4em 0;
+}
+
+#webform-clientForm select,#webform-clientForm input,#webform-clientForm textarea {
+    max-width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#webform-clientForm input,#webform-clientForm input[type="text"],#webform-clientForm select,#webform-clientForm textarea {
+    background-color: #ffffff;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+#webform-clientForm input,#webform-clientForm select,#webform-clientForm textarea,#webform-clientForm button,#webform-clientForm a.button {
+    font-size: 90%;
+}
+#webform-clientForm select {
+    max-height: 2.3em;
+}
+#webform-clientForm a.button,#webform-clientForm input,#webform-clientForm label,#webform-clientForm select,#webform-clientForm button,#webform-clientForm textarea {
+    background-color: #ffffff;
+    border: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: -moz-inline-stack;
+    display: inline-block;
+    zoom: 1;
+    height: 2em;
+    margin: 0;
+    padding: .25em .25em;
+    vertical-align: middle;
+    white-space: normal;
+}
+.teaser-article #webform-clientForm input{
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    zoom: 1;
+}
+@media screen and  (max-width: 979px){
+    .teaser-article #webform-clientForm select,
+    .teaser-article #webform-clientForm input{
+        display: block;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+@media screen and  (max-width: 979px){
+    #webform-clientForm input,#webform-clientForm select,#webform-clientForm textarea,#webform-clientForm button,#webform-clientForm a.button {
+        font-size: 115%;
+    }
+}
+#webform-clientForm .form-required {
+    color: #f00;
+}
+.teaser-article #webform-clientForm .form-button{
+    display: block;
+    margin: .4em 0;
+}
+.teaser-article #webform-clientForm .form-button input{
+    display: block;
+    width: 100%;
+    background-color: #ee7d11;
+    color: #ffffff;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    overflow: visible;
+    padding: .25em .75em;
+    text-decoration: none;
+}
+
+.content-column-highlight .teaser-article,
+.content-column-service .teaser-article,
+.content-column-webform .teaser-article{
+    font-size: 1em;
+    min-height: 220px;
+    height: auto !important;
+    height: 267px;
+    max-height: 220px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    min-width: 267px;
+    width: auto !important;
+    width: 267px;
+    max-width: 267px;
+}
+@media screen and  (max-width: 979px){
+    .teaser-article #webform-clientForm .form-button{
+        margin: 0;
+        margin-top: .5em;
+    }
+    .content-column-highlight .teaser-article,
+    .content-column-service .teaser-article,
+    .content-column-webform .teaser-article{
+        min-width: 100%;
+        width: auto !important;
+        min-height: 0;
+        padding-bottom: 10px;
+        max-height: none;
+        max-width: none;
+    }
+}
+.content-column-highlight .teaser-article:hover{
+    opacity: 0.5;
+}
+
+.content-column-service .teaser-article:hover,
+.content-column-1 .teaser-article:hover,
+.content-column-2 .teaser-article:hover{
+ 
+ animation: animate .5s linear;
+ outline:1px solid #e2e2e3;
+ 
+}
+
+@keyframes animate{
+ 
+ 0%{
+  width:0;
+  height:0;
+  outline-color: #000;
+  
+ }
+ 
+ 100%{
+  width:100%;
+  height:100%;
+  outline-color: e2e2e3;
+ }
+ 
+}
+.main-content.home{
+    margin-bottom: 50px;
+}
+/*Menu style change*/
+
+@media only screen and (max-width: 991px){
+    .main-nav {
+        padding: 0px;
+    }
+}
+@media only screen and (max-width: 991px){
+    .main-nav .nav:last-child {
+        padding-bottom: 10px; 
+    }
+    .top-nav {
+        margin-top: 0px;
+    }
+}

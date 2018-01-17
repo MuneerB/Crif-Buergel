@@ -1,0 +1,85 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using CrifAustria.Utils;
+@{
+	Layout = null;
+	var textColor=(Model.Content.HasValue("textColor"))?Model.Content.GetPropertyValue<string>("textColor"):"crif-white";
+}
+@{ var currentPage=Model.Content;
+    var Image_Style=string.Empty;
+    var Mob_Image_Style = string.Empty;
+    if (currentPage.HasValue("backgroundImage"))
+    {
+        var konsumentenBoxImage = Umbraco.TypedMedia(currentPage.GetPropertyValue("backgroundImage"));
+        string backgroundImageURL = konsumentenBoxImage.Url;
+        Image_Style = string.Format("style=\"background-image : url('{0}')\"", backgroundImageURL);
+    }
+  if (currentPage.HasValue("mobileBackgroundImage"))
+    {
+        var konsumentenBoxMobImage = Umbraco.TypedMedia(currentPage.GetPropertyValue("mobileBackgroundImage"));
+        string backgroundMobImageURL = konsumentenBoxMobImage.Url;
+        Mob_Image_Style = string.Format("style=\"background-image : url('{0}')\"", backgroundMobImageURL);
+    }
+    <div class="cta-box cta-career sml-sprtr-top-20 clearfix box-text-centered uber-uns hidden-xs" @Html.Raw(Image_Style)>
+        <div class="text">
+            @if(CurrentPage.HasValue("title"))
+            {
+				if (CurrentPage.HasValue("link"))
+				{
+					var konsumentenBoxLinks = Model.Content.GetPropertyValue<RJP.MultiUrlPicker.Models.MultiUrls>("link");
+					if (konsumentenBoxLinks != null && konsumentenBoxLinks.Any())
+					{
+						<a href="@konsumentenBoxLinks.FirstOrDefault().Url"  @konsumentenBoxLinks.FirstOrDefault().Target><h3 class="@Common.getPredefinedColorSetClass(textColor)">@currentPage.GetPropertyValue("title")</h3></a>
+					}
+				}
+                else
+                {
+                    <h3 class="@Common.getPredefinedColorSetClass(textColor)">@currentPage.GetPropertyValue("title")</h3>
+                }
+            }
+            @if(CurrentPage.HasValue("shortDescription"))
+            {
+				<p class="@Common.getPredefinedColorSetClass(textColor,true)">@Html.Raw(umbraco.library.RemoveFirstParagraphTag(Model.Content.GetPropertyValue("shortDescription").ToSafeString()))</p>
+            }
+            @if (CurrentPage.HasValue("link"))
+            {
+                var konsumentenBoxLinks = Model.Content.GetPropertyValue<RJP.MultiUrlPicker.Models.MultiUrls>("link");
+                if (konsumentenBoxLinks != null && konsumentenBoxLinks.Any())
+                {
+                    <a href="@konsumentenBoxLinks.FirstOrDefault().Url" class="link @Common.getPredefinedColorSetClass(textColor)" @konsumentenBoxLinks.FirstOrDefault().Target>@konsumentenBoxLinks.FirstOrDefault().Name<i class="fa fa-caret-right"></i></a>
+                }
+            }
+        </div>
+    </div>
+	 <div class="cta-box cta-career sml-sprtr-top-20 clearfix box-text-centered uber-uns hidden-lg hidden-md hidden-sm" @Html.Raw(Mob_Image_Style)>
+        <div class="text">
+            @if(CurrentPage.HasValue("title"))
+            {
+				if (CurrentPage.HasValue("link"))
+				{
+					var konsumentenBoxLinks = Model.Content.GetPropertyValue<RJP.MultiUrlPicker.Models.MultiUrls>("link");
+					if (konsumentenBoxLinks != null && konsumentenBoxLinks.Any())
+					{
+						<a href="@konsumentenBoxLinks.FirstOrDefault().Url"  @konsumentenBoxLinks.FirstOrDefault().Target><h3 class="@Common.getPredefinedColorSetClass(textColor)">@currentPage.GetPropertyValue("title")</h3></a>
+					}
+				}
+                else
+                {
+                    <h3 class="@Common.getPredefinedColorSetClass(textColor)">@currentPage.GetPropertyValue("title")</h3>
+                }
+            }
+            @if(CurrentPage.HasValue("shortDescription"))
+            {
+				<p class="@Common.getPredefinedColorSetClass(textColor,true)">@Html.Raw(umbraco.library.RemoveFirstParagraphTag(Model.Content.GetPropertyValue("shortDescription").ToSafeString()))</p>
+            }
+            @if (CurrentPage.HasValue("link"))
+            {
+                var konsumentenBoxLinks = Model.Content.GetPropertyValue<RJP.MultiUrlPicker.Models.MultiUrls>("link");
+                if (konsumentenBoxLinks != null && konsumentenBoxLinks.Any())
+                {
+                    <a href="@konsumentenBoxLinks.FirstOrDefault().Url" class="link @Common.getPredefinedColorSetClass(textColor)" @konsumentenBoxLinks.FirstOrDefault().Target>@konsumentenBoxLinks.FirstOrDefault().Name<i class="fa fa-caret-right"></i></a>
+                }
+            }
+        </div>
+    </div>
+
+}

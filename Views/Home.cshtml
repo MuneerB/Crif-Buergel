@@ -1,0 +1,37 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using RJP.MultiUrlPicker.Models
+@{
+	Layout = "_Layout.cshtml";
+}
+@Umbraco.RenderMacro("HomeSlider")
+<!-- Content -->
+<section class="main-content home">
+	<div class="container">
+		    <aside class="blue-box bg-blue abtusbox home">
+			    <p>@Html.Raw(Umbraco.RenderMacro("PropertyTranslation", new {Property="aboutUsDescription"}))</p>
+                @if (Model.Content.HasValue("aboutUsLinK"))
+                {
+                    var quickLinks = Model.Content.GetPropertyValue<MultiUrls>("aboutUsLinK");
+                    if (quickLinks != null && quickLinks.Any())
+                    { 
+                        <a href="@quickLinks.FirstOrDefault().Url" target="@quickLinks.FirstOrDefault().Target">@quickLinks.FirstOrDefault().Name<i class="fa fa-caret-right"></i></a>
+                    }
+                }
+			
+		    </aside>
+        </div>
+    @Umbraco.RenderMacro("TeaserBlocks")
+        <div class="container newsbox">
+        </div>
+		@*<div class="row">
+			<div role="tabpanel" class="content-tab">
+				  <!-- Nav tabs -->
+				  @Umbraco.RenderMacro("CCFTab")
+				@Umbraco.RenderMacro("testNewsTagg")
+			</div>
+		</div>
+			
+	</div>*@
+</section>
+
+									  

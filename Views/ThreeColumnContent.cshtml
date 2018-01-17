@@ -1,0 +1,111 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@using RJP.MultiUrlPicker.Models
+@using Archetype.Models;
+@{
+	Layout = null;
+}
+@{
+    var currentPage = Model.Content;
+    if (currentPage.HasValue("linkToPages"))
+    {
+        var columnLinks = currentPage.GetPropertyValue<ArchetypeModel>("linkToPages");
+        if (columnLinks.Any() && columnLinks != null)
+        {
+            var cssClass = "";
+            if (columnLinks.Count() == 3)
+            {
+                cssClass = "col-sm-4";
+            }
+            else if (columnLinks.Count() == 2)
+            {
+                cssClass = "col-sm-6";
+            }
+            else if (columnLinks.Count() == 2)
+            {
+                cssClass = "col-sm-12";
+            }
+            else
+            {
+                cssClass = "col-sm-6";
+            }
+            //mobileImage
+            <section class="bottom-section bg-drk-grey section-sprtr">
+				<div class="container">
+					<div class="row">
+						<div class="clearfix">
+                        @{
+                            foreach (var linkData in columnLinks)
+                            {
+                                var titleUrl="";
+                                var titleTarget = "";
+                                var urlName = "";
+                                if (linkData.HasValue("link"))
+                                {
+                                    var link = linkData.GetValue<MultiUrls>("link");
+                                    if (link.Any())
+                                    {
+                                        titleUrl = link.FirstOrDefault().Url;
+                                        titleTarget = link.FirstOrDefault().Target;
+                                        urlName = link.FirstOrDefault().Name;
+                                    }
+                                    else
+                                    {
+                                        titleUrl = "javascript:void(0)";
+                                    }
+                                }
+								
+                                <div class="@cssClass text-center box-strctr">
+                                    @{
+                                        if (linkData.HasValue("image")||linkData.HasValue("title"))
+                                        {
+                                            if (!string.IsNullOrEmpty(titleUrl))
+                                            {
+                                                if (linkData.HasValue("image"))
+												{ 
+                                                    if (linkData.HasValue("image"))
+													{
+														 var linkImage = Umbraco.TypedMedia(linkData.GetValue("image"));
+														 <img class="icon" src="@linkImage.Url" alt="@linkImage.Name">
+													}
+												} 
+												if (linkData.HasValue("title"))
+												{ 
+													<h3>@linkData.GetValue("title")</h3> 
+												}
+											}
+										}
+									}
+                                        
+                                        @if (linkData.HasValue("shortDescription"))
+                                        {
+                                            <p>
+                                                @Html.Raw(@Umbraco.ReplaceLineBreaksForHtml((string)linkData.GetValue("shortDescription")).Truncate(160))
+                                                
+                                           </p>
+                                        }
+                                        
+                                        if (!string.IsNullOrEmpty(titleUrl))
+                                        {
+                                            <a href="@titleUrl" target="@titleTarget" class="btn clr-drk-blu grad-grey">@urlName</a>
+                                        }
+
+                                    }
+                                    
+                                   
+                                  
+                                    
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+            </section>
+        }
+    }
+
+}
+
+
+ 

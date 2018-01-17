@@ -1,0 +1,104 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@using RJP.MultiUrlPicker.Models
+@using Archetype.Models;
+
+@{
+    var currentPage = Model.Content;
+     <section class="two-col-structure video-text-bx">
+            <div class="row">
+                    @if (currentPage.HasValue("leftSideSpecialContentBox"))
+                        {
+                            var leftContent = currentPage.GetPropertyValue<ArchetypeModel>("leftSideSpecialContentBox").FirstOrDefault();
+                            if(leftContent.Alias=="textInputBox")
+                            {
+                                @PrintText(leftContent)
+                            }
+                            else if(leftContent.Alias=="imageInputBox")
+                            {
+                                @PrintImage(leftContent)
+                            }
+                            else if (leftContent.Alias == "videoInputBox")
+                            {
+                                @PrintVideo(leftContent)
+                            }
+                        }
+                        @if (currentPage.HasValue("rightSideSpecialContentBox"))
+                        {
+                            var rightContent = currentPage.GetPropertyValue<ArchetypeModel>("rightSideSpecialContentBox").FirstOrDefault();
+                            if (rightContent.Alias == "textInputBox")
+                            {
+                                @PrintText(rightContent)
+                            }
+                            else if (rightContent.Alias == "imageInputBox")
+                            {
+                                @PrintImage(rightContent)
+                            }
+                            else if (rightContent.Alias == "videoInputBox")
+                            {
+                                @PrintVideo(rightContent)
+                            }
+                        }
+           </div>
+        </section>
+    }
+
+@helper PrintVideo(ArchetypeFieldsetModel fieldset)
+{
+    <div class="col-sm-6">
+        <div class="videocontent" style="height:300px;">
+            <video style="width:100%;height:100%;" controls="controls" width="100%" height="100%" id="player1" preload="none">
+                <source type="video/youtube" src="@fieldset.GetValue("youtubeOrVimeoUrl")" />
+            </video>
+        </div>
+    </div>
+}
+@helper PrintImage(ArchetypeFieldsetModel fieldset)
+{
+    var image = Umbraco.TypedMedia(fieldset.GetValue("image"));
+    <div class="col-sm-6">
+        <img src="@image.Url" alt="" class="img-responsive">
+    </div>
+}
+@helper PrintText(ArchetypeFieldsetModel fieldset)
+{
+    <div class="col-sm-6 textcontent">
+        @{
+            var titleUrl = "";
+            var titleTarget = "";
+            if (fieldset.HasValue("link"))
+            {
+                var multiUrlPicker = fieldset.GetValue<MultiUrls>("link");
+                if (multiUrlPicker.Count() == 1)
+                {
+                    titleUrl = multiUrlPicker.FirstOrDefault().Url;
+                    titleTarget = multiUrlPicker.FirstOrDefault().Target;
+                }
+                else
+                {
+                    titleUrl = "javascript:void(0)";
+                }
+
+            }
+            if (fieldset.HasValue("title"))
+            {
+                <a href="@titleUrl" target="@titleTarget"><h3 class="section-title-medium">@fieldset.GetValue("title")</h3></a>
+            }
+            if (fieldset.HasValue("description"))
+            {
+                <p>@Html.Raw(@Umbraco.ReplaceLineBreaksForHtml((string)fieldset.GetValue("description")))</p>
+            }
+            if (fieldset.HasValue("link"))
+            {
+                var multiUrlPicker = fieldset.GetValue<MultiUrls>("link");
+                if (multiUrlPicker.Any())
+                {
+                    <a href="@multiUrlPicker.FirstOrDefault().Url" rel="nofollow" class="clr-drk-blu link" @multiUrlPicker.FirstOrDefault().Target>@multiUrlPicker.FirstOrDefault().Name<i class="fa fa-caret-right"></i></a>
+                }
+
+            }
+        }
+
+    </div>
+}
+

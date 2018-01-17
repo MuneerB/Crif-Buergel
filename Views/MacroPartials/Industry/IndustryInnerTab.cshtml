@@ -1,0 +1,151 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+    var IndustryNode = Umbraco.TypedContent(Umbraco.GetDictionaryValue("IndustryCategoryNodeID"));
+    var childNodes = IndustryNode.Children.Where(x => x.IsVisible()).OrderBy("sortOrder");
+    int industry_items_Count = 0;
+    var currentPage = Model.Content;
+<section class="main-content">
+    <div class="content-tab aside-tab industry-inner">
+        @*<div class="cd-tabs">*@
+        <div class="container">
+            <div class="row">
+                <div class="cd-tabs  inner-container no-side-padding">
+                    <nav>
+                    <!-- Nav tabs -->
+                    <ul class="cd-tabs-navigation">
+                        @foreach(var node in childNodes)
+                        {
+                            string listClass = (node.Id == Model.Content.Id) ? "selected" : "normal";
+                            string anchorClass = (node.Id == Model.Content.Id) ? "class=\"selected\"" : "";
+                            var tab_name=node.HasValue("menuLabel") ? node.GetPropertyValue("menuLabel") : node.Name;
+                            <li class="@listClass">
+                                <a href="@node.Url" data-content="@tab_name" @Html.Raw(anchorClass)>
+                                    @tab_name
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </nav>
+               </div> </div> </div> 
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="container">
+                    <div class="row">
+                        <div class="inner-container industry-tb">
+                            <section class="two-cls-main clearfix border-grey-bottom">
+                                <article class="col-sm-5 ftrd-cntnt">
+								    <h1 class="clr-grey itlc-bold">
+									    @if(currentPage.HasValue("icon"))
+									    {
+										    var Image= Umbraco.TypedMedia(currentPage.GetPropertyValue<string>("icon"));
+
+											    <img src="@Image.Url" alt="" class="icon" />
+
+									    }
+									    @(currentPage.HasValue("title")?Umbraco.Field("title").ToString():currentPage.Name)
+								    </h1>
+                                    @if(currentPage.HasValue("shortDescription"))
+                                    {
+                                        <p>@Umbraco.Field("shortDescription")</p>
+                                    }
+                                </article>
+                                <aside class="col-sm-7 aside-slider-wrapper" data-speed="@Umbraco.Field("sliderspeed")">
+                                    @Umbraco.RenderMacro("IndustrySlider")
+                                </aside>
+                            </section>
+
+						    @Umbraco.RenderMacro("ThreeBoxContent")
+
+                            <section class="industry-framwork-box md-sprtr-top gutter-pad">
+                                <span class="logo-holder">
+                                    <img class="icon" src="/images/crif-text-logo.png" />
+                                </span>
+                                <article class="desc clearfix">
+                                    <p class="framework-title">@Umbraco.Field("creditFrameworkTitle")</p>
+                                    <p>@Html.Raw(Umbraco.Field("creditFrameworkSummary"))</p>
+                                </article>
+                            </section>
+                            <!-- Framework -->
+                            <div class="gutter-pad">
+                                <section class="framework-box-container clearfix">
+                                    <!-- Links -->
+                                    <div class="col-sm-6 no-side-padding">
+
+                                       <ul class="list-unstyled framework-link-list">
+                                            @{var phaseDataRepository = currentPage.AncestorOrSelf(1).Descendants("creditFrameworkPhase");
+                                             }
+                                            @displayCCFPhase(phaseDataRepository.FirstOrDefault())
+                                            <li>
+                                                <ul class="list-unstyled smll-lnks-list list-inline">
+                                                    @foreach (var node in phaseDataRepository.Skip(1).Take(4))
+                                                    {
+                                                       @displayCCFPhase(node)
+                                                    }
+                                                </ul>
+                                            </li>
+                                            @foreach (var node in phaseDataRepository.Skip(5).Take(3))
+                                            {
+                                               @displayCCFPhase(node)
+                                            }
+                                         </ul>
+
+                                    </div>
+
+                                    <!-- Desc -->
+                                    <div class="col-sm-6 framework-dtls">
+                                        <aside class="framework-box bg-light-grey arrow-brdr-lft">
+                                            @{var CCFPhaseLinkTo = currentPage.GetPropertyValue<RJP.MultiUrlPicker.Models.MultiUrls>("creditPhaseDefaultLink");
+                                              string linkTo = "javascript:;", target = "_blank", Name = "";
+                                              if (CCFPhaseLinkTo != null && CCFPhaseLinkTo.Any())
+                                              {
+                                                  linkTo = CCFPhaseLinkTo.FirstOrDefault().Url;
+                                                  target = CCFPhaseLinkTo.FirstOrDefault().Target;
+                                                  Name = CCFPhaseLinkTo.FirstOrDefault().Name;
+                                              }}
+                                            <span id="close-desc" class="close-desc" data-title="@Html.Raw(umbraco.library.RemoveFirstParagraphTag(Model.Content.GetPropertyValue("creditPhaseDefaultTitle").ToString()))" data-content="@Html.Raw(umbraco.library.StripHtml(Model.Content.GetPropertyValue("creditPhaseDefaultText").ToString()))">Close <i class="search-icon">X</i></span>
+                                                <div class="framework-desc">
+                                                    <h4><a href="#" class="title-link dark-color" style="pointer-events:none">@Model.Content.GetPropertyValue("creditPhaseDefaultTitle")</a></h4>
+                                                    <p>
+                                                        @Html.Raw(umbraco.library.StripHtml(Model.Content.GetPropertyValue("creditPhaseDefaultText").ToString()))
+                                                    </p>
+                                                </div>
+                                             <a href="@linkTo" @target id="framework-desc-link" class="link clr-drk-blu">@Name<i class="fa fa-caret-right"></i></a>
+                                        </aside>
+                                    </div>
+
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+          </div>
+        @*</div>*@ <!-- Tab content -->
+
+    </div> <!-- Tab Panel -->
+</section>
+}
+@helper displayCCFPhase(IPublishedContent CCFPhase)
+{
+    var CCFPhaseTitle = CCFPhase.GetPropertyValue<string>("title");
+    var CCFPhaseMenuTitle = CCFPhase.GetPropertyValue<string>("menuTitle");
+    var CCFPhaseMenuIcon = Umbraco.TypedMedia(CCFPhase.GetPropertyValue<string>("icon"));
+    string CCFPhaseDescription = CCFPhase.GetPropertyValue<string>("text");
+    var CCFPhaseLinkTo = CCFPhase.GetPropertyValue<RJP.MultiUrlPicker.Models.MultiUrls>("link");
+    string linkTo = "javascript:;", target = "_blank", Name = "";
+    if (CCFPhaseLinkTo != null && CCFPhaseLinkTo.Any())
+    {
+        linkTo = CCFPhaseLinkTo.FirstOrDefault().Url;
+        target = CCFPhaseLinkTo.FirstOrDefault().Target;
+        Name = CCFPhaseLinkTo.FirstOrDefault().Name;
+    }
+    <li>
+
+        <a data-id="@CCFPhase.Id" data-title="@CCFPhaseTitle" data-content="@CCFPhaseDescription" data-linkname="@Name"
+        href="@linkTo" @target class="grad-orng btn-sqr-brdr itlc-bold"><img class="icon" src="@CCFPhaseMenuIcon.Url" />
+            @CCFPhaseMenuTitle
+
+        </a>
+
+    </li>
+}

@@ -1,0 +1,187 @@
+﻿ 2016-09-05 07:43:37,129 [P10048/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.4.3 application starting on LENOVO-PC
+ 2016-09-05 07:43:37,169 [P10048/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2016-09-05 07:43:37,188 [P10048/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 19ms)
+ 2016-09-05 07:43:37,247 [P10048/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2016-09-05 07:43:37,560 [P10048/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 313ms)
+ 2016-09-05 07:43:37,575 [P10048/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2016-09-05 07:43:37,583 [P10048/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 8ms)
+ 2016-09-05 07:43:37,583 [P10048/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2016-09-05 07:43:37,595 [P10048/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 11ms)
+ 2016-09-05 07:43:37,615 [P10048/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2016-09-05 07:43:37,625 [P10048/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 10ms)
+ 2016-09-05 07:43:37,626 [P10048/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2016-09-05 07:43:37,640 [P10048/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 14ms)
+ 2016-09-05 07:43:37,703 [P10048/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2016-09-05 07:43:37,712 [P10048/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 9ms)
+ 2016-09-05 07:43:37,713 [P10048/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2016-09-05 07:43:37,723 [P10048/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 9ms)
+ 2016-09-05 07:43:38,635 [P10048/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-09-05 07:43:38,857 [P10048/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-09-05 07:43:38,928 [P10048/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-09-05 07:43:38,944 [P10048/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2016-09-05 07:43:38,959 [P10048/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2016-09-05 07:43:38,961 [P10048/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2016-09-05 07:43:38,979 [P10048/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 1936ms)
+ 2016-09-05 07:43:40,552 [P10048/D2/T12] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:56643/umbraco (UmbracoModule request)
+ 2016-09-05 07:43:40,713 [P10048/D2/T12] INFO  umbraco.content - Load Xml from file...
+ 2016-09-05 07:43:40,717 [P10048/D2/T12] INFO  umbraco.content - Loaded Xml from file.
+ 2016-09-05 07:43:45,471 [P10048/D2/T12] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2016-09-05 07:43:45,524 [P10048/D2/T12] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 53ms)
+ 2016-09-05 07:43:45,936 [P10048/D2/T12] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2016-09-05 07:43:45,947 [P10048/D2/T12] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 11ms)
+ 2016-09-05 07:43:49,913 [P10048/D2/T12] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.cms.businesslogic.macro.IMacroEngine
+ 2016-09-05 07:43:49,922 [P10048/D2/T12] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 0 (took 8ms)
+ 2016-09-05 07:43:56,547 [P10048/D2/T12] WARN  RJP.MultiUrlPicker.Models.MultiUrls - MultiUrlPicker value converter skipped a link as the node has been upublished/deleted (Id: 1108), 
+ 2016-09-05 07:43:56,565 [P10048/D2/T12] WARN  RJP.MultiUrlPicker.Models.MultiUrls - MultiUrlPicker value converter skipped a link as the node has been upublished/deleted (Id: 1108), 
+ 2016-09-05 07:44:40,802 [P10048/D2/T15] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2016-09-04 07:44:40
+ 2016-09-05 11:49:27,266 [P5828/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.4.3 application starting on LENOVO-PC
+ 2016-09-05 11:49:27,321 [P5828/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2016-09-05 11:49:27,335 [P5828/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 14ms)
+ 2016-09-05 11:49:27,423 [P5828/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2016-09-05 11:49:27,539 [P5828/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 116ms)
+ 2016-09-05 11:49:27,614 [P5828/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2016-09-05 11:49:27,615 [P5828/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 0ms)
+ 2016-09-05 11:49:27,615 [P5828/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2016-09-05 11:49:27,624 [P5828/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 8ms)
+ 2016-09-05 11:49:27,641 [P5828/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2016-09-05 11:49:27,658 [P5828/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 16ms)
+ 2016-09-05 11:49:27,658 [P5828/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2016-09-05 11:49:27,702 [P5828/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 43ms)
+ 2016-09-05 11:49:27,765 [P5828/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2016-09-05 11:49:27,766 [P5828/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 0ms)
+ 2016-09-05 11:49:27,767 [P5828/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2016-09-05 11:49:27,767 [P5828/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 0ms)
+ 2016-09-05 11:49:28,531 [P5828/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-09-05 11:49:28,715 [P5828/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-09-05 11:49:28,829 [P5828/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-09-05 11:49:28,875 [P5828/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2016-09-05 11:49:28,889 [P5828/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2016-09-05 11:49:28,890 [P5828/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2016-09-05 11:49:28,909 [P5828/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 1709ms)
+ 2016-09-05 11:49:30,920 [P5828/D2/T8] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:56643/umbraco (UmbracoModule request)
+ 2016-09-05 11:49:31,088 [P5828/D2/T8] INFO  umbraco.content - Load Xml from file...
+ 2016-09-05 11:49:31,092 [P5828/D2/T8] INFO  umbraco.content - Loaded Xml from file.
+ 2016-09-05 11:49:31,601 [P5828/D2/T8] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2016-09-05 11:49:31,603 [P5828/D2/T8] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 1ms)
+ 2016-09-05 11:49:31,884 [P5828/D2/T8] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2016-09-05 11:49:31,885 [P5828/D2/T8] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 0ms)
+ 2016-09-05 11:49:33,765 [P5828/D2/T8] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.cms.businesslogic.macro.IMacroEngine
+ 2016-09-05 11:49:33,766 [P5828/D2/T8] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 0 (took 1ms)
+ 2016-09-05 11:49:34,147 [P5828/D2/T8] WARN  RJP.MultiUrlPicker.Models.MultiUrls - MultiUrlPicker value converter skipped a link as the node has been upublished/deleted (Id: 1108), 
+ 2016-09-05 11:49:34,148 [P5828/D2/T8] WARN  RJP.MultiUrlPicker.Models.MultiUrls - MultiUrlPicker value converter skipped a link as the node has been upublished/deleted (Id: 1108), 
+ 2016-09-05 11:50:31,157 [P5828/D2/T15] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2016-09-04 11:50:31
+ 2016-09-05 11:54:20,363 [P5828/D2/T11] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username CrifAustria from IP address ::1
+ 2016-09-05 11:54:20,365 [P5828/D2/T11] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: CrifAustria logged in from IP address ::1
+ 2016-09-05 11:54:20,497 [P5828/D2/T23] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2016-09-05 11:54:20,512 [P5828/D2/T23] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 15ms)
+ 2016-09-05 11:54:20,704 [P5828/D2/T17] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplication
+ 2016-09-05 11:54:20,733 [P5828/D2/T17] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplication, found 0 (took 29ms)
+ 2016-09-05 11:54:20,742 [P5828/D2/T33] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ITree
+ 2016-09-05 11:54:20,800 [P5828/D2/T33] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ITree, found 0 (took 57ms)
+ 2016-09-05 11:54:20,804 [P5828/D2/T29] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2016-09-05 11:54:20,805 [P5828/D2/T29] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 0ms)
+ 2016-09-05 11:54:20,808 [P5828/D2/T29] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ITree
+ 2016-09-05 11:54:20,842 [P5828/D2/T29] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ITree, found 0 (took 34ms)
+ 2016-09-05 11:56:10,778 [P5828/D2/T34] INFO  Umbraco.Web.Editors.AuthenticationController - User CrifAustria from IP address ::1 has logged out
+ 2016-09-05 11:56:19,428 [P5828/D2/T21] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username muneer@27technologies.com from IP address ::1
+ 2016-09-05 11:56:19,428 [P5828/D2/T21] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: muneer@27technologies.com logged in from IP address ::1
+ 2016-09-05 11:56:33,607 [P5828/D2/T36] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/Previews/docType.cshtml
+ 2016-09-05 11:56:33,607 [P5828/D2/T5] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/Previews/docType.cshtml
+ 2016-09-05 11:56:33,607 [P5828/D2/T19] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/Previews/docType.cshtml
+ 2016-09-05 11:56:33,608 [P5828/D2/T36] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/Previews/bannerWithExtendingImage.cshtml
+ 2016-09-05 11:56:33,608 [P5828/D2/T19] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/Previews/bannerWithExtendingImage.cshtml
+ 2016-09-05 11:56:33,608 [P5828/D2/T5] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/Previews/bannerWithBackgroundImage.cshtml
+ 2016-09-05 11:56:33,608 [P5828/D2/T19] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/docType.cshtml
+ 2016-09-05 11:56:33,608 [P5828/D2/T36] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/docType.cshtml
+ 2016-09-05 11:56:33,608 [P5828/D2/T5] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/docType.cshtml
+ 2016-09-05 11:56:33,608 [P5828/D2/T36] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/bannerWithExtendingImage.cshtml
+ 2016-09-05 11:56:33,609 [P5828/D2/T19] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/bannerWithExtendingImage.cshtml
+ 2016-09-05 11:56:33,609 [P5828/D2/T5] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/bannerWithBackgroundImage.cshtml
+ 2016-09-05 11:56:33,611 [P5828/D2/T5] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name docType
+ 2016-09-05 11:56:33,611 [P5828/D2/T36] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name docType
+ 2016-09-05 11:56:33,611 [P5828/D2/T19] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name docType
+ 2016-09-05 11:59:28,922 [P5828/D2/T17] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ICacheRefresher
+ 2016-09-05 11:59:28,941 [P5828/D2/T17] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 0 (took 18ms)
+ 2016-09-05 11:59:30,143 [P5828/D2/T33] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/Previews/docType.cshtml
+ 2016-09-05 11:59:30,143 [P5828/D2/T21] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/Previews/docType.cshtml
+ 2016-09-05 11:59:30,144 [P5828/D2/T21] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/Previews/bannerWithExtendingImage.cshtml
+ 2016-09-05 11:59:30,144 [P5828/D2/T33] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/Previews/bannerWithExtendingImage.cshtml
+ 2016-09-05 11:59:30,144 [P5828/D2/T21] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/docType.cshtml
+ 2016-09-05 11:59:30,144 [P5828/D2/T33] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/docType.cshtml
+ 2016-09-05 11:59:30,145 [P5828/D2/T33] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/bannerWithExtendingImage.cshtml
+ 2016-09-05 11:59:30,145 [P5828/D2/T21] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/bannerWithExtendingImage.cshtml
+ 2016-09-05 11:59:30,147 [P5828/D2/T21] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name docType
+ 2016-09-05 11:59:30,147 [P5828/D2/T33] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name docType
+ 2016-09-05 11:59:30,158 [P5828/D2/T17] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/Previews/docType.cshtml
+ 2016-09-05 11:59:30,159 [P5828/D2/T17] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/Previews/bannerWithBackgroundImage.cshtml
+ 2016-09-05 11:59:30,159 [P5828/D2/T17] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/docType.cshtml
+ 2016-09-05 11:59:30,159 [P5828/D2/T17] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/bannerWithBackgroundImage.cshtml
+ 2016-09-05 11:59:30,159 [P5828/D2/T17] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name docType
+ 2016-09-05 12:15:07,971 [P5828/D2/T33] INFO  Umbraco.Web.Editors.AuthenticationController - User muneer@27technologies.com from IP address ::1 has logged out
+ 2016-09-05 12:15:18,358 [P5828/D2/T36] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username CrifAustria from IP address ::1
+ 2016-09-05 12:15:18,358 [P5828/D2/T36] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: CrifAustria logged in from IP address ::1
+ 2016-09-05 12:18:55,332 [P5828/D2/T21] WARN  Umbraco.Web.Security.Providers.UmbracoMembershipProvider`2[[Umbraco.Core.Services.IMembershipUserService, Umbraco.Core, Version=1.0.5948.18141, Culture=neutral, PublicKeyToken=null],[Umbraco.Core.Models.Membership.IUser, Umbraco.Core, Version=1.0.5948.18141, Culture=neutral, PublicKeyToken=null]] - Cannot create member as username already exists: Eidtor
+ 2016-09-05 12:20:51,972 [P5828/D2/T37] INFO  Umbraco.Web.Editors.AuthenticationController - User CrifAustria from IP address ::1 has logged out
+ 2016-09-05 12:20:55,102 [P5828/D2/T19] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username CrifAustria from IP address ::1
+ 2016-09-05 12:20:55,102 [P5828/D2/T19] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: CrifAustria logged in from IP address ::1
+ 2016-09-05 12:20:59,327 [P5828/D2/T37] INFO  Umbraco.Web.Editors.AuthenticationController - User CrifAustria from IP address ::1 has logged out
+ 2016-09-05 12:21:03,336 [P5828/D2/T35] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username muneer@27technologies.com from IP address ::1
+ 2016-09-05 12:21:03,336 [P5828/D2/T35] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: muneer@27technologies.com logged in from IP address ::1
+ 2016-09-05 12:31:47,634 [P5828/D2/T19] INFO  Umbraco.Web.Editors.AuthenticationController - User muneer@27technologies.com from IP address ::1 has logged out
+ 2016-09-05 12:31:55,553 [P5828/D2/T11] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username CrifAustria from IP address ::1
+ 2016-09-05 12:31:55,553 [P5828/D2/T11] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: CrifAustria logged in from IP address ::1
+ 2016-09-05 12:39:49,087 [P5828/D2/T33] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/Previews/docType.cshtml
+ 2016-09-05 12:39:49,087 [P5828/D2/T33] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/Previews/bannerWithExtendingImage.cshtml
+ 2016-09-05 12:39:49,087 [P5828/D2/T33] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/docType.cshtml
+ 2016-09-05 12:39:49,088 [P5828/D2/T33] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/bannerWithExtendingImage.cshtml
+ 2016-09-05 12:39:49,089 [P5828/D2/T33] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name docType
+ 2016-09-05 12:39:49,146 [P5828/D2/T35] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/Previews/docType.cshtml
+ 2016-09-05 12:39:49,146 [P5828/D2/T35] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/Previews/bannerWithExtendingImage.cshtml
+ 2016-09-05 12:39:49,146 [P5828/D2/T35] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/docType.cshtml
+ 2016-09-05 12:39:49,146 [P5828/D2/T35] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/bannerWithExtendingImage.cshtml
+ 2016-09-05 12:39:49,146 [P5828/D2/T35] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name docType
+ 2016-09-05 12:39:49,179 [P5828/D2/T33] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/Previews/docType.cshtml
+ 2016-09-05 12:39:49,179 [P5828/D2/T33] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/Previews/bannerWithBackgroundImage.cshtml
+ 2016-09-05 12:39:49,179 [P5828/D2/T33] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/docType.cshtml
+ 2016-09-05 12:39:49,180 [P5828/D2/T33] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name /Views/Partials/Grid/Editors/DocTypeGridEditor/bannerWithBackgroundImage.cshtml
+ 2016-09-05 12:39:49,180 [P5828/D2/T33] WARN  Our.Umbraco.DocTypeGridEditor.Bootstrap - No view file found with the name docType
+ 2016-09-05 12:40:54,852 [P5828/D2/T29] INFO  Umbraco.Web.Editors.AuthenticationController - User CrifAustria from IP address ::1 has logged out
+ 2016-09-05 12:41:25,163 [P5828/D2/T36] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username m.baleri@77agency.com from IP address ::1
+ 2016-09-05 12:41:34,055 [P5828/D2/T22] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username approver from IP address ::1
+ 2016-09-05 12:41:41,002 [P5828/D2/T12] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username CrifAustria from IP address ::1
+ 2016-09-05 12:41:41,002 [P5828/D2/T12] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: CrifAustria logged in from IP address ::1
+ 2016-09-05 12:42:06,013 [P5828/D2/T21] INFO  Umbraco.Web.Editors.AuthenticationController - User CrifAustria from IP address ::1 has logged out
+ 2016-09-05 12:42:16,772 [P5828/D2/T11] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username muneer@27technologies.com from IP address ::1
+ 2016-09-05 12:42:16,772 [P5828/D2/T11] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: muneer@27technologies.com logged in from IP address ::1
+ 2016-09-05 12:44:41,266 [P5828/D2/T28] INFO  Umbraco.Web.Editors.AuthenticationController - User muneer@27technologies.com from IP address ::1 has logged out
+ 2016-09-05 12:44:44,649 [P5828/D2/T28] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username CrifAustria from IP address ::1
+ 2016-09-05 12:44:44,649 [P5828/D2/T28] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: CrifAustria logged in from IP address ::1
+ 2016-09-05 12:45:18,567 [P5828/D2/T36] ERROR umbraco.cms.presentation.user.EditUser - Exception
+System.Configuration.Provider.ProviderException: A member with the email 'muneer.baleri@gmail.com' already exists
+   at Umbraco.Web.Security.Providers.UmbracoMembershipProvider`2.UpdateUser(MembershipUser user)
+   at Umbraco.Web.Security.MembershipHelper.UpdateMember(MembershipUser member, MembershipProvider provider, String email, Nullable`1 isApproved, Nullable`1 lastLoginDate, Nullable`1 lastActivityDate, String comment)
+   at umbraco.cms.presentation.user.EditUser.UpdateMembershipProvider(MembershipUser membershipUser)
+   at umbraco.cms.presentation.user.EditUser.SaveUser_Click(Object sender, EventArgs e)
+ 2016-09-05 12:45:26,297 [P5828/D2/T26] ERROR umbraco.cms.presentation.user.EditUser - Exception
+System.Configuration.Provider.ProviderException: A member with the email 'muneer.baleri@gmail.com' already exists
+   at Umbraco.Web.Security.Providers.UmbracoMembershipProvider`2.UpdateUser(MembershipUser user)
+   at Umbraco.Web.Security.MembershipHelper.UpdateMember(MembershipUser member, MembershipProvider provider, String email, Nullable`1 isApproved, Nullable`1 lastLoginDate, Nullable`1 lastActivityDate, String comment)
+   at umbraco.cms.presentation.user.EditUser.UpdateMembershipProvider(MembershipUser membershipUser)
+   at umbraco.cms.presentation.user.EditUser.SaveUser_Click(Object sender, EventArgs e)
+ 2016-09-05 12:46:06,354 [P5828/D2/T5] ERROR umbraco.cms.presentation.user.EditUser - Exception
+System.Configuration.Provider.ProviderException: A member with the email 'm.baleri@77agency.com' already exists
+   at Umbraco.Web.Security.Providers.UmbracoMembershipProvider`2.UpdateUser(MembershipUser user)
+   at Umbraco.Web.Security.MembershipHelper.UpdateMember(MembershipUser member, MembershipProvider provider, String email, Nullable`1 isApproved, Nullable`1 lastLoginDate, Nullable`1 lastActivityDate, String comment)
+   at umbraco.cms.presentation.user.EditUser.UpdateMembershipProvider(MembershipUser membershipUser)
+   at umbraco.cms.presentation.user.EditUser.SaveUser_Click(Object sender, EventArgs e)
+ 2016-09-05 12:46:26,527 [P5828/D2/T28] ERROR umbraco.cms.presentation.user.EditUser - Exception
+System.Configuration.Provider.ProviderException: A member with the email 'm.baleri@77agency.com' already exists
+   at Umbraco.Web.Security.Providers.UmbracoMembershipProvider`2.UpdateUser(MembershipUser user)
+   at Umbraco.Web.Security.MembershipHelper.UpdateMember(MembershipUser member, MembershipProvider provider, String email, Nullable`1 isApproved, Nullable`1 lastLoginDate, Nullable`1 lastActivityDate, String comment)
+   at umbraco.cms.presentation.user.EditUser.UpdateMembershipProvider(MembershipUser membershipUser)
+   at umbraco.cms.presentation.user.EditUser.SaveUser_Click(Object sender, EventArgs e)
+ 2016-09-05 12:48:25,860 [P5828/D2/T26] INFO  Umbraco.Web.Editors.AuthenticationController - User CrifAustria from IP address ::1 has logged out
+ 2016-09-05 12:48:28,410 [P5828/D2/T21] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username CrifAustria from IP address ::1
+ 2016-09-05 12:48:36,594 [P5828/D2/T37] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username muneer@27technologies.com from IP address ::1
+ 2016-09-05 12:48:36,594 [P5828/D2/T37] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: muneer@27technologies.com logged in from IP address ::1
+ 2016-09-05 13:08:07,988 [P5828/D2/T19] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: muneer@27technologies.com, IP Address: ::1

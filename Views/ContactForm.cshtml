@@ -1,0 +1,118 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "Pages.cshtml";
+    string strUserAgent = Request.UserAgent.ToString().ToLower();
+    var linkedInTitle = "";
+    if (Model.Content.HasValue("linkedInLoginTitle"))
+    {
+        linkedInTitle = Model.Content.GetPropertyValue<string>("linkedInLoginTitle");
+    }
+    var clientId = System.Configuration.ConfigurationManager.AppSettings["ClientIDForLinkedInRegister"];
+}
+@section css {
+    <script type="text/javascript" src="/scripts/linkedin.signin.js"></script>
+}
+<section class="main-content">
+	<div class="container">
+		<div class="row">
+			<div class="inner-container gutter-pad clearfix">
+				<div class="title">						  						
+					<h1 class="clr-drk-blu h2">@Umbraco.Field("title")</h1>
+                    @if (strUserAgent != null)
+	                {
+		                if (strUserAgent.Contains("ipad") || strUserAgent.Contains("iphone"))
+		                {
+			                using (Html.BeginUmbracoForm<CrifAustria.Controllers.LinkedInController>("index", null))
+                            {
+	                             <input type="submit" value="Sign in with Linkedin" class="btn btn-lnkd" /><i class="fa fa-linkedin fa-2x"></i>
+                            } 
+		                }
+                        else
+                        {
+                            <button id="libtn" class="btn btn-lnkd" onclick="liAuth()"><i class="fa fa-linkedin fa-2x"></i>Sign in with Linkedin</button>
+                        }
+                    }
+				</div>	
+				<div class="contact-2-clmns">	
+					<article class="col-sm-8 no-side-padding">
+						<section class="form lrg-sprtr-top">
+                            @{
+                                if (Model.Content.DocumentTypeAlias == "contactUs")
+                                {
+							        @Umbraco.RenderMacro("Contact")
+									
+                                }
+                                else if (Model.Content.DocumentTypeAlias == "sheduleConsultation")
+                                { 
+                                	@Umbraco.RenderMacro("SheduleConsultation")
+                                }
+                                else if (Model.Content.DocumentTypeAlias == "newsletter")
+                                {
+                                    @Umbraco.RenderMacro("NewsletterSubscription")
+                                }
+                            }
+						</section>																							
+					</article>
+				</div>
+				<div class="contact-2-clmns">	
+					<article class="col-sm-12 no-side-padding">
+						<section class="form lrg-sprtr-top">
+							@{
+                                if (Model.Content.DocumentTypeAlias == "contactUs")
+                                {
+							       	<hr/>
+									@Umbraco.RenderMacro("OfficeWorldWide")
+									
+                                }
+							}	
+						</section>																							
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+							@*?!-_ß%&'"'/+*@
+</section>
+		<input id="hdApiClientId" type="hidden" value="@clientId" />			
+@section innerJs{
+	 <script type="text/javascript">
+		$('input').bind('keypress', function (event) {
+	         var regex = new RegExp("^[-a-zA-Z0-9@@.ÄäÖöÜü?!_ß%&/+\"\b\t ]+$");
+			var code= (!event.charCode) ? event.keyCode : event.charCode;
+	         var key = String.fromCharCode(!event.charCode ? event.keyCode : event.charCode);
+			
+	         if (!regex.test(key)) {
+				 if(code!=35 && code!=36)
+				 {
+					 event.preventDefault();
+					 return false;
+				 }
+	         }
+	     });
+	     $('input[id$=messageTxt], textarea').bind('keypress', function (event) {
+	         var regex = new RegExp("^[-a-zA-Z0-9();:.,ÄäÖöÜü?!_ß%&/+\"\b\t ]+$");
+	         var code= (!event.charCode) ? event.keyCode : event.charCode;
+	         var key = String.fromCharCode(!event.charCode ? event.keyCode : event.charCode);
+			
+	         if (!regex.test(key)) {
+				 if(code!=35 && code!=36)
+				 {
+					 event.preventDefault();
+					 return false;
+				 }
+	         }
+	     });
+		var defaultRangeValidator = jQuery.validator.methods.range;
+				console.log(defaultRangeValidator);
+				 jQuery.validator.methods.range = function (value, element, param) {
+					 console.log(defaultRangeValidator);
+					 if (element.type === 'checkbox') {
+						 // if it's a checkbox return true if it is checked
+						 return element.checked;
+					 } else {
+						 // otherwise run the default validation function
+						 return defaultRangeValidator.call(this, value, element, param);
+					 }
+				 }
+    </script> 
+}
